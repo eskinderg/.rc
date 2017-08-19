@@ -47,9 +47,45 @@ au InsertLeave * match ExtraWhitespace /\s\+$/
 ""let g:tsuquyomi_completion_detail = 1
 
 "Syntactic error display configuration
+"let g:tmuxline_preset = {
+      "\'a'    : '#S',
+      "\'b'    : '#W',
+      "\'c'    : '#H',
+      "\'win'  : '#I #W',
+      "\'cwin' : '#I #W',
+      "\'x'    : '%a',
+      "\'y'    : '#W %R',
+      "\'z'    : '#H'}
+
+"let g:tmuxline_preset = {
+      "\'a'    : '#S',
+      "\'win'  : ['#I', '#W'],
+      "\'cwin' : ['#I', '#W', '#F'],
+      "\'y'    : [ '%a', '%r'],
+      "\'z'    : '#H'}
+
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'win'  : ['#I', '#W'],
+      \'cwin' : '#W',
+      \'x'    : '%b',
+      \'y'    : '%d',
+      \'z'    : '%r'}
+
+set statusline+=%F
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 "let g:syntastic_debug = 3
 "let g:syntastic_typescript_checkers = ['tslint']
 "let g:syntastic_typescript_checkers = ['tslint', 'tsc']
+let g:syntastic_typescript_checkers = ['tsuquyomi']
 "let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
 
 "set statusline+=%#warningmsg#
@@ -60,6 +96,9 @@ au InsertLeave * match ExtraWhitespace /\s\+$/
 "let g:syntastic_auto_loc_list = 1
 "let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
+
+
+
 
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -79,6 +118,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 "colorscheme onedark
 "colorscheme one
 colorscheme solarized8_dark_high
+"colorscheme solarized8_dark_low
 "colorscheme one-dark
 "colorscheme solarized8_dark
 "colorscheme 256-grayvim
@@ -99,11 +139,14 @@ filetype plugin on
 "let g:airline_theme='cool'
 "let g:airline_theme='onedark'
 "let g:airline_theme='base16_grayscale'
+"
+"
 "syntax enable
 "DoMatchParen
 " air-line
 "let g:airline_theme='minimalist'
-let g:airline_theme='onedark'
+let g:airline_theme='angr'
+"let g:airline_theme='onedark'
 let g:airline#extensions#tabline#fnamemod = ':t' "Show only file names in the tab
 let g:airline#extensions#tabline#tab_nr_type = 1 "Show Tab Numbers instead of the number of tabs in each windows
 let g:airline#extensions#tabline#enabled = 1
@@ -191,7 +234,7 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
 "nmap <C-k> <C-e>
-"nmap <C-j> <C-y>  
+"nmap <C-j> <C-y>
 
 "Resize vsplit
 nmap <C-v> :vertical resize +5<cr>
@@ -329,4 +372,48 @@ function! AddDependency()
     exec 'normal :%s/(, /(/g
 '
 endfunction
+
+"fun! Start()
+    "" Don't run if: we have commandline arguments, we don't have an empty
+    "" buffer, if we've not invoked as vim or gvim, or if we'e start in insert mode
+    "if argc() || line2byte('$') != -1 || v:progname !~? '^[-gmnq]\=vim\=x\=\%[\.exe]$' || &insertmode
+        "return
+    "endif
+
+    "" Start a new buffer ...
+    "enew
+
+    "" ... and set some options for it
+    "setlocal
+        "\ bufhidden=wipe
+        "\ buftype=nofile
+        "\ nobuflisted
+        "\ nocursorcolumn
+        "\ nocursorline
+        "\ nolist
+        "\ nonumber
+        "\ noswapfile
+        "\ norelativenumber
+
+    "" Now we can just write to the buffer, whatever you want.
+    "call append('$', "VIM Modified By Eskinder")
+
+    ""for line in split(system('fortune -a'), '\n')
+        ""call append('$', '        ' . l:line)
+    ""endfor
+
+    "" No modifications to this buffer
+    "setlocal nomodifiable nomodified
+
+    "" When we go to insert mode start a new buffer, and start insert
+    "nnoremap <buffer><silent> e :enew<CR>
+    "nnoremap <buffer><silent> i :enew <bar> startinsert<CR>
+    "nnoremap <buffer><silent> o :enew <bar> startinsert<CR>
+"endfun
+
+"" Run after "doing all the startup stuff"
+"autocmd VimEnter * call Start()
+
+
 execute pathogen#infect()
+
