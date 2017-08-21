@@ -4,22 +4,12 @@ set t_Co=256
 set t_ut=
 set background=dark
 set showmatch
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 syntax on
 
 set hidden
 
 "let g:deoplete#enable_at_startup = 1
-
-"set t_8b=^[[48;2;%lu;%lu;%lum
-"set t_8f=^[[38;2;%lu;%lu;%lum
-
-"set term=screen-256color
-"set term=xterm-256color
-
-"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
-"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
-"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
-    "set termguicolors
 
 set termguicolors
 
@@ -33,36 +23,11 @@ if (empty($TMUX))
 endif
 
 "-----------------------------------------------------------------------------------------------------------------------------------
-"
 
 "Trailing whitespaces
 "Must Me insetred before the colorscheme
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 au InsertLeave * match ExtraWhitespace /\s\+$/
-
-"if !exists('g:airline_symbols')
-    "let g:airline_symbols = {}
-"endif
-
-""let g:tsuquyomi_completion_detail = 1
-
-"Syntactic error display configuration
-"let g:tmuxline_preset = {
-      "\'a'    : '#S',
-      "\'b'    : '#W',
-      "\'c'    : '#H',
-      "\'win'  : '#I #W',
-      "\'cwin' : '#I #W',
-      "\'x'    : '%a',
-      "\'y'    : '#W %R',
-      "\'z'    : '#H'}
-
-"let g:tmuxline_preset = {
-      "\'a'    : '#S',
-      "\'win'  : ['#I', '#W'],
-      "\'cwin' : ['#I', '#W', '#F'],
-      "\'y'    : [ '%a', '%r'],
-      "\'z'    : '#H'}
 
 let g:tmuxline_preset = {
       \'a'    : '#S',
@@ -96,9 +61,6 @@ let g:syntastic_typescript_checkers = ['tsuquyomi']
 "let g:syntastic_auto_loc_list = 1
 "let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
-
-
-
 
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -201,7 +163,7 @@ filetype plugin on
 filetype indent on              "With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 
-" let mapleader = ","
+"let mapleader = ","
 "let g:mapleader = ","
 
 let mapleader = "\<Space>"
@@ -211,10 +173,6 @@ command GREP :execute 'vimgrep '.expand('<cword>').' '.expand('%') | :copen | :c
 
 " Fast saves
 " nmap <leader>w :w!<cr>
-
-" Down is really the next line
-"nnoremap j gj
-"nnoremap k gk
 
 "Better Indentation
 vnoremap < <gv
@@ -270,10 +228,8 @@ map <Leader>t :!phpunit %<cr>
 let g:EasyMotion_leader_key = '<Leader>'
 
 " Powerline (Fancy thingy at bottom stuff)
-let g:Powerline_symbols = 'fancy'
+"let g:Powerline_symbols = 'fancy'
 set laststatus=2   " Always show the statusline
-set encoding=utf-8 " Necessary to show Unicode glyphs
-set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 
 autocmd cursorhold * set nohlsearch
 autocmd cursormoved * set hlsearch
@@ -289,39 +245,6 @@ abbr log console.log();<left><left>
 " insert mode
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-
-" Abbreviations
-abbrev pft PHPUnit_Framework_TestCase
-
-abbrev gm !php artisan generate:model
-abbrev gc !php artisan generate:controller
-abbrev gmig !php artisan generate:migration
-
-" Auto-remove trailing spaces
-autocmd BufWritePre *.php :%s/\s\+$//e
-
-" Edit todo list for project
-nmap ,todo :e todo.txt<cr>
-
-" Laravel framework commons
-nmap <leader>lr :e app/routes.php<cr>
-nmap <leader>lca :e app/config/app.php<cr>81Gf(%O
-nmap <leader>lcd :e app/config/database.php<cr>
-nmap <leader>lc :e composer.json<cr>
-
-" Concept - load underlying class for Laravel
-function! FacadeLookup()
-    let facade = input('Facade Name: ')
-    let classes = {
-\       'Form': 'Html/FormBuilder.php',
-\       'Html': 'Html/HtmlBuilder.php',
-\       'File': 'Filesystem/Filesystem.php',
-\       'Eloquent': 'Database/Eloquent/Model.php'
-\   }
-
-    execute ":edit vendor/laravel/framework/src/Illuminate/" . classes[facade]
-endfunction
- nmap,lf :call FacadeLookup()<cr>
 
 " CtrlP Stuff
 
@@ -340,80 +263,29 @@ nmap sp :split<cr>
 " Create/edit file in the current directory
 nmap :ed :edit %:p:h/
 
-" Prepare a new PHP class
-function! Class()
-    let name = input('Class name? ')
-    let namespace = input('Any Namespace? ')
-
-    if strlen(namespace)
-        exec 'normal i<?php namespace ' . namespace . ';
-    else
-        exec 'normal i<?php
-    endif
-
-    " Open class
-    exec 'normal iclass ' . name . ' {^M}^[O^['
-
-    exec 'normal i^M    public function __construct()^M{^M ^M}^['
-endfunction
 nmap ,1  :call Class()<cr>
 
-" Ad a new dependency to a PHP class
-function! AddDependency()
-    let dependency = input('Var Name: ')
-    let namespace = input('Class Path: ')
-
-    let segments = split(namespace, '\')
-    let typehint = segments[-1]
-
-    exec 'normal gg/construct^M:H^Mf)i, ' . typehint . ' $' . dependency . '^[/}^>O$this->^[a' . dependency . ' = $' . dependency . ';^[?{^MkOprotected $' . dependency . ';^M^[?{^MOuse ' . namespace . ';^M^['
-
-    " Remove opening comma if there is only one dependency
-    exec 'normal :%s/(, /(/g
-'
-endfunction
-
-"fun! Start()
-    "" Don't run if: we have commandline arguments, we don't have an empty
-    "" buffer, if we've not invoked as vim or gvim, or if we'e start in insert mode
-    "if argc() || line2byte('$') != -1 || v:progname !~? '^[-gmnq]\=vim\=x\=\%[\.exe]$' || &insertmode
-        "return
-    "endif
-
-    "" Start a new buffer ...
-    "enew
-
-    "" ... and set some options for it
-    "setlocal
-        "\ bufhidden=wipe
-        "\ buftype=nofile
-        "\ nobuflisted
-        "\ nocursorcolumn
-        "\ nocursorline
-        "\ nolist
-        "\ nonumber
-        "\ noswapfile
-        "\ norelativenumber
-
-    "" Now we can just write to the buffer, whatever you want.
-    "call append('$', "VIM Modified By Eskinder")
-
-    ""for line in split(system('fortune -a'), '\n')
-        ""call append('$', '        ' . l:line)
-    ""endfor
-
-    "" No modifications to this buffer
-    "setlocal nomodifiable nomodified
-
-    "" When we go to insert mode start a new buffer, and start insert
-    "nnoremap <buffer><silent> e :enew<CR>
-    "nnoremap <buffer><silent> i :enew <bar> startinsert<CR>
-    "nnoremap <buffer><silent> o :enew <bar> startinsert<CR>
-"endfun
-
-"" Run after "doing all the startup stuff"
-"autocmd VimEnter * call Start()
-
+"Begin Tabgar Settings
+"=============================================================================
+let g:tagbar_type_typescript = {
+  \ 'ctagsbin' : 'tstags',
+  \ 'ctagsargs' : '-f-',
+  \ 'kinds': [
+    \ 'e:enums:0:1',
+    \ 'f:function:0:1',
+    \ 't:typealias:0:1',
+    \ 'M:Module:0:1',
+    \ 'I:import:0:1',
+    \ 'i:interface:0:1',
+    \ 'C:class:0:1',
+    \ 'm:method:0:1',
+    \ 'p:property:0:1',
+    \ 'v:variable:0:1',
+    \ 'c:const:0:1',
+  \ ],
+  \ 'sort' : 0
+\ }
+"End Tabgar Settings =========================================================
 
 execute pathogen#infect()
 
