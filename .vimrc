@@ -5,6 +5,7 @@ set t_ut=
 set background=dark
 set showmatch
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+set incsearch
 syntax on
 
 set hidden
@@ -132,7 +133,7 @@ set go-=L " Removes left hand scroll bar
 set linespace=15
 set showmode                    " always show what mode we're currently editing in
 set nowrap                      " don't wrap lines
-set tabstop=2                  " a tab is two spaces
+set tabstop=3                  " a tab is two spaces
 set smarttab
 set tags=tags
 
