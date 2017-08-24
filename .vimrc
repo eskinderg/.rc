@@ -212,6 +212,17 @@ nmap ,c :!open -a Google\ Chrome<cr>
 "Show (partial) command in the status line
 set showcmd
 
+"These are the tweaks I apply to YCM's config, you don't need them but they might help.
+"YCM gives you popups and splits by default that some people might not like, so these should tidy it up a bit for you.
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_confirm_extra_conf=0
+set completeopt-=preview
+
+"vim-javascript plugin settings
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
+
 " Create split below
 nmap :sp :rightbelow sp<cr>
 
@@ -222,8 +233,8 @@ nnoremap :bn :BufSurfForward<cr>
 highlight Search cterm=underline
 
 
-" Run PHPUnit tests
-map <Leader>t :!phpunit %<cr>
+" Toggle tag bar
+map <Leader>t :TagbarToggle<cr>
 
 " Easy motion stuff
 let g:EasyMotion_leader_key = '<Leader>'
