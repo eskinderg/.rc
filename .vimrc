@@ -201,6 +201,7 @@ nmap 25 :vertical resize 40<cr>
 nmap 50 <c-w>=
 nmap 75 :vertical resize 120<cr>
 
+"NERDTree configurations
 nmap <C-b> :NERDTreeToggle<cr>
 
 "NERDTree ignore directory
