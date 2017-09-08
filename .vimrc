@@ -66,6 +66,8 @@ let g:syntastic_typescript_checkers = ['tsuquyomi']
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
+inoremap <C-k> <C-O>:
+
 "colorscheme koehler
 "colorscheme vim-material
 "colorscheme delek
@@ -124,8 +126,8 @@ let g:Powerline_symbols='unicode'
 "
 "Fuzzy Search(CTRLP) and vimgrep search
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules,dist,documentation,coverage,node  "For Windows systems
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules/**,dist/**,documentation/**,coverage/**,node/**  "For Linux systems
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules,dist,documentation,coverage,node,package-lock.json  "For Windows systems
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules/**,dist/**,documentation/**,coverage/**,node/**,package-lock.json  "For Linux systems
 "set guifont=menlo\ for\ powerline:h30
 "set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
@@ -143,7 +145,7 @@ set foldlevel=3
 "set tags=tags;/
 set softtabstop=4               " when hitting <BS>, pretend like a tab is removed, even if spaces
 set expandtab                   " expand tabs by default (overloadable per file type later)
-set shiftwidth=2               " number of spaces to use for autoindenting
+set shiftwidth=5               " number of spaces to use for autoindenting
 set shiftround                  " use multiple of shiftwidth when indenting with '<' and '>'
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 set autoindent                  " always set autoindenting on
