@@ -6,6 +6,8 @@ set background=dark
 set showmatch
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set incsearch
+set cursorline          "highlight current line
+set cursorcolumn        "highlight current column
 syntax on
 
 set hidden
@@ -80,7 +82,7 @@ inoremap <C-k> <C-O>:
 "colorscheme ron
 "colorscheme base
 "colorscheme automation
-"colorscheme onedark
+""colorscheme onedark
 "colorscheme one
 colorscheme solarized8_dark_high
 "colorscheme solarized8_dark_low
@@ -90,9 +92,6 @@ colorscheme solarized8_dark_high
 "colorscheme shine
 "colorscheme slate
 "colorscheme solarized
-
-" For commenting filetype plugin on
-filetype plugin on
 
 "change swap and backup directory
 "set undodir=~/.vim/.undo//
@@ -109,8 +108,8 @@ filetype plugin on
 "syntax enable
 "DoMatchParen
 " air-line
-"let g:airline_theme='minimalist'
-let g:airline_theme='angr'
+let g:airline_theme='minimalist'
+"let g:airline_theme='angr'
 "let g:airline_theme='onedark'
 let g:airline#extensions#tabline#fnamemod = ':t' "Show only file names in the tab
 let g:airline#extensions#tabline#tab_nr_type = 1 "Show Tab Numbers instead of the number of tabs in each windows
@@ -120,7 +119,7 @@ let g:airline_powerline_fonts=1
 "set guifont=Source\ Code\ Pro\ for\ Powerline
 "set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
 
-set guifont=Lucida_Console:h11
+"set guifont=Lucida_Console:h11
 
 let g:Powerline_symbols='unicode'
 "
@@ -130,9 +129,9 @@ set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules,dist,documentation,cove
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules/**,dist/**,documentation/**,coverage/**,node/**,package-lock.json  "For Linux systems
 "set guifont=menlo\ for\ powerline:h30
 "set guioptions-=T " Removes top toolbar
-set guioptions-=r " Removes right hand scroll bar
+"set guioptions-=r " Removes right hand scroll bar
 set go-=L " Removes left hand scroll bar
-set linespace=15
+"set linespace=15 " For GUI vim or GVim
 set showmode                    " always show what mode we're currently editing in
 set nowrap                      " don't wrap lines
 set tabstop=3                  " a tab is two spaces
@@ -145,7 +144,7 @@ set foldlevel=3
 "set tags=tags;/
 set softtabstop=4               " when hitting <BS>, pretend like a tab is removed, even if spaces
 set expandtab                   " expand tabs by default (overloadable per file type later)
-set shiftwidth=5               " number of spaces to use for autoindenting
+set shiftwidth=4               " number of spaces to use for autoindenting
 set shiftround                  " use multiple of shiftwidth when indenting with '<' and '>'
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 set autoindent                  " always set autoindenting on
@@ -255,6 +254,12 @@ command! H let @/=""
 "shorcut for console.log();
 abbr log console.log();<left><left>
 
+"Omni Completeion Settings
+" Enable autocompletion
+set omnifunc=syntaxcomplete#Complete
+" Select keyword as you type
+:set completeopt=longest,menuone
+
 " If you prefer the Omni-Completion tip window to close when a selection is
 " made, these lines close it on movement in insert mode or when leaving
 " insert mode
@@ -300,7 +305,14 @@ let g:tagbar_type_typescript = {
   \ ],
   \ 'sort' : 0
 \ }
-"End Tabgar Settings =========================================================
 
+
+"End Tabgar Settings =========================================================
+"let g:indentLine_char = '.'
+let g:indentLine_color_term = 202
+"vim-indent-guides ========================================================
+
+
+"End vim-indent-guides ========================================================
 execute pathogen#infect()
 
