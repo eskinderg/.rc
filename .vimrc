@@ -85,6 +85,8 @@ inoremap <C-k> <C-O>:
 ""colorscheme onedark
 "colorscheme one
 colorscheme solarized8_dark_high
+"colorscheme vrunchbang-dark
+"colorscheme vrunchbang-light
 "colorscheme solarized8_dark_low
 "colorscheme one-dark
 "colorscheme solarized8_dark
@@ -116,8 +118,7 @@ let g:airline#extensions#tabline#tab_nr_type = 1 "Show Tab Numbers instead of th
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts=1
-"set guifont=Source\ Code\ Pro\ for\ Powerline
-"set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
+set guifont=Source\ Code\ Pro\ for\ Powerline
 
 "set guifont=Lucida_Console:h11
 
@@ -125,8 +126,8 @@ let g:Powerline_symbols='unicode'
 "
 "Fuzzy Search(CTRLP) and vimgrep search
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules,dist,documentation,coverage,node,package-lock.json  "For Windows systems
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules/**,dist/**,documentation/**,coverage/**,node/**,package-lock.json  "For Linux systems
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules,bower_components,dist,documentation,coverage,node,package-lock.json  "For Windows systems
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules/**,bower_components/**,dist/**,documentation/**,coverage/**,node/**,package-lock.json  "For Linux systems
 "set guifont=menlo\ for\ powerline:h30
 "set guioptions-=T " Removes top toolbar
 "set guioptions-=r " Removes right hand scroll bar
@@ -144,7 +145,7 @@ set foldlevel=3
 "set tags=tags;/
 set softtabstop=4               " when hitting <BS>, pretend like a tab is removed, even if spaces
 set expandtab                   " expand tabs by default (overloadable per file type later)
-set shiftwidth=4               " number of spaces to use for autoindenting
+set shiftwidth=2               " number of spaces to use for autoindenting
 set shiftround                  " use multiple of shiftwidth when indenting with '<' and '>'
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 set autoindent                  " always set autoindenting on
@@ -203,10 +204,12 @@ nmap 50 <c-w>=
 nmap 75 :vertical resize 120<cr>
 
 "NERDTree configurations
+"set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
 nmap <C-b> :NERDTreeToggle<cr>
 
 "NERDTree ignore directory
-let g:NERDTreeIgnore=['\~$', 'vendor', 'node_modules', 'dist', 'coverage', 'documentation']
+let g:NERDTreeIgnore=['\~$', 'vendor', 'node_modules','bower_components', 'dist', 'coverage', 'documentation']
 
 "Load the current buffer in Chrome
 nmap ,c :!open -a Google\ Chrome<cr>
