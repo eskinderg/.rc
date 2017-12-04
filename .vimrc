@@ -82,7 +82,7 @@ inoremap <C-k> <C-O>:
 "colorscheme ron
 "colorscheme base
 "colorscheme automation
-""colorscheme onedark
+" colorscheme onedark
 "colorscheme one
 colorscheme solarized8_dark_high
 "colorscheme vrunchbang-dark

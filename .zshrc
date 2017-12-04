@@ -12,11 +12,27 @@ export ZSH=/home/esk/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
-#ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
 
-#ZSH_THEME="amuse"
+# ZSH_THEME="amuse"
 
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
+
+# POWERLEVEL9K_MODE='awesome-patched'
+POWERLEVEL9K_MODE='awesome-fontconfig'
+# POWERLEVEL9K_MODE='nerdfont-complete'
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true # new line
+# POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="↱"
+# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="↳ "
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir_writable root_indicator context dir background_jobs status)
+
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs vi_mode)
+
+POWERLEVEL9K_STATUS_OK=false
+# POWERLEVEL9K_HOME_ICON=''
+# POWERLEVEL9K_HOME_SUB_ICON=''
+# POWERLEVEL9K_FOLDER_ICON=''
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -144,3 +160,14 @@ _ng_completion () {
 
 compctl -K _ng_completion ng
 ###-end-ng-completion###
+
+if [[ -z "$TMUX" ]]
+then
+    ID="`tmux ls | grep -vm1 attached | cut -d: -f1`"
+    if [[ -z "$ID" ]]
+    then
+        tmux new-session
+    else
+        tmux attach-session -t "$ID"
+    fi
+fi
