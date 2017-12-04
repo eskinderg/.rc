@@ -8,6 +8,7 @@ DEFAULT_USER=$USER
 # Path to your oh-my-zsh installation.
 export ZSH=/home/esk/.oh-my-zsh
 
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -23,16 +24,70 @@ POWERLEVEL9K_MODE='awesome-fontconfig'
 # POWERLEVEL9K_MODE='nerdfont-complete'
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true # new line
+
+# POWERLEVEL9K_SHORTEN_DIR_LENGTH=2 # Sorten directory path
+
 # POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="↱"
 # POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="↳ "
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir_writable root_indicator context dir background_jobs status)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator context dir background_jobs status vcs dir_writable )
 
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs vi_mode)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=( vi_mode)
 
 POWERLEVEL9K_STATUS_OK=false
 # POWERLEVEL9K_HOME_ICON=''
 # POWERLEVEL9K_HOME_SUB_ICON=''
 # POWERLEVEL9K_FOLDER_ICON=''
+## POWERLEVEL9K SETTINGS ##
+POWERLEVEL9K_STATUS_VERBOSE=false
+POWERLEVEL9K_STATUS_OK_IN_NON_VERBOSE=true
+# POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+# POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
+# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%K{black}%F{black} `zsh_weather` %f%k%F{black}%f "
+# POWERLEVEL9K_CUSTOM_HELLO_WORLD="zsh_hello_world"
+# POWERLEVEL9K_CUSTOM_INTERNET_SIGNAL="zsh_internet_signal"
+# POWERLEVEL9K_CUSTOM_IP="zsh_custom_ip"
+# POWERLEVEL9K_CUSTOM_IP_BACKGROUND="black"
+# POWERLEVEL9K_CUSTOM_INTERNET_SIGNAL_BACKGROUND="black"
+# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_internet_signal  dir dir_writable vcs)
+# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(custom_ip disk_usage status)
+# POWERLEVEL9K_TIME_FORMAT="%D{\uf073 %d.%m.%y}"
+
+POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND='white'
+POWERLEVEL9K_VI_MODE_INSERT_BACKGROUND='black'
+POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND='white'
+POWERLEVEL9K_VI_MODE_NORMAL_BACKGROUND='green'
+
+POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND="red"
+POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_BACKGROUND="black"
+
+POWERLEVEL9K_DIR_HOME_BACKGROUND="green"
+POWERLEVEL9K_DIR_HOME_FOREGROUND="white"
+
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND="blue"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="white"
+
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="black"
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="white"
+
+POWERLEVEL9K_VCS_CLEAN_BACKGROUND="green"
+POWERLEVEL9K_VCS_CLEAN_FOREGROUND="white"
+
+#default hooks for git
+# POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-untracked git-aheadbehind git-stash git-remotebranch git-tagname)
+
+POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-aheadbehind git-remotebranch git-tagname)
+
+POWERLEVEL9K_VCS_MODIFIED_BACKGROUND="black"
+POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND="black"
+POWERLEVEL9K_VCS_MODIFIED_FOREGROUND="yellow"
+POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND="yellow"
+# POWERLEVEL9K_SHOW_CHANGESET=true # hash number
+POWERLEVEL9K_VCS_SHOW_SUBMODULE_DIRTY=false
+
+
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+##
+
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,7 +106,7 @@ POWERLEVEL9K_STATUS_OK=false
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"

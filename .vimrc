@@ -8,6 +8,8 @@ set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusl
 set incsearch
 set cursorline          "highlight current line
 set cursorcolumn        "highlight current column
+set history=1000
+
 syntax on
 
 set hidden
@@ -308,6 +310,16 @@ let g:tagbar_type_typescript = {
   \ ],
   \ 'sort' : 0
 \ }
+
+
+
+
+if !exists("g:ycm_semantic_triggers")
+  let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
+
+
 
 
 "End Tabgar Settings =========================================================
