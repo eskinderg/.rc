@@ -116,6 +116,9 @@ let g:airline_theme='minimalist'
 "let g:airline_theme='angr'
 "let g:airline_theme='onedark'
 let g:airline#extensions#tabline#fnamemod = ':t' "Show only file names in the tab
+" let g:airline_section_z = '%t'
+" g:airline#extensions#tabline#fnamemod
+" let g:airline#extensions#tabline#fnamemod = ':t' "Show only file names in the tab
 let g:airline#extensions#tabline#tab_nr_type = 1 "Show Tab Numbers instead of the number of tabs in each windows
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -125,6 +128,10 @@ set guifont=Source\ Code\ Pro\ for\ Powerline
 "set guifont=Lucida_Console:h11
 
 let g:Powerline_symbols='unicode'
+
+"set viminfo directory
+"set viminfo+=n~/.vim/viminfo
+
 "
 "Fuzzy Search(CTRLP) and vimgrep search
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -161,7 +168,7 @@ set visualbell           " don't beep
 set noerrorbells         " don't beep
 set autowrite  "Save on buffer switch
 set mouse=a
-set clipboard=unnamed "Use System clipboard
+set clipboard=unnamedplus "Use System clipboard
 
 filetype on
 filetype plugin on
