@@ -27,7 +27,53 @@ if (empty($TMUX))
   endif
 endif
 
-"-----------------------------------------------------------------------------------------------------------------------------------
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+
+  Plugin 'Shougo/vimproc.vim'
+  Plugin 'jiangmiao/auto-pairs'
+  Plugin 'kien/ctrlp.vim'
+  Plugin 'Yggdroot/indentLine'
+  Plugin 'itchyny/lightline.vim'
+  Plugin 'scrooloose/nerdtree'
+  Plugin 'Xuyuanp/nerdtree-git-plugin'
+  Plugin 'rstacruz/sparkup'
+  Plugin 'mhartington/vim-typings'
+  Plugin 'Quramy/tsuquyomi'
+  Plugin 'Quramy/vim-dtsm'
+  Plugin 'Quramy/vim-js-pretty-template'
+  Plugin 'jason0x43/vim-js-indent'
+  Plugin 'vim-syntastic/syntastic'
+  Plugin 'majutsushi/tagbar'
+  Plugin 'ternjs/tern_for_vim'
+  Plugin 'edkolev/tmuxline.vim'
+  Plugin 'leafgarland/typescript-vim'
+  Plugin 'vim-airline/vim-airline'
+  Plugin 'vim-airline/vim-airline-themes'
+  Plugin 'ton/vim-bufsurf'
+  Plugin 'tpope/vim-commentary'
+  Plugin 'ryanoasis/vim-devicons'
+  Plugin 'easymotion/vim-easymotion'
+  Plugin 'tpope/vim-eunuch'
+  Plugin 'tpope/vim-fugitive'
+  Plugin 'airblade/vim-gitgutter'
+  Plugin 'fatih/vim-go'
+  Plugin 'nathanaelkane/vim-indent-guides'
+  Plugin 'pangloss/vim-javascript'
+  Plugin 'sheerun/vim-polyglot'
+  Plugin 'tpope/vim-surround'
+  Plugin 'christoomey/vim-tmux-navigator'
+  Plugin 'tpope/vim-unimpaired'
+  Plugin 'HerringtonDarkholme/yats.vim'
+  Plugin 'Valloric/YouCompleteMe'
+  Plugin 'VundleVim/Vundle.vim'
+
+call vundle#end()
+
+" Fix for syntastic not recognizing *.ts files
+autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 
 "Trailing whitespaces
 "Must Me insetred before the colorscheme
@@ -99,7 +145,7 @@ colorscheme solarized8_dark_high
 
 "change swap and backup directory
 "set undodir=~/.vim/.undo//
-"set backupdir=~/.vim/.backup//
+set backupdir=~/.vim/.backup//
 "set directory=~/.vim/.swp//
 
 "Tmux line configs
@@ -169,6 +215,9 @@ set noerrorbells         " don't beep
 set autowrite  "Save on buffer switch
 set mouse=a
 set clipboard=unnamedplus "Use System clipboard
+set backup
+
+" vmap <buffer> ;bo "zdi<B><c-r>z</B><esc>
 
 filetype on
 filetype plugin on
@@ -249,6 +298,7 @@ highlight Search cterm=underline
 
 " Toggle tag bar
 map <Leader>t :TagbarToggle<cr>
+nmap <Leader>t :TagbarToggle<cr>
 
 " Easy motion stuff
 let g:EasyMotion_leader_key = '<Leader>'
@@ -264,13 +314,19 @@ autocmd cursormoved * set hlsearch
 command! H let @/=""
 
 "shorcut for console.log();
-abbr log console.log();<left><left>
+" abbr log console.log();<left><left>
+" map<leader>c "zdiconsole.log('<c-r>z');<esc>
+"mapping for console.log()
+map<leader>l "zdiwaconsole.log(<c-r>z);<esc>
+map<leader><leader>l "zdiwaconsole.log('<c-r>z');<esc>
 
+vmap<leader>l "zdaconsole.log(<c-r>z);<esc>
+vmap<leader><leader>l "zdaconsole.log('<c-r>z');<esc>
 "Omni Completeion Settings
 " Enable autocompletion
 set omnifunc=syntaxcomplete#Complete
 " Select keyword as you type
-:set completeopt=longest,menuone
+set completeopt=longest,menuone
 
 " If you prefer the Omni-Completion tip window to close when a selection is
 " made, these lines close it on movement in insert mode or when leaving
@@ -336,5 +392,4 @@ let g:indentLine_color_term = 202
 
 
 "End vim-indent-guides ========================================================
-execute pathogen#infect()
 
