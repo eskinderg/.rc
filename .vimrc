@@ -9,6 +9,9 @@ set incsearch
 set cursorline          "highlight current line
 set cursorcolumn        "highlight current column
 set history=1000
+set sessionoptions-=options  " Don't save vim options when mksession
+" set wildmenu
+" set path+=**
 
 syntax on
 
@@ -48,7 +51,7 @@ call vundle#begin()
   Plugin 'vim-syntastic/syntastic'
   Plugin 'majutsushi/tagbar'
   Plugin 'ternjs/tern_for_vim'
-  Plugin 'edkolev/tmuxline.vim'
+  " Plugin 'edkolev/tmuxline.vim'
   Plugin 'leafgarland/typescript-vim'
   Plugin 'vim-airline/vim-airline'
   Plugin 'vim-airline/vim-airline-themes'
@@ -69,16 +72,13 @@ call vundle#begin()
   Plugin 'HerringtonDarkholme/yats.vim'
   Plugin 'Valloric/YouCompleteMe'
   Plugin 'VundleVim/Vundle.vim'
-
+  Plugin 'vim-bookmarks'
+  Plugin 'sjl/gundo.vim'
 call vundle#end()
 
 " Fix for syntastic not recognizing *.ts files
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 
-"Trailing whitespaces
-"Must Me insetred before the colorscheme
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-au InsertLeave * match ExtraWhitespace /\s\+$/
 
 let g:tmuxline_preset = {
       \'a'    : '#S',
@@ -101,7 +101,7 @@ let g:syntastic_check_on_wq = 0
 "let g:syntastic_debug = 3
 "let g:syntastic_typescript_checkers = ['tslint']
 "let g:syntastic_typescript_checkers = ['tslint', 'tsc']
-let g:syntastic_typescript_checkers = ['tsuquyomi']
+let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
 "let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
 
 "set statusline+=%#warningmsg#
@@ -118,6 +118,9 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 inoremap <C-k> <C-O>:
 
+"Custom theme
+source ~/.rc/.themerc.vim
+
 "colorscheme koehler
 "colorscheme vim-material
 "colorscheme delek
@@ -132,7 +135,7 @@ inoremap <C-k> <C-O>:
 "colorscheme automation
 " colorscheme onedark
 "colorscheme one
-colorscheme solarized8_dark_high
+"colorscheme solarized8_dark_high
 "colorscheme vrunchbang-dark
 "colorscheme vrunchbang-light
 "colorscheme solarized8_dark_low
@@ -148,42 +151,45 @@ colorscheme solarized8_dark_high
 set backupdir=~/.vim/.backup//
 "set directory=~/.vim/.swp//
 
-"Tmux line configs
-"Airline theme
-"let g:airline_theme='cool'
-"let g:airline_theme='onedark'
-"let g:airline_theme='base16_grayscale'
-"
-"
-"syntax enable
-"DoMatchParen
-" air-line
-let g:airline_theme='minimalist'
-"let g:airline_theme='angr'
-"let g:airline_theme='onedark'
-let g:airline#extensions#tabline#fnamemod = ':t' "Show only file names in the tab
+" Airline configs  ========================================================================>
+
+" let g:airline_theme='onedark'
+" let g:airline_theme='base16_grayscale'
+" let g:airline_theme='angr'
+" let g:airline_theme='onedark'
+" let g:airline_theme='minimalist'
+let g:airline_theme='cool'
+let g:airline_powerline_fonts=1
+let g:airline_section_z = '%t' " Show only filename at the z secion of the airline
+
+" let g:airline_section_y = '%-0.10{getcwd()}'
+
+let g:airline#extensions#syntastic#enabled = 0 " Disable syntastic info
+let g:airline#extensions#tagbar#enabled = 0 " Disable Tagbar info
+
+" let g:airline_section_warning = '%t'
+" let g:airline#extensions#tabline#fnamemod = ':t' "Show only file names in the tab
 " let g:airline_section_z = '%t'
 " g:airline#extensions#tabline#fnamemod
 " let g:airline#extensions#tabline#fnamemod = ':t' "Show only file names in the tab
-let g:airline#extensions#tabline#tab_nr_type = 1 "Show Tab Numbers instead of the number of tabs in each windows
-let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_powerline_fonts=1
-set guifont=Source\ Code\ Pro\ for\ Powerline
+" let g:airline#extensions#tabline#tab_nr_type = 1 "Show Tab Numbers instead of the number of tabs in each windows
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#left_alt_sep = '|'
+" let g:Powerline_symbols='unicode'
 
-"set guifont=Lucida_Console:h11
+" End Airline configs  ========================================================================
 
-let g:Powerline_symbols='unicode'
+"Gvim Font setting for GVim
+set guifont=Meslo\ LG\ S\ for\ Powerline\ 9
 
 "set viminfo directory
 "set viminfo+=n~/.vim/viminfo
 
-"
+
 "Fuzzy Search(CTRLP) and vimgrep search
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules,bower_components,dist,documentation,coverage,node,package-lock.json  "For Windows systems
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules/**,bower_components/**,dist/**,documentation/**,coverage/**,node/**,package-lock.json  "For Linux systems
-"set guifont=menlo\ for\ powerline:h30
 "set guioptions-=T " Removes top toolbar
 "set guioptions-=r " Removes right hand scroll bar
 set go-=L " Removes left hand scroll bar
@@ -235,6 +241,16 @@ command GREP :execute 'vimgrep '.expand('<cword>').' '.expand('%') | :copen | :c
 " Fast saves
 " nmap <leader>w :w!<cr>
 
+
+" Gundo map =========================================
+nnoremap<F5> :GundoToggle<CR>
+if has('python3')
+    let g:gundo_prefer_python3 = 1
+endif
+" End Gundo map =========================================
+
+
+
 "Better Indentation
 vnoremap < <gv
 vnoremap > >gv
@@ -261,12 +277,10 @@ nmap 25 :vertical resize 40<cr>
 nmap 50 <c-w>=
 nmap 75 :vertical resize 120<cr>
 
-"NERDTree configurations
-"set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
-set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
+" NERDTree configurations
 nmap <C-b> :NERDTreeToggle<cr>
 
-"NERDTree ignore directory
+" NERDTree ignore directory
 let g:NERDTreeIgnore=['\~$', 'vendor', 'node_modules','bower_components', 'dist', 'coverage', 'documentation']
 
 "Load the current buffer in Chrome
@@ -293,9 +307,6 @@ nmap :sp :rightbelow sp<cr>
 nnoremap :bp :BufSurfBack<cr>
 nnoremap :bn :BufSurfForward<cr>
 
-highlight Search cterm=underline
-
-
 " Toggle tag bar
 map <Leader>t :TagbarToggle<cr>
 nmap <Leader>t :TagbarToggle<cr>
@@ -313,16 +324,14 @@ autocmd cursormoved * set hlsearch
 " Remove search results
 command! H let @/=""
 
-"shorcut for console.log();
-" abbr log console.log();<left><left>
-" map<leader>c "zdiconsole.log('<c-r>z');<esc>
-"mapping for console.log()
+" Shorcut for console.log();
 map<leader>l "zdiwaconsole.log(<c-r>z);<esc>
 map<leader><leader>l "zdiwaconsole.log('<c-r>z');<esc>
 
 vmap<leader>l "zdaconsole.log(<c-r>z);<esc>
 vmap<leader><leader>l "zdaconsole.log('<c-r>z');<esc>
-"Omni Completeion Settings
+
+" Omni Completeion Settings
 " Enable autocompletion
 set omnifunc=syntaxcomplete#Complete
 " Select keyword as you type
@@ -374,8 +383,30 @@ let g:tagbar_type_typescript = {
   \ 'sort' : 0
 \ }
 
+" save session =============================================================
 
+" fu! SaveSess()
+"   execute 'mksession! ' . getcwd() . '/.session.vim'
+" endfunction
 
+" fu! RestoreSess()
+"   if filereadable(getcwd() . '/.session.vim')
+"     execute 'so ' . getcwd() . '/.session.vim'
+"     if bufexists(1)
+"       for l in range(1, bufnr('$'))
+"         if bufwinnr(l) == -1
+"           exec 'sbuffer ' . l
+"         endif
+"       endfor
+"     endif
+"   endif
+" endfunction
+
+" autocmd VimLeave * call SaveSess()
+" autocmd VimEnter * nested call RestoreSess()
+
+" set sessionoptions-=options  " Don't save options
+"end save session ===================================================================
 
 if !exists("g:ycm_semantic_triggers")
   let g:ycm_semantic_triggers = {}
@@ -383,13 +414,10 @@ endif
 let g:ycm_semantic_triggers['typescript'] = ['.']
 
 
-
-
 "End Tabgar Settings =========================================================
 "let g:indentLine_char = '.'
 let g:indentLine_color_term = 202
 "vim-indent-guides ========================================================
-
 
 "End vim-indent-guides ========================================================
 
