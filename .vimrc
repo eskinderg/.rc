@@ -47,7 +47,6 @@ call vundle#begin()
   Plugin 'Quramy/tsuquyomi'
   Plugin 'Quramy/vim-dtsm'
   Plugin 'Quramy/vim-js-pretty-template'
-  Plugin 'jason0x43/vim-js-indent'
   Plugin 'vim-syntastic/syntastic'
   Plugin 'majutsushi/tagbar'
   Plugin 'ternjs/tern_for_vim'
@@ -65,6 +64,8 @@ call vundle#begin()
   Plugin 'fatih/vim-go'
   Plugin 'nathanaelkane/vim-indent-guides'
   Plugin 'pangloss/vim-javascript'
+  Plugin 'jason0x43/vim-js-indent'
+  Plugin 'jelera/vim-javascript-syntax'
   Plugin 'sheerun/vim-polyglot'
   Plugin 'tpope/vim-surround'
   Plugin 'christoomey/vim-tmux-navigator'
@@ -72,7 +73,9 @@ call vundle#begin()
   Plugin 'HerringtonDarkholme/yats.vim'
   Plugin 'Valloric/YouCompleteMe'
   Plugin 'VundleVim/Vundle.vim'
-  Plugin 'vim-bookmarks'
+  " Plugin 'vim-bookmarks'
+  Plugin 'kshenoy/vim-signature'
+  Plugin 'gregsexton/matchtag'
   Plugin 'sjl/gundo.vim'
 call vundle#end()
 
@@ -102,6 +105,16 @@ let g:syntastic_check_on_wq = 0
 "let g:syntastic_typescript_checkers = ['tslint']
 "let g:syntastic_typescript_checkers = ['tslint', 'tsc']
 let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
+
+let g:tsuquyomi_single_quote_import=1 " customize import statements' quotation
+
+let g:tsuquyomi_disable_quickfix = 1 " use syntastic for displaying syntax and semantics errors instead of vim's default quickfix window
+
+" let g:syntastic_scss_checkers = ['scss_lint']
+
+" provides a tooltip function
+" autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
+
 "let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
 
 "set statusline+=%#warningmsg#
@@ -116,7 +129,7 @@ let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
-inoremap <C-k> <C-O>:
+" inoremap <C-k> <C-O>:
 
 "Custom theme
 source ~/.rc/.themerc.vim
@@ -165,7 +178,7 @@ let g:airline_section_z = '%t' " Show only filename at the z secion of the airli
 " let g:airline_section_y = '%-0.10{getcwd()}'
 
 let g:airline#extensions#syntastic#enabled = 0 " Disable syntastic info
-let g:airline#extensions#tagbar#enabled = 0 " Disable Tagbar info
+" let g:airline#extensions#tagbar#enabled = 0 " Disable Tagbar info
 
 " let g:airline_section_warning = '%t'
 " let g:airline#extensions#tabline#fnamemod = ':t' "Show only file names in the tab
@@ -268,8 +281,8 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
-"nmap <C-k> <C-e>
-"nmap <C-j> <C-y>
+" noremap <C-k> <C-e> " Turns out tmux-vim-navigator already have those mappings
+" noremap <C-j> <C-y> " Turns out tmux-vim-navigator already have those mappings
 
 "Resize vsplit
 nmap <C-v> :vertical resize +5<cr>
@@ -340,8 +353,8 @@ set completeopt=longest,menuone
 " If you prefer the Omni-Completion tip window to close when a selection is
 " made, these lines close it on movement in insert mode or when leaving
 " insert mode
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+" autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+" autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " CtrlP Stuff
 
@@ -408,6 +421,8 @@ let g:tagbar_type_typescript = {
 " set sessionoptions-=options  " Don't save options
 "end save session ===================================================================
 
+nnoremap <leader>ev :e $MYVIMRC<CR>
+
 if !exists("g:ycm_semantic_triggers")
   let g:ycm_semantic_triggers = {}
 endif
@@ -421,3 +436,46 @@ let g:indentLine_color_term = 202
 
 "End vim-indent-guides ========================================================
 
+" :nnoremap <leader>g :execute "vimgrep " . shellescape(expand("<cWORD>")) . " **/*.ts " " ."<cr>
+
+
+vnoremap <leader>g :<c-u>call GrepOperator(visualmode())<cr>
+nnoremap <leader>g :set operatorfunc=GrepOperator<cr>g@
+
+nnoremap gt /templateUrl<CR>f'gf
+nnoremap gs /styleUrls<CR>f'gf
+
+function! GrepOperator(type)
+
+  let saved_unnamed_register = @@
+
+  if a:type ==# 'v'
+    normal! `<v`>y
+  elseif a:type ==# 'char'
+    normal! `[v`]y
+  else
+    return
+  endif
+
+  silent execute "vimgrep " . shellescape(@@) . " **/*.ts " " ."
+
+  copen
+
+  let @@ = saved_unnamed_register
+
+endfunction
+
+
+nnoremap <leader>a :set operatorfunc=CustomOperator<cr>g@
+vnoremap <leader>a :<c-u>call CustomOperator(visualmode())<cr>
+
+function! CustomOperator(type)
+    if a:type ==# 'v'
+        execute "normal! `<v`>y"
+    elseif a:type ==# 'char'
+        execute "normal! `[v`]y"
+    else
+        return
+    endif
+    echom @@
+endfunction
