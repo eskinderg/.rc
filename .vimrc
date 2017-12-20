@@ -37,7 +37,7 @@ call vundle#begin()
 
   Plugin 'Shougo/vimproc.vim'
   Plugin 'jiangmiao/auto-pairs'
-  Plugin 'kien/ctrlp.vim'
+  Plugin 'ctrlpvim/ctrlp.vim' " Vim-devicons compatible ctrlp
   Plugin 'Yggdroot/indentLine'
   Plugin 'itchyny/lightline.vim'
   Plugin 'scrooloose/nerdtree'
@@ -56,7 +56,6 @@ call vundle#begin()
   Plugin 'vim-airline/vim-airline-themes'
   Plugin 'ton/vim-bufsurf'
   Plugin 'tpope/vim-commentary'
-  Plugin 'ryanoasis/vim-devicons'
   Plugin 'easymotion/vim-easymotion'
   Plugin 'tpope/vim-eunuch'
   Plugin 'tpope/vim-fugitive'
@@ -72,11 +71,13 @@ call vundle#begin()
   Plugin 'tpope/vim-unimpaired'
   Plugin 'HerringtonDarkholme/yats.vim'
   Plugin 'Valloric/YouCompleteMe'
-  Plugin 'VundleVim/Vundle.vim'
   " Plugin 'vim-bookmarks'
   Plugin 'kshenoy/vim-signature'
   Plugin 'gregsexton/matchtag'
   Plugin 'sjl/gundo.vim'
+  Plugin 'ryanoasis/vim-devicons'
+  " Plugin 'maxbrunsfeld/vim-yankstack'
+  Plugin 'VundleVim/Vundle.vim'
 call vundle#end()
 
 " Fix for syntastic not recognizing *.ts files
@@ -102,20 +103,21 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 "let g:syntastic_debug = 3
-"let g:syntastic_typescript_checkers = ['tslint']
-"let g:syntastic_typescript_checkers = ['tslint', 'tsc']
+
+" Cusrom Syntastic
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_style_error_symbol = '⚡'
+let g:syntastic_warning_symbol = '⚠⚠'
+let g:syntastic_style_warning_symbol = '≈≈'
 let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
 
 let g:tsuquyomi_single_quote_import=1 " customize import statements' quotation
-
 let g:tsuquyomi_disable_quickfix = 1 " use syntastic for displaying syntax and semantics errors instead of vim's default quickfix window
 
 " let g:syntastic_scss_checkers = ['scss_lint']
 
 " provides a tooltip function
 " autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
-
-"let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
 
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
@@ -375,6 +377,13 @@ nmap :ed :edit %:p:h/
 
 nmap ,1  :call Class()<cr>
 
+" Vim devicons configurations
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+
+let g:DevIconsEnableFolderExtensionPatternMatching = 0
+
+
 "Begin Tabgar Settings
 "=============================================================================
 let g:tagbar_type_typescript = {
@@ -470,12 +479,12 @@ nnoremap <leader>a :set operatorfunc=CustomOperator<cr>g@
 vnoremap <leader>a :<c-u>call CustomOperator(visualmode())<cr>
 
 function! CustomOperator(type)
-    if a:type ==# 'v'
-        execute "normal! `<v`>y"
-    elseif a:type ==# 'char'
-        execute "normal! `[v`]y"
-    else
-        return
-    endif
-    echom @@
+  if a:type ==# 'v'
+    execute "normal! `<v`>y"
+  elseif a:type ==# 'char'
+    execute "normal! `[v`]y"
+  else
+    return
+  endif
+  echom @@
 endfunction
