@@ -134,8 +134,9 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 " inoremap <C-k> <C-O>:
 
 "Custom theme
-source ~/.rc/.themerc.vim
+" source ~/.rc/.themerc.vim
 
+colorscheme EskTheme
 "colorscheme koehler
 "colorscheme vim-material
 "colorscheme delek
@@ -172,8 +173,8 @@ set backupdir=~/.vim/.backup//
 " let g:airline_theme='base16_grayscale'
 " let g:airline_theme='angr'
 " let g:airline_theme='onedark'
-" let g:airline_theme='minimalist'
-let g:airline_theme='cool'
+let g:airline_theme='minimalist'
+" let g:airline_theme='cool'
 let g:airline_powerline_fonts=1
 let g:airline_section_z = '%t' " Show only filename at the z secion of the airline
 
@@ -439,11 +440,18 @@ let g:ycm_semantic_triggers['typescript'] = ['.']
 
 
 "End Tabgar Settings =========================================================
-"let g:indentLine_char = '.'
-let g:indentLine_color_term = 202
-"vim-indent-guides ========================================================
 
-"End vim-indent-guides ========================================================
+
+" vim-indent-guides ========================================================
+" let g:indentLine_char = '.'
+" let g:indentLine_char = '│'
+let g:indentLine_char = '┆'
+" let g:indentLine_color_term = 202
+" let g:indentLine_color_term = 1
+" let g:indentLine_color_tty_light = 7 " (default: 4)
+" let g:indentLine_color_dark = 1 " (default: 2)
+" End vim-indent-guides ========================================================
+
 
 " :nnoremap <leader>g :execute "vimgrep " . shellescape(expand("<cWORD>")) . " **/*.ts " " ."<cr>
 

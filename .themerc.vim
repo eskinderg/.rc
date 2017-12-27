@@ -14,6 +14,18 @@ let colors_name = "EskTheme"
 " if !has('gui_running') && get(g:, 'solarized_termtrans', 0)
 hi! Normal cterm=NONE gui=NONE ctermfg=14 guifg=#ccd2cf ctermbg=8 guibg=#282c34
 hi! CursorLineNr ctermbg=0 guibg=#282c34
+
+" hi! Number ctermbg=0 guibg=#282c34 guifg=red
+" hi! Boolean ctermbg=0 guibg=#282c34 guifg=green
+
+"Function frech brackets
+hi! Function ctermbg=0 guibg=#282c34 guifg=#767676
+hi! Conditional ctermbg=0 guibg=#282c34 guifg=#767676
+hi! String ctermbg=0 guibg=#282c34 cterm=italic guifg=#4a8e5e
+" hi! Repeat ctermbg=0 guibg=#282c34  guifg=black
+hi! Operator ctermbg=0 guibg=#282c34 guifg=#268bd2
+hi! Debug ctermbg=0 guibg=#282c34 guifg=blue
+
 hi! LineNr ctermbg=0 guibg=#282c34
 hi! Folded ctermbg=0 guibg=#282c34
 hi! FoldColumn ctermbg=0 guibg=#282c34
@@ -25,17 +37,43 @@ hi! FoldColumn ctermbg=0 guibg=#282c34
 " hi! FoldColumn ctermbg=0 guibg=#282c34
 " endif
 
+
+
+
+" typescriptOperator delete new instanceof typeof
+hi! typescriptOperator cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=#61afef ctermbg=NONE guibg=NONE
+" typescriptSource import export from as
+hi! typescriptSource cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=#61afef ctermbg=NONE guibg=NONE
+" typescriptBoolean true false
+hi! typescriptBoolean cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=#61afef ctermbg=NONE guibg=NONE
+hi! typescriptType cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=#61afef ctermbg=NONE guibg=NONE
+"return
+hi! typescriptStatement cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=#61afef ctermbg=NONE guibg=NONE
+hi! typescriptDecorators cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=#61afef ctermbg=NONE guibg=NONE
+" syntax keyword typescriptHtmlElemProperties contained className clientHeight clientLeft clientTop clientWidth dir href id innerHTML lang length offsetHeight offsetLeft offsetParent offsetTop offsetWidth scrollHeight scrollLeft scrollTop scrollWidth style tabIndex target title
+hi! typescriptHtmlElemProperties cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=orange ctermbg=NONE guibg=NONE
+hi! typescriptParameters cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=orange ctermbg=NONE guibg=NONE
+hi! typescriptHtmlElemAttrs cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=orange ctermbg=NONE guibg=NONE
+hi! typescriptAll cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=orange ctermbg=NONE guibg=NONE
+hi! typescriptBrowserObjects cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=orange ctermbg=NONE guibg=NONE
+hi! typescriptFunction cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=red ctermbg=NONE guibg=NONE
+hi! typescriptRefD cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=green ctermbg=NONE guibg=NONE
+" hi! typescriptRefS cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=blue ctermbg=NONE guibg=NONE
+" hi! typescriptPrototype cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=blue ctermbg=NONE guibg=NONE
+
 hi! Comment cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=#4b5364 ctermbg=NONE guibg=NONE
 hi! Constant cterm=NONE gui=NONE ctermfg=6 guifg=#2aa198 ctermbg=NONE guibg=NONE
-hi! Identifier cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
+
+"this keyword
+hi! Identifier cterm=NONE gui=NONE ctermfg=4 guifg=#61afef ctermbg=NONE guibg=NONE
 hi! Statement cterm=NONE gui=NONE ctermfg=2 guifg=#c678dd ctermbg=NONE guibg=NONE
 hi! PreProc cterm=NONE gui=NONE ctermfg=9 guifg=#61afef ctermbg=NONE guibg=NONE
 hi! Type cterm=NONE gui=NONE ctermfg=3 guifg=#b58900 ctermbg=NONE guibg=NONE
-hi! Special cterm=NONE gui=NONE ctermfg=9 guifg=#61afef ctermbg=NONE guibg=NONE
+hi! Special cterm=NONE gui=NONE ctermfg=9 guifg=#767676 ctermbg=NONE guibg=NONE
 hi! Underlined cterm=NONE gui=NONE ctermfg=13 guifg=#6c71c4 ctermbg=NONE guibg=NONE
 hi! Ignore cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=NONE guibg=NONE
 hi! Error cterm=NONE,bold gui=NONE,bold ctermfg=1 guifg=#dc322f ctermbg=NONE guibg=NONE
-hi! Todo cterm=NONE,bold gui=NONE,bold ctermfg=5 guifg=#d33682 ctermbg=NONE guibg=NONE
+hi! Todo cterm=NONE,bold gui=NONE,bold cterm=italic ctermfg=5 guifg=#d33682 ctermbg=NONE guibg=NONE
 hi! link QuickFixLine Search
 hi! MatchParen cterm=NONE,bold gui=NONE,bold ctermfg=15 guifg=#fdf6e3 ctermbg=0 guibg=#282c34
 " if get(g:, 'solarized_old_cursor_style', 0)
@@ -72,7 +110,7 @@ hi! CommandMode ctermfg=5 guifg=#d33682 ctermbg=15 guibg=#fdf6e3 cterm=NONE,reve
 "   hi! TabLineSel ctermfg=14 guifg=#93a1a1 ctermbg=15 guibg=#fdf6e3 cterm=NONE,reverse gui=NONE,reverse
 " else
 hi! StatusLine ctermfg=14 guifg=#93a1a1 ctermbg=0 guibg=#282c34 cterm=NONE,reverse gui=NONE,reverse
-hi! StatusLineNC ctermfg=11 guifg=#4b5364 ctermbg=0 guibg=#282c34 cterm=NONE,reverse gui=NONE,reverse
+hi! StatusLineNC ctermfg=11 guifg=#202530 ctermbg=0 guibg=#282c34 cterm=NONE,reverse gui=NONE,reverse
 hi! TabLine ctermfg=11 guifg=#4b5364 ctermbg=0 guibg=#282c34 cterm=NONE,reverse gui=NONE,reverse
 hi! TabLineFill ctermfg=11 guifg=#4b5364 ctermbg=0 guibg=#282c34 cterm=NONE,reverse gui=NONE,reverse
 hi! TabLineSel ctermfg=14 guifg=#93a1a1 ctermbg=0 guibg=#282c34 cterm=NONE,reverse gui=NONE,reverse
@@ -82,12 +120,17 @@ hi! Visual guibg=#3e4451
 hi! Directory cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
 hi! ErrorMsg cterm=NONE,reverse gui=NONE,reverse ctermfg=1 guifg=#dc322f ctermbg=15 guibg=#fdf6e3
 hi! IncSearch cterm=NONE,standout gui=NONE,standout ctermfg=9 guifg=#61afef ctermbg=NONE guibg=NONE
-hi! Search cterm=NONE,reverse gui=NONE,reverse ctermfg=3 guifg=#b58900 ctermbg=NONE guibg=NONE
+
+hi! CursorLine cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#2c323c guisp=#eee8d5
+" Transparent background for search
+" hi! Search cterm=NONE, gui=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#2c323c cterm=underline
+hi! Search  guifg=black guibg=darkgreen guifg=black
+
 hi! MoreMsg cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
 hi! ModeMsg cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
 hi! LineNr cterm=NONE gui=NONE ctermfg=11 guifg=#4b5364
 hi! Question cterm=NONE,bold gui=NONE,bold ctermfg=6 guifg=#2aa198 ctermbg=NONE guibg=NONE
-hi! VertSplit cterm=NONE gui=NONE ctermfg=11 guifg=#4b5364 ctermbg=11 guibg=#4b5364
+hi! VertSplit cterm=NONE gui=NONE ctermfg=11 guifg=#202530 ctermbg=11 guibg=#202530
 " hi! VertSplit cterm=NONE gui=NONE ctermfg=11 guifg=#4b5364 ctermbg=11 guibg=#4b5364
 hi! VisualNOS ctermfg=NONE guifg=NONE ctermbg=0 guibg=#282c34 cterm=NONE,reverse gui=NONE,reverse
 hi! WarningMsg cterm=NONE,bold gui=NONE,bold ctermfg=9 guifg=#61afef ctermbg=NONE guibg=NONE
@@ -128,6 +171,7 @@ hi! PmenuSel ctermfg=11 guifg=#268bd2 ctermbg=15 guibg=#fdf6e3 cterm=NONE,revers
 hi! PmenuSbar ctermfg=15 guifg=#fdf6e3 ctermbg=14 guibg=#93a1a1 cterm=NONE,reverse gui=NONE,reverse
 hi! PmenuThumb ctermfg=14 guifg=#93a1a1 ctermbg=8 guibg=#282c34 cterm=NONE,reverse gui=NONE,reverse
 hi! CursorColumn cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#282c34
+"Visual transparent selection
 hi! CursorLine cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#2c323c guisp=#eee8d5
 hi! ColorColumn cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#282c34
 hi! link lCursor Cursor
@@ -341,9 +385,6 @@ highlight UnwanttedTab ctermbg=red guibg=darkred
 highlight TrailSpace guibg=red ctermbg=darkred
 match UnwanttedTab /\t/
 match TrailSpace / \+$/
-
-" Underline Current search result
-highlight Search cterm=underline
 
 autocmd ColorScheme * highlight UnwanttedTab ctermbg=darkred guibg=darkred
 autocmd ColorScheme * highlight TrailSpace ctermbg=darkred guibg=red ctermbg=darkred
