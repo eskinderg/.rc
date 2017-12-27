@@ -252,7 +252,7 @@ filetype indent on              "With a map leader it's possible to do extra key
 let mapleader = "\<Space>"
 
 " Easily GREP current word in current file.
-command GREP :execute 'vimgrep '.expand('<cword>').' '.expand('%') | :copen | :cc
+" command GREP :execute 'vimgrep '.expand('<cword>').' '.expand('%') | :copen | :cc
 
 " Fast saves
 " nmap <leader>w :w!<cr>
