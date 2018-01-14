@@ -181,7 +181,7 @@ let g:airline_section_z = '%t' " Show only filename at the z secion of the airli
 " let g:airline_section_y = '%-0.10{getcwd()}'
 
 let g:airline#extensions#syntastic#enabled = 0 " Disable syntastic info
-" let g:airline#extensions#tagbar#enabled = 0 " Disable Tagbar info
+let g:airline#extensions#tagbar#enabled = 0 " Disable Tagbar info
 
 " let g:airline_section_warning = '%t'
 " let g:airline#extensions#tabline#fnamemod = ':t' "Show only file names in the tab
@@ -199,7 +199,7 @@ let g:airline#extensions#syntastic#enabled = 0 " Disable syntastic info
 set guifont=Meslo\ LG\ S\ for\ Powerline\ 9
 
 "set viminfo directory
-"set viminfo+=n~/.vim/viminfo
+" set viminfo+=n~/.vim/viminfo
 
 
 "Fuzzy Search(CTRLP) and vimgrep search
@@ -431,7 +431,8 @@ let g:tagbar_type_typescript = {
 " set sessionoptions-=options  " Don't save options
 "end save session ===================================================================
 
-nnoremap <leader>ev :e $MYVIMRC<CR>
+" nnoremap <leader>ev :e $MYVIMRC<CR>
+nnoremap <leader>ev :e ~/.rc/.vimrc<CR>
 
 if !exists("g:ycm_semantic_triggers")
   let g:ycm_semantic_triggers = {}
@@ -454,10 +455,11 @@ let g:indentLine_char = '┆'
 
 
 " :nnoremap <leader>g :execute "vimgrep " . shellescape(expand("<cWORD>")) . " **/*.ts " " ."<cr>
+" Map ctrl + n for no search highlight
+nnoremap <silent><C-n> :nohlsearch <cr>
 
-
-vnoremap <leader>g :<c-u>call GrepOperator(visualmode())<cr>
-nnoremap <leader>g :set operatorfunc=GrepOperator<cr>g@
+vnoremap <silent><leader>g :<c-u>call GrepOperator(visualmode())<cr>
+nnoremap <silent><leader>g :set operatorfunc=GrepOperator<cr>g@
 
 nnoremap gt /templateUrl<CR>f'gf
 nnoremap gs /styleUrls<CR>f'gf

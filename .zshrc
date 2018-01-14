@@ -171,6 +171,9 @@ export NVM_DIR="/home/esk/.nvm"
 alias pbcopy="xclip -sel clip"
 
 alias suroot="sudo -E -s" # remain loggedin as root user
+alias c="clear"
+alias vi="nvim"
+alias vim="nvim"
 
 ###-begin-ng-completion###
 #
