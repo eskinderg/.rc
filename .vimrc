@@ -10,6 +10,7 @@ set cursorline          "highlight current line
 set cursorcolumn        "highlight current column
 set history=1000
 set sessionoptions-=options  " Don't save vim options when mksession
+set noswapfile
 " set wildmenu
 " set path+=**
 
@@ -163,7 +164,7 @@ colorscheme EskTheme
 "colorscheme solarized
 
 "change swap and backup directory
-"set undodir=~/.vim/.undo//
+set undodir=~/.vim/.undo//
 set backupdir=~/.vim/.backup//
 "set directory=~/.vim/.swp//
 
@@ -196,7 +197,7 @@ let g:airline#extensions#tagbar#enabled = 0 " Disable Tagbar info
 " End Airline configs  ========================================================================
 
 "Gvim Font setting for GVim
-set guifont=Meslo\ LG\ S\ for\ Powerline\ 9
+set guifont=Meslo\ LG\ S\ for\ Powerline\ 9.5
 
 "set viminfo directory
 " set viminfo+=n~/.vim/viminfo
@@ -318,6 +319,9 @@ let g:javascript_plugin_flow = 1
 
 " Create split below
 nmap :sp :rightbelow sp<cr>
+
+" Set Spell check for txt files
+autocmd BufRead,BufNewFile *.txt setlocal spell
 
 " Quickly go forward or backward to buffer
 nnoremap :bp :BufSurfBack<cr>
