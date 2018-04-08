@@ -85,6 +85,7 @@ call vundle#end()
 " Fix for syntastic not recognizing *.ts files
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 
+autocmd FileType html setlocal shiftwidth=4 tabstop=4
 
 let g:tmuxline_preset = {
       \'a'    : '#S',
@@ -297,6 +298,7 @@ nmap 75 :vertical resize 120<cr>
 
 " NERDTree configurations
 nmap <C-b> :NERDTreeToggle<cr>
+nmap <C-f> :NERDTreeFind<cr>
 
 " NERDTree ignore directory
 let g:NERDTreeIgnore=['\~$', 'vendor', 'node_modules','bower_components', 'dist', 'coverage', 'documentation']
