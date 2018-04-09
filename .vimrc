@@ -42,6 +42,7 @@ call vundle#begin()
   Plugin 'Yggdroot/indentLine'
   Plugin 'itchyny/lightline.vim'
   Plugin 'scrooloose/nerdtree'
+  Plugin 'AndrewRadev/splitjoin.vim'
   Plugin 'Xuyuanp/nerdtree-git-plugin'
   Plugin 'rstacruz/sparkup'
   Plugin 'mhartington/vim-typings'
