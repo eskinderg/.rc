@@ -43,6 +43,11 @@ call vundle#begin()
   Plugin 'itchyny/lightline.vim'
   Plugin 'scrooloose/nerdtree'
   Plugin 'AndrewRadev/splitjoin.vim'
+  Plugin 'tpope/vim-repeat'
+  " Plugin 'svermeulen/vim-easyclip'
+  " Plugin 'w0rp/ale'
+  " Plugin 'altercation/vim-colors-solarized'
+  Plugin 'lifepillar/vim-solarized8'
   Plugin 'Xuyuanp/nerdtree-git-plugin'
   Plugin 'rstacruz/sparkup'
   Plugin 'mhartington/vim-typings'
@@ -74,6 +79,7 @@ call vundle#begin()
   Plugin 'tpope/vim-unimpaired'
   Plugin 'HerringtonDarkholme/yats.vim'
   Plugin 'Valloric/YouCompleteMe'
+  Plugin 'OmniSharp/omnisharp-vim'
   " Plugin 'vim-bookmarks'
   Plugin 'kshenoy/vim-signature'
   Plugin 'gregsexton/matchtag'
@@ -155,7 +161,8 @@ colorscheme EskTheme
 "colorscheme automation
 " colorscheme onedark
 "colorscheme one
-"colorscheme solarized8_dark_high
+" colorscheme solarized8_dark_high
+"colorscheme solarized8
 "colorscheme vrunchbang-dark
 "colorscheme vrunchbang-light
 "colorscheme solarized8_dark_low
@@ -205,6 +212,8 @@ set guifont=Meslo\ LG\ S\ for\ Powerline\ 9.5
 "set viminfo directory
 " set viminfo+=n~/.vim/viminfo
 
+" repeat vim mapping
+silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 
 "Fuzzy Search(CTRLP) and vimgrep search
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -292,7 +301,8 @@ nmap <C-l> <C-w>l
 " noremap <C-j> <C-y> " Turns out tmux-vim-navigator already have those mappings
 
 "Resize vsplit
-nmap <C-v> :vertical resize +5<cr>
+nmap <C-v> :vertical resize +2<cr>
+nmap <C-s> :resize +2<cr>
 nmap 25 :vertical resize 40<cr>
 nmap 50 <c-w>=
 nmap 75 :vertical resize 120<cr>
@@ -388,10 +398,13 @@ nmap ,1  :call Class()<cr>
 
 " Vim devicons configurations
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
-
-let g:DevIconsEnableFolderExtensionPatternMatching = 0
-
+" let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+" let g:DevIconsEnableFolderExtensionPatternMatching = 0
+autocmd FileType nerdtree setlocal nolist
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 'on'
 
 "Begin Tabgar Settings
 "=============================================================================
@@ -446,7 +459,6 @@ if !exists("g:ycm_semantic_triggers")
   let g:ycm_semantic_triggers = {}
 endif
 let g:ycm_semantic_triggers['typescript'] = ['.']
-
 
 "End Tabgar Settings =========================================================
 
