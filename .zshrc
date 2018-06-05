@@ -112,7 +112,7 @@ DISABLE_AUTO_TITLE="true"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -131,11 +131,15 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git, docker, autoenv, npm, node, tmux, zsh-syntax-highlighting,z, vi-mode )
+plugins=( git, docker, autoenv, npm, node, tmux, zsh-syntax-highlighting,z, zsh-completions, vi-mode )
+autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+bindkey '^ ' autosuggest-accept
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -173,6 +177,7 @@ alias pbcopy="xclip -sel clip"
 alias suroot="sudo -E -s" # remain loggedin as root user
 alias c="clear"
 alias vi="nvim"
+alias v="nvim"
 alias vim="nvim"
 
 ###-begin-ng-completion###

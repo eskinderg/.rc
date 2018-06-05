@@ -44,9 +44,12 @@ call vundle#begin()
   Plugin 'scrooloose/nerdtree'
   Plugin 'AndrewRadev/splitjoin.vim'
   Plugin 'tpope/vim-repeat'
+  " Plugin 'mxw/vim-jsx'
+  " Plugin 'ianks/vim-tsx'
   " Plugin 'svermeulen/vim-easyclip'
   " Plugin 'w0rp/ale'
   " Plugin 'altercation/vim-colors-solarized'
+  Plugin 'tpope/vim-dispatch'
   Plugin 'lifepillar/vim-solarized8'
   Plugin 'Xuyuanp/nerdtree-git-plugin'
   Plugin 'rstacruz/sparkup'
@@ -72,8 +75,8 @@ call vundle#begin()
   Plugin 'nathanaelkane/vim-indent-guides'
   Plugin 'pangloss/vim-javascript'
   Plugin 'jason0x43/vim-js-indent'
-  Plugin 'jelera/vim-javascript-syntax'
-  Plugin 'sheerun/vim-polyglot'
+  " Plugin 'jelera/vim-javascript-syntax'
+  " Plugin 'sheerun/vim-polyglot'
   Plugin 'tpope/vim-surround'
   Plugin 'christoomey/vim-tmux-navigator'
   Plugin 'tpope/vim-unimpaired'
@@ -115,11 +118,14 @@ let g:syntastic_check_on_wq = 0
 "let g:syntastic_debug = 3
 
 " Cusrom Syntastic
-let g:syntastic_error_symbol = '✗'
+" let g:syntastic_error_symbol = '✗'
+let g:syntastic_error_symbol = '⚡'
 let g:syntastic_style_error_symbol = '⚡'
 let g:syntastic_warning_symbol = '⚠⚠'
 let g:syntastic_style_warning_symbol = '≈≈'
-let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
+let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint', 'tsc']
+" let g:syntastic_typescript_checkers = [ 'tsc', 'tslint']
+let g:syntastic_aggregate_errors = 1
 
 let g:tsuquyomi_single_quote_import=1 " customize import statements' quotation
 let g:tsuquyomi_disable_quickfix = 1 " use syntastic for displaying syntax and semantics errors instead of vim's default quickfix window
@@ -137,6 +143,20 @@ let g:tsuquyomi_disable_quickfix = 1 " use syntastic for displaying syntax and s
 "let g:syntastic_auto_loc_list = 1
 "let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
+
+"Vim Diff settings ignore whitespace
+set diffopt=filler,iwhite
+let g:gitgutter_diff_args = '-w'
+
+"leafguard/typescript-vim configurations
+let g:typescript_indent_disable = 1
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
+autocmd FileType typescript :set makeprg=tsc
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+
+
 
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -326,10 +346,28 @@ let g:ycm_add_preview_to_completeopt=0
 let g:ycm_confirm_extra_conf=0
 set completeopt-=preview
 
+"jsx settings
+" let g:jsx_ext_required = 1
+
 "vim-javascript plugin settings
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
+
+let g:javascript_conceal_function             = "ƒ"
+let g:javascript_conceal_null                 = "ø"
+let g:javascript_conceal_this                 = "@"
+let g:javascript_conceal_return               = "⇚"
+let g:javascript_conceal_undefined            = "¿"
+let g:javascript_conceal_NaN                  = "ℕ"
+let g:javascript_conceal_prototype            = "¶"
+let g:javascript_conceal_static               = "•"
+let g:javascript_conceal_super                = "Ω"
+let g:javascript_conceal_arrow_function       = "⇒"
+let g:javascript_conceal_noarg_arrow_function = "🞅"
+let g:javascript_conceal_underscore_arrow_function = "🞅"
+
+set conceallevel=1
 
 " Create split below
 nmap :sp :rightbelow sp<cr>
@@ -366,10 +404,20 @@ vmap<leader>l "zdaconsole.log(<c-r>z);<esc>
 vmap<leader><leader>l "zdaconsole.log('<c-r>z');<esc>
 
 " Omni Completeion Settings
+" let g:OmniSharp_server_type = 'roslyn'
+" let g:OmniSharp_prefer_global_sln = 1
+" let g:OmniSharp_timeout = 10
+" let g:OmniSharp_server_path ='/home/esk/omnisharp-server/OmniSharp/bin/Debug/OmniSharp.exe'
+let g:OmniSharp_server_path = '/home/esk/omnisharp-server/OmniSharp/bin/Debug/OmniSharp.exe'
+" let g:OmniSharp_server_path = '/home/esk/.vscode/extensions/ms-vscode.csharp-1.15.2/.omnisharp/1.30.1/omnisharp/OmniSharp.exe'
+let g:OmniSharp_server_use_mono = 1
+" let g:Omnisharp_start_server = 1
+" let g:Omnisharp_stop_server = 2  " Automatically stop the server
+
 " Enable autocompletion
-set omnifunc=syntaxcomplete#Complete
+" set omnifunc=syntaxcomplete#Complete
 " Select keyword as you type
-set completeopt=longest,menuone
+" set completeopt=longest,menuone
 
 " If you prefer the Omni-Completion tip window to close when a selection is
 " made, these lines close it on movement in insert mode or when leaving
@@ -476,7 +524,7 @@ let g:indentLine_char = '┆'
 
 " :nnoremap <leader>g :execute "vimgrep " . shellescape(expand("<cWORD>")) . " **/*.ts " " ."<cr>
 " Map ctrl + n for no search highlight
-nnoremap <silent><C-n> :nohlsearch <cr>
+nnoremap <silent><C-n> :set hlsearch! <cr>
 
 vnoremap <silent><leader>g :<c-u>call GrepOperator(visualmode())<cr>
 nnoremap <silent><leader>g :set operatorfunc=GrepOperator<cr>g@
