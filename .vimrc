@@ -36,30 +36,38 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 
-  Plugin 'Shougo/vimproc.vim'
-  Plugin 'jiangmiao/auto-pairs'
+  Plugin 'jiangmiao/auto-pairs' " Autoclose {} [] ()
   Plugin 'ctrlpvim/ctrlp.vim' " Vim-devicons compatible ctrlp
   Plugin 'Yggdroot/indentLine'
   Plugin 'itchyny/lightline.vim'
   Plugin 'scrooloose/nerdtree'
   Plugin 'AndrewRadev/splitjoin.vim'
   Plugin 'tpope/vim-repeat'
+  Plugin 'drewtempelmeyer/palenight.vim' "Theme Plugin
   " Plugin 'mxw/vim-jsx'
+  " Plugin 'tiagofumo/vim-nerdtree-syntax-highlight' "Very high performance plugin
   " Plugin 'ianks/vim-tsx'
   " Plugin 'svermeulen/vim-easyclip'
   " Plugin 'w0rp/ale'
   " Plugin 'altercation/vim-colors-solarized'
-  Plugin 'tpope/vim-dispatch'
+
+  Plugin 'godlygeek/tabular'
+  Plugin 'plasticboy/vim-markdown'
+
+  Plugin 'editorconfig/editorconfig-vim'
+
+  " Plugin 'tpope/vim-dispatch'
   Plugin 'lifepillar/vim-solarized8'
   Plugin 'Xuyuanp/nerdtree-git-plugin'
   Plugin 'rstacruz/sparkup'
-  Plugin 'mhartington/vim-typings'
+  " Plugin 'mhartington/vim-typings'
   Plugin 'Quramy/tsuquyomi'
-  Plugin 'Quramy/vim-dtsm'
-  Plugin 'Quramy/vim-js-pretty-template'
+  " Plugin 'Shougo/vimproc.vim' " Required for Defenition navigation for typescript
+  " Plugin 'Quramy/vim-dtsm'
+  " Plugin 'Quramy/vim-js-pretty-template'
   Plugin 'vim-syntastic/syntastic'
   Plugin 'majutsushi/tagbar'
-  Plugin 'ternjs/tern_for_vim'
+  " Plugin 'ternjs/tern_for_vim'
   " Plugin 'edkolev/tmuxline.vim'
   Plugin 'hail2u/vim-css3-syntax'
   Plugin 'leafgarland/typescript-vim'
@@ -71,10 +79,10 @@ call vundle#begin()
   Plugin 'tpope/vim-eunuch'
   Plugin 'tpope/vim-fugitive'
   Plugin 'airblade/vim-gitgutter'
-  Plugin 'fatih/vim-go'
+  " Plugin 'fatih/vim-go'
   Plugin 'nathanaelkane/vim-indent-guides'
   Plugin 'pangloss/vim-javascript'
-  Plugin 'jason0x43/vim-js-indent'
+  " Plugin 'jason0x43/vim-js-indent'
   " Plugin 'jelera/vim-javascript-syntax'
   " Plugin 'sheerun/vim-polyglot'
   Plugin 'tpope/vim-surround'
@@ -84,9 +92,9 @@ call vundle#begin()
   Plugin 'Valloric/YouCompleteMe'
   Plugin 'OmniSharp/omnisharp-vim'
   " Plugin 'vim-bookmarks'
-  Plugin 'kshenoy/vim-signature'
+  Plugin 'kshenoy/vim-signature' " Displays Marker symbol on the side
   Plugin 'gregsexton/matchtag'
-  Plugin 'sjl/gundo.vim'
+  " Plugin 'sjl/gundo.vim' " Undu History log plugin
   Plugin 'ryanoasis/vim-devicons'
   " Plugin 'maxbrunsfeld/vim-yankstack'
   Plugin 'VundleVim/Vundle.vim'
@@ -123,7 +131,7 @@ let g:syntastic_error_symbol = '⚡'
 let g:syntastic_style_error_symbol = '⚡'
 let g:syntastic_warning_symbol = '⚠⚠'
 let g:syntastic_style_warning_symbol = '≈≈'
-let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint', 'tsc']
+let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
 " let g:syntastic_typescript_checkers = [ 'tsc', 'tslint']
 let g:syntastic_aggregate_errors = 1
 
@@ -157,7 +165,6 @@ autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
 
-
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
@@ -165,7 +172,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 "Custom theme
 " source ~/.rc/.themerc.vim
-
+" colorscheme palenight
 colorscheme EskTheme
 "colorscheme koehler
 "colorscheme vim-material
@@ -227,8 +234,9 @@ let g:airline#extensions#tagbar#enabled = 0 " Disable Tagbar info
 " End Airline configs  ========================================================================
 
 "Gvim Font setting for GVim
-set guifont=Meslo\ LG\ S\ for\ Powerline\ 9.5
-
+" set guifont=Meslo\ LG\ S\ for\ Powerline\ 9.5
+set guifont=Monospace\ 10
+" set guifont=Lucida_Console:h11
 "set viminfo directory
 " set viminfo+=n~/.vim/viminfo
 
@@ -237,8 +245,8 @@ silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 
 "Fuzzy Search(CTRLP) and vimgrep search
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules,bower_components,dist,documentation,coverage,node,package-lock.json  "For Windows systems
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules/**,bower_components/**,dist/**,documentation/**,coverage/**,node/**,package-lock.json  "For Linux systems
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules,bower_components,dist,release,documentation,coverage,node,package-lock.json  "For Windows systems
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules/**,bower_components/**,dist/**,release/**,documentation/**,coverage/**,node/**,package-lock.json  "For Linux systems
 "set guioptions-=T " Removes top toolbar
 "set guioptions-=r " Removes right hand scroll bar
 set go-=L " Removes left hand scroll bar
@@ -264,7 +272,7 @@ set number                      " always show line numbers
 set relativenumber              " show relative numbering
 set ignorecase                  " ignore case when searching
 set smartcase                   " ignore case if search pattern is all lowercase,
-set timeout timeoutlen=1000 ttimeoutlen=1000
+set timeout timeoutlen=300 ttimeoutlen=300
 set visualbell           " don't beep
 set noerrorbells         " don't beep
 set autowrite  "Save on buffer switch
@@ -331,8 +339,12 @@ nmap 75 :vertical resize 120<cr>
 nmap <C-b> :NERDTreeToggle<cr>
 nmap <C-f> :NERDTreeFind<cr>
 
+" Auto start if no file opened
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 " NERDTree ignore directory
-let g:NERDTreeIgnore=['\~$', 'vendor', 'node_modules','bower_components', 'dist', 'coverage', 'documentation']
+let g:NERDTreeIgnore=['\~$', 'vendor', 'release', 'node_modules','bower_components', 'dist', 'coverage', 'documentation']
 
 "Load the current buffer in Chrome
 nmap ,c :!open -a Google\ Chrome<cr>
@@ -408,9 +420,12 @@ vmap<leader><leader>l "zdaconsole.log('<c-r>z');<esc>
 " let g:OmniSharp_prefer_global_sln = 1
 " let g:OmniSharp_timeout = 10
 " let g:OmniSharp_server_path ='/home/esk/omnisharp-server/OmniSharp/bin/Debug/OmniSharp.exe'
-let g:OmniSharp_server_path = '/home/esk/omnisharp-server/OmniSharp/bin/Debug/OmniSharp.exe'
+" let g:OmniSharp_server_path = '/home/esk/omnisharp-server/OmniSharp/bin/Debug/OmniSharp.exe'
+" let g:OmniSharp_server_path = '/home/esk/.vim/bundle/omnisharp-linux-x64/run'
 " let g:OmniSharp_server_path = '/home/esk/.vscode/extensions/ms-vscode.csharp-1.15.2/.omnisharp/1.30.1/omnisharp/OmniSharp.exe'
-let g:OmniSharp_server_use_mono = 1
+" let g:OmniSharp_server_use_mono = 1
+" let g:omnisharp_proc_debug = 1
+" let g:OmniSharp_start_server = 0
 " let g:Omnisharp_start_server = 1
 " let g:Omnisharp_stop_server = 2  " Automatically stop the server
 
@@ -500,6 +515,15 @@ let g:tagbar_type_typescript = {
 " set sessionoptions-=options  " Don't save options
 "end save session ===================================================================
 
+
+" React Configs
+let g:ale_linters = {
+\    'typescript': ['tslint', 'tsserver'],
+\}
+
+" vim go configs
+let g:go_version_warning = 0
+
 " nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>ev :e ~/.rc/.vimrc<CR>
 
@@ -524,7 +548,8 @@ let g:indentLine_char = '┆'
 
 " :nnoremap <leader>g :execute "vimgrep " . shellescape(expand("<cWORD>")) . " **/*.ts " " ."<cr>
 " Map ctrl + n for no search highlight
-nnoremap <silent><C-n> :set hlsearch! <cr>
+" nnoremap <silent><C-n> :set hlsearch! <cr>
+nnoremap <C-n> :noh<cr>
 
 vnoremap <silent><leader>g :<c-u>call GrepOperator(visualmode())<cr>
 nnoremap <silent><leader>g :set operatorfunc=GrepOperator<cr>g@
