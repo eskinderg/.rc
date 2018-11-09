@@ -13,13 +13,8 @@ set sessionoptions-=options  " Don't save vim options when mksession
 set noswapfile
 " set wildmenu
 " set path+=**
-
 syntax on
-
 set hidden
-
-"let g:deoplete#enable_at_startup = 1
-
 set termguicolors
 
 if (empty($TMUX))
@@ -61,13 +56,23 @@ call vundle#begin()
   Plugin 'Xuyuanp/nerdtree-git-plugin'
   Plugin 'rstacruz/sparkup'
   " Plugin 'mhartington/vim-typings'
-  Plugin 'Quramy/tsuquyomi'
+  " Plugin 'Quramy/tsuquyomi'
   " Plugin 'Shougo/vimproc.vim' " Required for Defenition navigation for typescript
+
+  "Deoplete Required Plugins
+  Plugin 'HerringtonDarkholme/yats.vim'
+  Plugin 'mhartington/nvim-typescript' " Forin async completion
+  Plugin 'Shougo/deoplete.nvim' " Forin Denite features
+  Plugin 'ervandew/supertab'
+  Plugin 'Shougo/denite.nvim'
+
   " Plugin 'Quramy/vim-dtsm'
   " Plugin 'Quramy/vim-js-pretty-template'
   Plugin 'vim-syntastic/syntastic'
   Plugin 'majutsushi/tagbar'
-  " Plugin 'ternjs/tern_for_vim'
+  Plugin 'ternjs/tern_for_vim'
+  Plugin 'carlitux/deoplete-ternjs'
+  Plugin 'othree/jspc.vim'
   " Plugin 'edkolev/tmuxline.vim'
   Plugin 'hail2u/vim-css3-syntax'
   Plugin 'leafgarland/typescript-vim'
@@ -88,8 +93,7 @@ call vundle#begin()
   Plugin 'tpope/vim-surround'
   Plugin 'christoomey/vim-tmux-navigator'
   Plugin 'tpope/vim-unimpaired'
-  Plugin 'HerringtonDarkholme/yats.vim'
-  Plugin 'Valloric/YouCompleteMe'
+  " Plugin 'Valloric/YouCompleteMe'
   Plugin 'OmniSharp/omnisharp-vim'
   " Plugin 'vim-bookmarks'
   Plugin 'kshenoy/vim-signature' " Displays Marker symbol on the side
@@ -100,8 +104,15 @@ call vundle#begin()
   Plugin 'VundleVim/Vundle.vim'
 call vundle#end()
 
+let g:deoplete#enable_at_startup = 1
+let g:nvim_typescript#default_mappings = 1
+let g:nvim_typescript#type_info_on_hold = 1
+nmap <c-]> :TSTypeDef<cr>
+nmap <c-m> :TSImport<cr>
+
 " Fix for syntastic not recognizing *.ts files
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 
 autocmd FileType html setlocal shiftwidth=4 tabstop=4
 
@@ -126,17 +137,20 @@ let g:syntastic_check_on_wq = 0
 "let g:syntastic_debug = 3
 
 " Cusrom Syntastic
-" let g:syntastic_error_symbol = '✗'
-let g:syntastic_error_symbol = '⚡'
+let g:syntastic_error_symbol = '✗'
+" let g:syntastic_error_symbol = '⚡'
 let g:syntastic_style_error_symbol = '⚡'
 let g:syntastic_warning_symbol = '⚠⚠'
 let g:syntastic_style_warning_symbol = '≈≈'
-let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
-" let g:syntastic_typescript_checkers = [ 'tsc', 'tslint']
+" let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
+" let g:syntastic_typescript_checkers = ['tslint', 'tsc']
+let g:syntastic_typescript_checkers = ['tslint', 'tsc', 'nvim-ts']
+let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_typescript_checkers = ['nvim-ts']
 let g:syntastic_aggregate_errors = 1
 
-let g:tsuquyomi_single_quote_import=1 " customize import statements' quotation
-let g:tsuquyomi_disable_quickfix = 1 " use syntastic for displaying syntax and semantics errors instead of vim's default quickfix window
+" let g:tsuquyomi_single_quote_import=1 " customize import statements' quotation
+" let g:tsuquyomi_disable_quickfix = 1 " use syntastic for displaying syntax and semantics errors instead of vim's default quickfix window
 
 " let g:syntastic_scss_checkers = ['scss_lint']
 
@@ -234,8 +248,8 @@ let g:airline#extensions#tagbar#enabled = 0 " Disable Tagbar info
 " End Airline configs  ========================================================================
 
 "Gvim Font setting for GVim
-" set guifont=Meslo\ LG\ S\ for\ Powerline\ 9.5
-set guifont=Monospace\ 10
+" set guifont=Meslo\ LG\ S\ for\ Powerline\ 10.5
+" set guifont=Monospace\ 9
 " set guifont=Lucida_Console:h11
 "set viminfo directory
 " set viminfo+=n~/.vim/viminfo
@@ -384,16 +398,13 @@ set conceallevel=1
 " Create split below
 nmap :sp :rightbelow sp<cr>
 
-" Set Spell check for txt files
-autocmd BufRead,BufNewFile *.txt setlocal spell
-
 " Quickly go forward or backward to buffer
 nnoremap :bp :BufSurfBack<cr>
 nnoremap :bn :BufSurfForward<cr>
 
 " Toggle tag bar
-map <Leader>t :TagbarToggle<cr>
-nmap <Leader>t :TagbarToggle<cr>
+" map <Leader>t :TagbarToggle<cr>
+" nmap <Leader>t :TagbarToggle<cr>
 
 " Easy motion stuff
 let g:EasyMotion_leader_key = '<Leader>'
@@ -466,8 +477,9 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 " let g:DevIconsEnableFolderExtensionPatternMatching = 0
 autocmd FileType nerdtree setlocal nolist
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
-let g:WebDevIconsNerdTreeGitPluginForceVAlign = 'on'
+" let g:WebDevIconsNerdTreeGitPluginForceVAlign = 'on'
 
 "Begin Tabgar Settings
 "=============================================================================
@@ -551,11 +563,26 @@ let g:indentLine_char = '┆'
 " nnoremap <silent><C-n> :set hlsearch! <cr>
 nnoremap <C-n> :noh<cr>
 
+" nnoremap <Leader>t :execute 'e '.expand('%:r').'.html' <cr>
+nmap <silent><Leader>t :call OpenFile(expand('%:p:h').'/'.GetFileName().'.component.html') <cr>
+nmap <silent><Leader>s :call OpenFile(expand('%:p:h').'/'.GetFileName().'.component.scss') <cr>
+nmap <silent><Leader>c :call OpenFile(expand('%:p:h').'/'.GetFileName().'.component.ts') <cr>
+nmap <silent><Leader>d :call OpenFile(expand('%:p:h').'/'.GetFileName().'.module.ts') <cr>
+
+function! OpenFile(filename)
+  " echo (a:filename)
+   if filereadable(a:filename)
+     silent execute "e " .a:filename
+   endif
+endfunction
+
+function! GetFileName()
+  return split(expand('%:t'),'[/\.]')[0]
+endfunction
+
 vnoremap <silent><leader>g :<c-u>call GrepOperator(visualmode())<cr>
 nnoremap <silent><leader>g :set operatorfunc=GrepOperator<cr>g@
 
-nnoremap gt /templateUrl<CR>f'gf
-nnoremap gs /styleUrls<CR>f'gf
 
 function! GrepOperator(type)
 
@@ -591,3 +618,12 @@ function! CustomOperator(type)
   endif
   echom @@
 endfunction
+
+" Show highlishting groups for the current word
+nmap <leader>u :call<SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc

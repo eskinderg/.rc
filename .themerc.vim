@@ -12,7 +12,13 @@ endif
 let colors_name = "EskTheme"
 
 " if !has('gui_running') && get(g:, 'solarized_termtrans', 0)
-hi! Normal cterm=NONE gui=NONE ctermfg=14 guifg=#ccd2cf ctermbg=8 guibg=#282c34
+hi! Normal cterm=NONE gui=NONE ctermfg=14 guifg=#c5c7c4 ctermbg=8 guibg=#282c34
+
+" Set Spell check for txt files
+autocmd BufRead,BufNewFile *.txt setlocal spell
+" colorscheme for text files
+autocmd BufRead,BufNewFile *.txt hi! Normal cterm=NONE gui=NONE ctermfg=14 guifg=#989a97 ctermbg=8 guibg=#282c34
+
 hi! CursorLineNr ctermbg=0 guibg=#282c34
 
 " hi! Number ctermbg=0 guibg=#282c34 guifg=red
@@ -56,6 +62,7 @@ hi! typescriptParameters cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=oran
 hi! typescriptHtmlElemAttrs cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=orange ctermbg=NONE guibg=NONE
 hi! typescriptAll cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=orange ctermbg=NONE guibg=NONE
 hi! typescriptBrowserObjects cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=orange ctermbg=NONE guibg=NONE
+hi! foldBraces cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=orange ctermbg=NONE guibg=NONE
 hi! typescriptFunction cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=red ctermbg=NONE guibg=NONE
 hi! typescriptRefD cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=green ctermbg=NONE guibg=NONE
 " hi! typescriptRefS cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=blue ctermbg=NONE guibg=NONE
@@ -76,6 +83,29 @@ hi! Error cterm=NONE,bold gui=NONE,bold ctermfg=1 guifg=#dc322f ctermbg=NONE gui
 hi! Todo cterm=NONE,bold gui=NONE,bold cterm=italic ctermfg=5 guifg=#d33682 ctermbg=NONE guibg=NONE
 hi! link QuickFixLine Search
 hi! MatchParen cterm=NONE,bold gui=NONE,bold ctermfg=15 guifg=#fdf6e3 ctermbg=0 guibg=#282c34
+
+hi! typescriptExport cterm=NONE gui=NONE ctermfg=4 guifg=#c678dd ctermbg=NONE guibg=NONE
+hi! typescriptImport cterm=NONE gui=NONE ctermfg=4 guifg=#c678dd ctermbg=NONE guibg=NONE
+hi! typescriptCastKeyword cterm=NONE gui=NONE ctermfg=4 guifg=#c678dd ctermbg=NONE guibg=NONE
+hi! typescriptClassKeyword cterm=NONE gui=NONE ctermfg=4 guifg=#c678dd ctermbg=NONE guibg=NONE
+hi! typescriptDecorator cterm=NONE gui=NONE ctermfg=4 guifg=#61afef ctermbg=NONE guibg=NONE
+hi! typescriptClassHeritage cterm=NONE gui=NONE ctermfg=4 guifg=#61afef ctermbg=NONE guibg=NONE
+hi! typescriptClassName cterm=NONE gui=NONE ctermfg=4 guifg=#61afef ctermbg=NONE guibg=NONE
+hi! typescriptBlock cterm=NONE gui=NONE ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
+" hi! typescriptBlock cterm=NONE gui=NONE ctermfg=4 guifg=red ctermbg=NONE guibg=NONE
+" hi! typescriptIdentifierName cterm=NONE gui=NONE ctermfg=4 guifg=red ctermbg=NONE guibg=NONE
+" hi! typescriptIdentifier cterm=NONE gui=NONE ctermfg=4 guifg=blue ctermbg=NONE guibg=NONE
+hi! typescriptArray cterm=NONE gui=NONE ctermfg=4 guifg=#61afef ctermbg=NONE guibg=NONE
+hi! typescriptMember cterm=NONE gui=NONE ctermfg=4 guifg=#8e9eab ctermbg=NONE guibg=NONE
+hi! typescriptCall cterm=NONE gui=NONE ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
+" hi! typescriptArrowFuncArg cterm=NONE gui=NONE ctermfg=4 guifg=red ctermbg=NONE guibg=NONE
+hi! typescriptClassBlock cterm=NONE gui=NONE ctermfg=4 guifg=#0e90f3 ctermbg=NONE guibg=NONE
+hi! typescriptProperty cterm=NONE gui=NONE ctermfg=4 guifg=green ctermbg=NONE guibg=NONE
+hi! typescriptPredefinedType cterm=NONE gui=NONE ctermfg=4 guifg=green ctermbg=NONE guibg=NONE
+hi! typescriptFuncCallArg cterm=NONE gui=NONE ctermfg=4 guifg=#b58900 ctermbg=NONE guibg=NONE
+" " hi! typescriptBlock cterm=NONE gui=NONE ctermfg=4 guifg=orange ctermbg=NONE guibg=NONE
+" hi! typescriptProp cterm=NONE gui=NONE ctermfg=4 guifg=red ctermbg=NONE guibg=NONE
+
 " if get(g:, 'solarized_old_cursor_style', 0)
 "   hi! Cursor cterm=NONE gui=NONE ctermfg=8 guifg=#282c34 ctermbg=14 guibg=#93a1a1
 " else
@@ -161,7 +191,7 @@ hi! DiffText cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=0 guibg=#484938
 " endif
 hi! SignColumn cterm=NONE gui=NONE ctermfg=14 guifg=#93a1a1 ctermbg=NONE guibg=NONE
 hi! Conceal cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
-hi! SpellBad cterm=NONE,undercurl gui=NONE,undercurl ctermfg=NONE guifg=NONE ctermbg=NONE guibg=NONE guisp=#d33682
+hi! SpellBad cterm=NONE,undercurl gui=NONE,undercurl ctermfg=NONE guifg=orange ctermbg=NONE guibg=NONE guisp=#d33682
 hi! SpellCap cterm=NONE,undercurl gui=NONE,undercurl ctermfg=NONE guifg=NONE ctermbg=NONE guibg=NONE guisp=#6c71c4
 hi! SpellRare cterm=NONE,undercurl gui=NONE,undercurl ctermfg=NONE guifg=NONE ctermbg=NONE guibg=NONE guisp=#2aa198
 hi! SpellLocal cterm=NONE,undercurl gui=NONE,undercurl ctermfg=NONE guifg=NONE ctermbg=NONE guibg=NONE guisp=#b58900
