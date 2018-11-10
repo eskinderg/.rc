@@ -98,17 +98,17 @@ call vundle#begin()
   " Plugin 'vim-bookmarks'
   Plugin 'kshenoy/vim-signature' " Displays Marker symbol on the side
   Plugin 'gregsexton/matchtag'
-  " Plugin 'sjl/gundo.vim' " Undu History log plugin
+  Plugin 'sjl/gundo.vim' " Undu History log plugin
   Plugin 'ryanoasis/vim-devicons'
   " Plugin 'maxbrunsfeld/vim-yankstack'
   Plugin 'VundleVim/Vundle.vim'
 call vundle#end()
 
 let g:deoplete#enable_at_startup = 1
-let g:nvim_typescript#default_mappings = 1
+" let g:nvim_typescript#default_mappings = 1
 let g:nvim_typescript#type_info_on_hold = 1
 nmap <c-]> :TSTypeDef<cr>
-nmap <c-m> :TSImport<cr>
+" nmap <c-m> :TSImport<cr>
 
 " Fix for syntastic not recognizing *.ts files
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
@@ -627,3 +627,27 @@ function! <SID>SynStack()
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
+
+nnoremap <Leader>f :call SearchInput() <cr>
+
+function! SearchInput()
+  " let curline = getline('.')
+
+  echohl warningmsg
+  call inputsave()
+  let str = input('Search string: ')
+  call inputrestore()
+
+  call inputsave()
+  let type = input('Filetype: ')
+  call inputrestore()
+
+  echohl normal
+  " call system("git commit -m '" . msg . "'")
+  " echom (str. type .' got from terminal')
+
+  if(strlen(str) > 0 && strlen(type))
+    silent! execute "vimgrep " . shellescape(str) . " **/*".type
+  endif
+
+endfunction

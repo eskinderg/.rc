@@ -68,6 +68,9 @@ hi! typescriptRefD cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=green cter
 " hi! typescriptRefS cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=blue ctermbg=NONE guibg=NONE
 " hi! typescriptPrototype cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=blue ctermbg=NONE guibg=NONE
 
+hi! qfFileName cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=orange ctermbg=NONE guibg=NONE
+hi! qfLineNr cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=#61afef ctermbg=NONE guibg=NONE
+
 hi! Comment cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=#4b5364 ctermbg=NONE guibg=NONE
 hi! Constant cterm=NONE gui=NONE ctermfg=6 guifg=#2aa198 ctermbg=NONE guibg=NONE
 
@@ -154,7 +157,7 @@ hi! IncSearch cterm=NONE,standout gui=NONE,standout ctermfg=9 guifg=#61afef cter
 hi! CursorLine cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#2c323c guisp=#eee8d5
 " Transparent background for search
 " hi! Search cterm=NONE, gui=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#2c323c cterm=underline
-hi! Search  guifg=black guibg=darkgreen guifg=black
+hi! Search cterm=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#474531 cterm=NONE, gui=NONE
 
 hi! MoreMsg cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
 hi! ModeMsg cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
@@ -195,9 +198,17 @@ hi! SpellBad cterm=NONE,undercurl gui=NONE,undercurl ctermfg=NONE guifg=orange c
 hi! SpellCap cterm=NONE,undercurl gui=NONE,undercurl ctermfg=NONE guifg=NONE ctermbg=NONE guibg=NONE guisp=#6c71c4
 hi! SpellRare cterm=NONE,undercurl gui=NONE,undercurl ctermfg=NONE guifg=NONE ctermbg=NONE guibg=NONE guisp=#2aa198
 hi! SpellLocal cterm=NONE,undercurl gui=NONE,undercurl ctermfg=NONE guifg=NONE ctermbg=NONE guibg=NONE guisp=#b58900
-hi! Pmenu ctermfg=14 guifg=#93a1a1 ctermbg=0 guibg=#282c34 cterm=NONE,reverse gui=NONE,reverse
-"Autocomplete menu "selection------------------------------------------------------------------------------
-hi! PmenuSel ctermfg=11 guifg=#268bd2 ctermbg=15 guibg=#fdf6e3 cterm=NONE,reverse gui=NONE,reverse
+
+"Autocomplete menu "selection----------------------------------------------------------------------------
+
+" Autocomplete menu background
+hi! Pmenu ctermfg=0 guifg=#abacac ctermbg=14 guibg=#383c4a cterm=NONE gui=NONE
+
+" Autocomplete menu selected text
+hi! PmenuSel ctermfg=15 guifg=#abacac ctermbg=11 guibg=#2c313a cterm=NONE gui=NONE
+
+" End autocomplete menu "selection------------------------------------------------------------------------
+
 hi! PmenuSbar ctermfg=15 guifg=#fdf6e3 ctermbg=14 guibg=#93a1a1 cterm=NONE,reverse gui=NONE,reverse
 hi! PmenuThumb ctermfg=14 guifg=#93a1a1 ctermbg=8 guibg=#282c34 cterm=NONE,reverse gui=NONE,reverse
 hi! CursorColumn cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#282c34
