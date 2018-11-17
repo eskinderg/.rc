@@ -171,6 +171,34 @@ hi! WildMenu ctermbg=15 guibg=#fdf6e3 ctermfg=0 guifg=#282c34 cterm=NONE,reverse
 hi! Folded cterm=NONE,bold gui=NONE,bold ctermfg=14 guifg=#51525f guisp=#282c34
 hi! FoldColumn cterm=NONE gui=NONE ctermfg=14 guifg=#93a1a1
 
+" Nerdtree colors_name
+" hi def link NERDTreeFile NerdBlue
+hi def link NERDTreeDir DirectoryFileName
+hi def link NERDTreeUp NerdBlue
+hi def link NERDTreeFile FileName
+hi def link NERDTreeExecFile FileName
+hi def link NERDTreeCWD NerdBlue
+hi def link NERDTreeOpenable CloseStateIcon
+hi def link NERDTreeClosable OpenStateIcon
+hi def link NERDTreeIgnore ignore
+hi def link NERDTreeRO WarningMsg
+hi def link NERDTreeBookmark Statement
+hi def link NERDTreeFlags TreeFlags
+hi def link NERDTreePart Special
+hi def link NERDTreePartFile Type
+hi def link NERDTreeDirSlash Identifier
+hi def link NERDTreeGitStatusDirDirty GitDirty
+
+hi! NerdBlue cterm=NONE gui=NONE ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
+hi! FileName cterm=NONE gui=NONE ctermfg=4 guifg=#93a1a1 ctermbg=NONE guibg=NONE
+hi! DirectoryFileName cterm=NONE gui=NONE ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
+hi! OpenStateIcon cterm=NONE gui=NONE ctermfg=4 guifg=#61afef ctermbg=NONE guibg=NONE
+hi! CloseStateIcon cterm=NONE gui=NONE ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
+hi! GitDirty cterm=NONE gui=NONE ctermfg=4 guifg=#7d4700 ctermbg=NONE guibg=NONE
+hi! TreeFlags cterm=NONE gui=NONE ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
+
+" End Nerdtree
+
 " if get(g:, "solarized_diffmode", "") == "high"
 "   hi! DiffAdd cterm=NONE,reverse gui=NONE,reverse ctermfg=2 guifg=#009900 ctermbg=NONE guibg=#009900
 "   hi! DiffChange cterm=NONE,reverse gui=NONE,reverse ctermfg=3 guifg=#b58900 ctermbg=NONE guibg=NONE
@@ -456,5 +484,4 @@ autocmd ColorScheme * highlight TrailSpace ctermbg=darkred guibg=red ctermbg=dar
 " OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 " THE SOFTWARE.
 "
-" vim:foldmethod=marker:foldlevel=0
 "}}}
