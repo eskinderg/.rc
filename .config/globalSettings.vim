@@ -28,7 +28,7 @@ let g:gitgutter_diff_args = '-w'
 " let g:typescript_compiler_options = ''
 " autocmd FileType typescript :set makeprg=tsc
 
-let g:NERDTreeIgnore=['\~$', 'vendor', 'release', 'node_modules','bower_components', 'dist', 'coverage', 'documentation']
+let g:NERDTreeIgnore=['\~$', 'vendor', 'release', 'node_modules', 'bower_components', 'dist', 'coverage', 'documentation']
 
 let g:ycm_add_preview_to_completeopt=0
 let g:ycm_confirm_extra_conf=0

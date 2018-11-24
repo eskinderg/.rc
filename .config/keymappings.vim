@@ -96,3 +96,13 @@ nmap <silent><Leader>t :call OpenFile(expand('%:p:h').'/'.GetFileName().'.compon
 nmap <silent><Leader>s :call OpenFile(expand('%:p:h').'/'.GetFileName().'.component.scss') <cr>
 nmap <silent><Leader>c :call OpenFile(expand('%:p:h').'/'.GetFileName().'.component.ts') <cr>
 nmap <silent><Leader>d :call OpenFile(expand('%:p:h').'/'.GetFileName().'.module.ts') <cr>
+
+" Show highlishting groups for the current word
+nmap <leader>u :call<SID>SynStack()<CR>
+
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc

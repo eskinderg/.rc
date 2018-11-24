@@ -11,8 +11,8 @@ let g:airline_section_z = '%t' " Show only filename at the z secion of the airli
 
 " let g:airline_section_y = '%-0.10{getcwd()}'
 
-let g:airline#extensions#syntastic#enabled = 0 " Disable syntastic info
-let g:airline#extensions#tagbar#enabled = 0 " Disable Tagbar info
+let g:airline#extensions#syntastic#enabled = 1 " Disable syntastic info
+let g:airline#extensions#tagbar#enabled = 1 " Disable Tagbar info
 
 " let g:airline_section_warning = '%t'
 " let g:airline#extensions#tabline#fnamemod = ':t' "Show only file names in the tab

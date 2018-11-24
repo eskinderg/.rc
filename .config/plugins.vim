@@ -30,7 +30,15 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'HerringtonDarkholme/yats.vim' "Typescript syntax highlight
   Plug 'leafgarland/typescript-vim', { 'for': 'typescript' } "Typescript syntax highlight
   Plug 'mhartington/nvim-typescript', {'do': './install.sh'} " Autocompletion of Typescript
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+  if has('nvim')
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  else
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+  endif
+
   Plug 'ervandew/supertab'
   " Plug 'Shougo/denite.nvim'
   " Plug 'Quramy/vim-dtsm'
@@ -73,6 +81,6 @@ call plug#begin('~/.config/nvim/plugged')
   " Plug 'junegunn/fzf'
   " Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
   " Plug 'neoclide/coc.nvim', {'do': 'yarn install'}
-  Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh' }
+  " Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh' }
 
 call plug#end()
