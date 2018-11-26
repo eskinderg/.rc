@@ -73,6 +73,11 @@ map<leader><leader>l "zdiwaconsole.log('<c-r>z');<esc>
 vmap<leader>l "zdaconsole.log(<c-r>z);<esc>
 vmap<leader><leader>l "zdaconsole.log('<c-r>z');<esc>
 
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
 " Familiar commands for file/symbol browsing
 map <D-p> :CtrlP<cr>
 "map <C-r> :CtrlPBufTag<cr>

@@ -62,6 +62,7 @@ call plug#begin('~/.config/nvim/plugged')
   " Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
   " Plug 'jason0x43/vim-js-indent'
   " Plug 'jelera/vim-javascript-syntax'
+  Plug 'junegunn/vim-easy-align'
   Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-surround'
   Plug 'christoomey/vim-tmux-navigator'
