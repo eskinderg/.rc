@@ -8,6 +8,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'AndrewRadev/splitjoin.vim'
   Plug 'tpope/vim-repeat'
   Plug 'drewtempelmeyer/palenight.vim' "Theme Plugin
+  Plug 'ap/vim-css-color'
   " React Plugins
   " Plug 'mxw/vim-jsx'
   " Plug 'wesQ3/vim-windowswap'
@@ -46,6 +47,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'vim-syntastic/syntastic' " Syntax error checking
   Plug 'majutsushi/tagbar'
   " Plug 'ternjs/tern_for_vim', { 'do': 'npm install' } " do npm install -g tern
+  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
   " Plug 'othree/jspc.vim'
   " Plug 'edkolev/tmuxline.vim'
   Plug 'hail2u/vim-css3-syntax'
@@ -70,7 +72,7 @@ call plug#begin('~/.config/nvim/plugged')
   " Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
   " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
   " Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
-  Plug 'OmniSharp/omnisharp-vim'
+  " Plug 'OmniSharp/omnisharp-vim'
   " Plug 'vim-bookmarks'
   Plug 'kshenoy/vim-signature' " Displays Marker symbol on the side
   Plug 'gregsexton/matchtag'

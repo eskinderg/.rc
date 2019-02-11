@@ -5,10 +5,10 @@
 " autocmd cursormoved * set hlsearch
 
 " Fix for syntastic not recognizing *.ts files
-autocmd BufNewFile,BufRead *.js setlocal filetype=typescript
+" autocmd BufNewFile,BufRead *.js setlocal filetype=typescript
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
-autocmd BufNewFile,BufRead *.jsx setlocal filetype=typescript
-autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript
+" autocmd BufNewFile,BufRead *.jsx setlocal filetype=typescript
+" autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript
 
 " autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 
@@ -20,4 +20,4 @@ autocmd FileType html setlocal shiftwidth=4 tabstop=4
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
-autocmd VimEnter * NERDTree " Start NERDTree on startup
+" autocmd VimEnter * NERDTree " Start NERDTree on startup
