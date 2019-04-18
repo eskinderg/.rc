@@ -131,7 +131,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=( git, docker, autoenv, npm, node, tmux, zsh-syntax-highlighting,z, zsh-completions, vi-mode )
+plugins=( enhancd git, docker, autoenv, npm, node, tmux, zsh-syntax-highlighting,z, zsh-completions, vi-mode )
 autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh

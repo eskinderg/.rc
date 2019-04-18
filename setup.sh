@@ -13,7 +13,6 @@ then
   ln -s ~/.rc/.themerc.vim ~/.config/nvim/colors/EskTheme.vim
 fi
 
-
 if [ -d ~/.vim ]  # Check if vim is installed
 then
   mkdir -p ~/.vim/colors

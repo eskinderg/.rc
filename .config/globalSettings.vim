@@ -94,7 +94,7 @@ let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
 " let g:WebDevIconsNerdTreeGitPluginForceVAlign = 'on'
 
-"Begin Tabgar Settings
+" Begin Tabgar Settings
 "=============================================================================
 let g:tagbar_type_typescript = {
   \ 'ctagsbin' : 'tstags',

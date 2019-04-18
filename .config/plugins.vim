@@ -10,6 +10,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'drewtempelmeyer/palenight.vim' "Theme Plugin
   Plug 'ap/vim-css-color'
   " React Plugins
+  Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
   " Plug 'mxw/vim-jsx'
   " Plug 'wesQ3/vim-windowswap'
   " Plug 'tiagofumo/vim-nerdtree-syntax-highlight' "Very high performance plugin
