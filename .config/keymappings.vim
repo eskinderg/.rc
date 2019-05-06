@@ -26,14 +26,38 @@ vnoremap > >gv
 imap jj <esc>
 
 "Auto change directory to match current file ,cd
-nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 "easier window navigation
 
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
+" nmap <C-h> <C-w>h
+" nmap <C-j> <C-w>j
+" nmap <C-k> <C-w>k
+" nmap <C-l> <C-w>l
+
+map <C-h> :call WinMove('h')<cr>
+map <C-j> :call WinMove('j')<cr>
+map <C-k> :call WinMove('k')<cr>
+map <C-l> :call WinMove('l')<cr>
+
+" Window movement shortcuts
+" move to the window in the direction shown, or create a new window
+function! WinMove(key)
+    let t:curwin = winnr()
+    exec "wincmd ".a:key
+    if (t:curwin == winnr())
+        if (match(a:key,'[jk]'))
+            wincmd v
+        else
+            wincmd s
+        endif
+        exec "wincmd ".a:key
+    endif
+endfunction
+
+" Mapping for switching buffers
+nmap <C-i> :bp<cr>
+nmap <C-o> :bn<cr>
 
 " noremap <C-k> <C-e> " Turns out tmux-vim-navigator already have those mappings
 " noremap <C-j> <C-y> " Turns out tmux-vim-navigator already have those mappings
@@ -47,6 +71,7 @@ nmap 75 :vertical resize 120<cr>
 
 " NERDTree configurations
 nmap <C-b> :NERDTreeToggle<cr>
+nmap <leader>e :NERDTreeToggle<cr>
 nmap <C-f> :NERDTreeFind<cr>
 
 "Load the current buffer in Chrome
@@ -91,6 +116,7 @@ nmap :ed :edit %:p:h/
 nmap ,1  :call Class()<cr>
 " nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>ev :e ~/.rc/.vimrc<CR>
+nnoremap <leader>ep :e ~/.rc/.config/plugins.vim<CR>
 " :nnoremap <leader>g :execute "vimgrep " . shellescape(expand("<cWORD>")) . " **/*.ts " " ."<cr>
 " Map ctrl + n for no search highlight
 " nnoremap <silent><C-n> :set hlsearch! <cr>

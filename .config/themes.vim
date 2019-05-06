@@ -1,4 +1,4 @@
-"Custom theme
+" Custom theme
 colorscheme EskTheme
 " colorscheme palenight
 " colorscheme koehler

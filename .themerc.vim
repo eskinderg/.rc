@@ -44,7 +44,8 @@ hi! FoldColumn ctermbg=0 guibg=#282c34
 " endif
 
 
-
+" for Plug 'machakann/vim-highlightedyank' setting
+highlight HighlightedyankRegion guibg=#3e4451
 
 " typescriptOperator delete new instanceof typeof
 hi! typescriptOperator cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=#61afef ctermbg=NONE guibg=NONE
@@ -68,7 +69,7 @@ hi! typescriptRefD cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=green cter
 " hi! typescriptRefS cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=blue ctermbg=NONE guibg=NONE
 " hi! typescriptPrototype cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=blue ctermbg=NONE guibg=NONE
 
-hi! qfFileName cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=orange ctermbg=NONE guibg=NONE
+hi! qfFileName cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=#4a76ce ctermbg=NONE guibg=NONE
 hi! qfLineNr cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=#61afef ctermbg=NONE guibg=NONE
 
 hi! Comment cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=#4b5364 ctermbg=NONE guibg=NONE

@@ -28,7 +28,7 @@ let g:gitgutter_diff_args = '-w'
 " let g:typescript_compiler_options = ''
 " autocmd FileType typescript :set makeprg=tsc
 
-let g:NERDTreeIgnore=['\~$', 'vendor', 'release', 'node_modules', 'bower_components', 'dist', 'coverage', 'documentation']
+let g:NERDTreeIgnore=['\~$', 'vendor', 'bin', 'obj', 'release', 'node_modules', 'bower_components', 'dist', 'coverage', 'documentation']
 
 let g:ycm_add_preview_to_completeopt=0
 let g:ycm_confirm_extra_conf=0
@@ -83,7 +83,6 @@ let g:javascript_plugin_flow = 1
 " autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 " autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
-
 " Vim devicons configurations
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1 "Turn on Folder Icons
 " let g:NERDTreeDirArrowExpandable = '🗀 '
@@ -93,6 +92,19 @@ autocmd FileType nerdtree setlocal nolist
 let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
 " let g:WebDevIconsNerdTreeGitPluginForceVAlign = 'on'
+
+" close NERDTree after a file is opened
+let g:NERDTreeQuitOnOpen=1
+" show hidden files in NERDTree
+" let NERDTreeShowHidden=1
+
+" Change default preview key of "go" to "p"
+" let g:NERDTreeMapPreview = "p"
+
+" Plug 'machakann/vim-highlightedyank' setting
+let g:highlightedyank_highlight_duration = 250
+
+let g:ctrlp_cmdpalette_execute = 1
 
 " Begin Tabgar Settings
 "=============================================================================
@@ -118,8 +130,8 @@ let g:tagbar_type_typescript = {
 
 " vim-indent-guides ========================================================
 " let g:indentLine_char = '.'
-" let g:indentLine_char = '│'
-let g:indentLine_char = '┆'
+let g:indentLine_char = '│'
+" let g:indentLine_char = '┆'
 " let g:indentLine_color_term = 202
 " let g:indentLine_color_term = 1
 " let g:indentLine_color_tty_light = 7 " (default: 4)

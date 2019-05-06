@@ -2,15 +2,19 @@ call plug#begin('~/.config/nvim/plugged')
 
   Plug 'jiangmiao/auto-pairs' " Autoclose {} [] ()
   Plug 'ctrlpvim/ctrlp.vim' " Vim-devicons compatible ctrlp
+  Plug 'fisadev/vim-ctrlp-cmdpalette'
   Plug 'Yggdroot/indentLine'
   Plug 'itchyny/lightline.vim'
   Plug 'scrooloose/nerdtree'
   Plug 'AndrewRadev/splitjoin.vim'
   Plug 'tpope/vim-repeat'
   Plug 'drewtempelmeyer/palenight.vim' "Theme Plugin
+  Plug 'flazz/vim-colorschemes'
   Plug 'ap/vim-css-color'
+  Plug 'tpope/vim-endwise'
+  Plug 'Valloric/MatchTagAlways'
   " React Plugins
-  Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+  " Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
   " Plug 'mxw/vim-jsx'
   " Plug 'wesQ3/vim-windowswap'
   " Plug 'tiagofumo/vim-nerdtree-syntax-highlight' "Very high performance plugin
@@ -29,9 +33,13 @@ call plug#begin('~/.config/nvim/plugged')
   " Plug 'Quramy/tsuquyomi'
   " Plug 'Shougo/vimproc.vim' " Required for Defenition navigation for typescript
   "Deoplete Required Plugins
+  Plug 'KeitaNakamura/highlighter.nvim', { 'do': ':UpdateRemotePlugins' } " For C#
   Plug 'HerringtonDarkholme/yats.vim' "Typescript syntax highlight
   Plug 'leafgarland/typescript-vim', { 'for': 'typescript' } "Typescript syntax highlight
   Plug 'mhartington/nvim-typescript', {'do': './install.sh'} " Autocompletion of Typescript
+
+  " For C# Autocompletion
+  Plug 'OmniSharp/omnisharp-vim'
 
   if has('nvim')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -45,7 +53,7 @@ call plug#begin('~/.config/nvim/plugged')
   " Plug 'Shougo/denite.nvim'
   " Plug 'Quramy/vim-dtsm'
   " Plug 'Quramy/vim-js-pretty-template'
-  Plug 'vim-syntastic/syntastic' " Syntax error checking
+  " Plug 'vim-syntastic/syntastic' " Syntax error checking
   Plug 'majutsushi/tagbar'
   " Plug 'ternjs/tern_for_vim', { 'do': 'npm install' } " do npm install -g tern
   Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
@@ -68,7 +76,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'junegunn/vim-easy-align'
   Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-surround'
-  Plug 'christoomey/vim-tmux-navigator'
+  " Plug 'christoomey/vim-tmux-navigator'
   Plug 'tpope/vim-unimpaired'
   " Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
   " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
@@ -76,15 +84,17 @@ call plug#begin('~/.config/nvim/plugged')
   " Plug 'OmniSharp/omnisharp-vim'
   " Plug 'vim-bookmarks'
   Plug 'kshenoy/vim-signature' " Displays Marker symbol on the side
-  Plug 'gregsexton/matchtag'
+  " Plug 'gregsexton/matchtag'
   Plug 'sjl/gundo.vim' " Undu History log plugin
   Plug 'ryanoasis/vim-devicons'
   " Plug 'maxbrunsfeld/vim-yankstack'
+  Plug 'machakann/vim-highlightedyank'
   " Plug 'VundleVim/Vundle.vim'
   " Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': ':UpdateRemotePlugins' }
   " Plug 'junegunn/fzf'
   " Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
   " Plug 'neoclide/coc.nvim', {'do': 'yarn install'}
   " Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh' }
-
+  " For Denite features
+  Plug 'Shougo/denite.nvim' , { 'do': ':UpdateRemotePlugins' }
 call plug#end()

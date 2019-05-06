@@ -14,6 +14,8 @@ autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 
 autocmd FileType html setlocal shiftwidth=4 tabstop=4
 
+" autocmd FileType cs OmniSharp_highlight_types
+
 " provides a tooltip function
 " autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
 "

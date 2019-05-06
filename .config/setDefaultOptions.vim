@@ -8,7 +8,7 @@ set noshowmode                 " Hide the default mode text (e.g. -- INSERT -- b
 set incsearch
 set cursorline                 " highlight current line
 set cursorcolumn               " highlight current column
-set history=1000
+set history=10000
 set sessionoptions-=options    " Don't save vim options when mksession
 set noswapfile
 " set directory=~/.vim/.swp//  " change swap and backup directory
