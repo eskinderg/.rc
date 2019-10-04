@@ -1,7 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-#export TERM=screen-256color-bce
+# export TERM=screen-256color-bce
+export TERM=xterm-256color
 
 DEFAULT_USER=$USER
 
@@ -14,15 +15,13 @@ export ZSH=/home/esk/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
 # ZSH_THEME="robbyrussell"
-
+# ZSH_THEME="spaceship"
 # ZSH_THEME="amuse"
-
 # ZSH_THEME="agnoster"
-
+ZSH_THEME="powerlevel9k/powerlevel9k"
 # POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_MODE='awesome-fontconfig'
 # POWERLEVEL9K_MODE='nerdfont-complete'
-ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true # new line
 
 # POWERLEVEL9K_SHORTEN_DIR_LENGTH=2 # Sorten directory path

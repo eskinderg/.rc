@@ -44,6 +44,22 @@ hi! FoldColumn ctermbg=0 guibg=#282c34
 " endif
 
 
+" For the gutter color
+highlight SignColumn guibg=#282c34
+
+
+"highlights for git gutter
+" #61afef
+" #268bd2
+highlight GitGutterAdd guifg=#3c6b4a guibg=#3c6b4a
+" highlight GitGutterChange guifg=#4a76ce guibg=#4a76ce
+highlight GitGutterChange guifg=#3e5584 guibg=#3e5584
+highlight GitGutterDelete guifg=#763635 guibg=#763635
+highlight GitGutterChangeDelete guifg=#886f22 guibg=#886f22
+" highlight GitGutterChangeDelete guifg=#4b5364 guibg=#b58900
+
+
+
 " for Plug 'machakann/vim-highlightedyank' setting
 highlight HighlightedyankRegion guibg=#3e4451
 
@@ -167,7 +183,7 @@ hi! Question cterm=NONE,bold gui=NONE,bold ctermfg=6 guifg=#2aa198 ctermbg=NONE 
 hi! VertSplit cterm=NONE gui=NONE ctermfg=11 guifg=#202530 ctermbg=11 guibg=#202530
 " hi! VertSplit cterm=NONE gui=NONE ctermfg=11 guifg=#4b5364 ctermbg=11 guibg=#4b5364
 hi! VisualNOS ctermfg=NONE guifg=NONE ctermbg=0 guibg=#282c34 cterm=NONE,reverse gui=NONE,reverse
-hi! WarningMsg cterm=NONE,bold gui=NONE,bold ctermfg=9 guifg=#61afef ctermbg=NONE guibg=NONE
+hi! WarningMsg cterm=NONE,bold gui=NONE,bold ctermfg=9 guifg=#2aa198 ctermbg=NONE guibg=NONE
 hi! WildMenu ctermbg=15 guibg=#fdf6e3 ctermfg=0 guifg=#282c34 cterm=NONE,reverse gui=NONE,reverse
 hi! Folded cterm=NONE,bold gui=NONE,bold ctermfg=14 guifg=#51525f guisp=#282c34
 hi! FoldColumn cterm=NONE gui=NONE ctermfg=14 guifg=#93a1a1
@@ -217,8 +233,8 @@ hi! TreeFlags cterm=NONE gui=NONE ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NON
 "   hi! DiffText cterm=NONE,bold gui=NONE,bold ctermfg=4 guifg=#268bd2 ctermbg=0 guibg=#282c34 guisp=#268bd2
 " else
 hi! DiffAdd cterm=NONE gui=NONE ctermfg=2 guifg=#009900 ctermbg=0 guibg=#282c34 guisp=#009900
-hi! DiffChange cterm=NONE gui=NONE ctermfg=3 guifg=#b58900 ctermbg=0 guibg=#282c34 guisp=#b58900
-hi! DiffDelete cterm=NONE gui=NONE ctermfg=1 guifg=#dc322f ctermbg=0 guibg=#282c34
+hi! DiffChange cterm=NONE gui=NONE ctermfg=3  ctermbg=0 guibg=#484938 guisp=#b58900
+hi! DiffDelete cterm=NONE gui=NONE ctermfg=1  ctermbg=0 guibg=#592a32
 hi! DiffText cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=0 guibg=#484938 guisp=#268bd2
 " endif
 hi! SignColumn cterm=NONE gui=NONE ctermfg=14 guifg=#93a1a1 ctermbg=NONE guibg=NONE

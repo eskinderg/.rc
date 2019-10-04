@@ -30,8 +30,8 @@ let g:gitgutter_diff_args = '-w'
 
 let g:NERDTreeIgnore=['\~$', 'vendor', 'bin', 'obj', 'release', 'node_modules', 'bower_components', 'dist', 'coverage', 'documentation']
 
-let g:ycm_add_preview_to_completeopt=0
-let g:ycm_confirm_extra_conf=0
+" let g:ycm_add_preview_to_completeopt=0
+" let g:ycm_confirm_extra_conf=0
 
 
 "jsx settings
@@ -94,7 +94,7 @@ let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
 " let g:WebDevIconsNerdTreeGitPluginForceVAlign = 'on'
 
 " close NERDTree after a file is opened
-let g:NERDTreeQuitOnOpen=1
+let g:NERDTreeQuitOnOpen=0
 " show hidden files in NERDTree
 " let NERDTreeShowHidden=1
 

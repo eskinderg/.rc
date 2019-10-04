@@ -24,4 +24,8 @@ let g:airline#extensions#tagbar#enabled = 1 " Disable Tagbar info
 " let g:airline#extensions#tabline#left_alt_sep = '|'
 " let g:Powerline_symbols='unicode'
 
-" End Airline configs  ========================================================================
+" let g:gitgutter_sign_added = ' '
+" let g:gitgutter_sign_modified = ' '
+" let g:gitgutter_sign_removed = ' '
+" let g:gitgutter_sign_removed_first_line = ' '
+" let g:gitgutter_sign_modified_removed = ' '

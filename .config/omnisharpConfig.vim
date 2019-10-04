@@ -56,6 +56,7 @@ augroup omnisharp_commands
   " The following commands are contextual, based on the cursor position.
   " autocmd FileType cs nnoremap <buffer> gd :OmniSharpGotoDefinition<CR>
   autocmd FileType cs nnoremap <buffer> <C-]> :OmniSharpGotoDefinition<CR>
+  autocmd FileType cs nnoremap <buffer> <C-[> :OmniSharpFindImplementations<CR>
   autocmd FileType cs nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
   autocmd FileType cs nnoremap <buffer> <Leader>fs :OmniSharpFindSymbol<CR>
   autocmd FileType cs nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>
@@ -81,8 +82,7 @@ xnoremap <Leader><Space> :call OmniSharp#GetCodeActions('visual')<CR>
 
 " Rename with dialog
 nnoremap <Leader>nm :OmniSharpRename<CR>
-nnoremap <F2> :OmniSharpRename<CR>
-" Rename without dialog - with cursor on the symbol to rename: `:Rename newname`
+nnoremap <F2> :OmniSharpRename<CR> " Rename without dialog - with cursor on the symbol to rename: `:Rename newname`
 command! -nargs=1 Rename :call OmniSharp#RenameTo("<args>")
 
 nnoremap <Leader>cf :OmniSharpCodeFormat<CR>

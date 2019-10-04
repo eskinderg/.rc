@@ -43,6 +43,7 @@ set relativenumber             " show relative numbering
 set ignorecase                 " ignore case when searching
 set smartcase                  " ignore case if search pattern is all lowercase,
 set timeout timeoutlen=350 ttimeoutlen=350
+set updatetime=350             " Update time for vim-gitgutter
 set visualbell                 " don't beep
 set noerrorbells               " don't beep
 set autowrite                  " Save on buffer switch

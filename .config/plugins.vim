@@ -13,6 +13,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'ap/vim-css-color'
   Plug 'tpope/vim-endwise'
   Plug 'Valloric/MatchTagAlways'
+  " Plug 'yuttie/comfortable-motion.vim' " physics-based smooth scrolling
+  Plug 'Rigellute/shades-of-purple.vim'
   " React Plugins
   " Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
   " Plug 'mxw/vim-jsx'

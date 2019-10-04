@@ -4,7 +4,7 @@
 let mapleader = "\<Space>"
 
 " nvim-typescript goto defenition
-nmap <c-]> :TSTypeDef<cr>
+autocmd FileType typescript nnoremap <buffer> <c-]> :TSTypeDef<cr>
 " nmap <c-m> :TSImport<cr>
 " inoremap <C-k> <C-O>:
 " vmap <buffer> ;bo "zdi<B><c-r>z</B><esc>

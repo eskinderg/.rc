@@ -6,7 +6,8 @@
 
 " Fix for syntastic not recognizing *.ts files
 " autocmd BufNewFile,BufRead *.js setlocal filetype=typescript
-autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
+" autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
+autocmd BufNewFile,BufReadPost *.ts set filetype=typescript
 " autocmd BufNewFile,BufRead *.jsx setlocal filetype=typescript
 " autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript
 
