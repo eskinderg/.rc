@@ -99,4 +99,5 @@ call plug#begin('~/.config/nvim/plugged')
   " Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh' }
   " For Denite features
   Plug 'Shougo/denite.nvim' , { 'do': ':UpdateRemotePlugins' }
+  Plug 'vifm/vifm'
 call plug#end()
