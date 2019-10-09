@@ -20,3 +20,5 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+
+feh –bg-fill ~/WallpaperStudio1.jpg
