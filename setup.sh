@@ -21,3 +21,10 @@ then
   mkdir -p ~/.vim/colors
   ln -s ~/.rc/.themerc.vim ~/.vim/colors/EskTheme.vim
 fi
+
+#i3status and i3status-rust config
+if [ -d ~/.config/i3 ]                      # Check if vim is installed
+then
+  ln -s ~/.rc/i3/config ~/.config/i3/config
+  ln -s ~/.rc/i3/i3status-rust/config.toml ~/.config/i3/i3status-rust/config.toml
+fi

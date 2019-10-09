@@ -1,0 +1,287 @@
+# font
+# font pango:Ubuntu Mono Regular 20
+# font pango:Inconsolata Nerd Font Medium 20
+# settings
+set $mod Mod4
+set $ws workspace
+set $laptop LVDS1
+
+# set $launcher dmenu_run -i -nb '#393939' -nf '#48B685' -sb '#dfefe2' -sf '#393939'
+set $launcher dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#005577' -sf '#EEEEEE' -fn 'monospace-10'
+
+# colors
+set $bgcolor 2c3340
+set $fgcolor 4a76ce
+set $txtcolor ccd2cf
+set $urgent EF6155
+
+# define names for workspaces with some nice symbols
+set $w0 0✪
+set $w1 1❶ 
+set $w2 2❷ 
+set $w3 3❸ 
+set $w4 4❹ 
+set $w5 5❺ 
+set $w6 6❻ 
+set $w7 7❼ ☘
+set $w8 8❽ 
+set $w9 9❾ 
+set $w10 10❿
+set $w11 11
+set $w12 12
+
+# switch to workspace
+bindsym $alt+grave workspace $w0
+bindsym $alt+1 workspace $w1
+bindsym $alt+2 workspace $w2
+bindsym $alt+3 workspace $w3
+bindsym $alt+4 workspace $w4
+bindsym $alt+5 workspace $w5
+bindsym $alt+6 workspace $w6
+bindsym $alt+7 workspace $w7
+bindsym $alt+8 workspace $w8
+bindsym $alt+9 workspace $w9
+bindsym $alt+0 workspace $w10
+bindsym $alt+minus workspace $w11
+bindsym $alt+equal workspace $w12
+
+# switch to next/prev workspace
+bindsym $sup+Right workspace next
+bindsym $sup+Left  workspace prev
+bindsym $sup+Up    workspace back_and_forth
+workspace_auto_back_and_forth yes
+bindsym $sup+Tab [urgent=latest] focus
+
+# move focused container to workspace
+bindsym $alt+Shift+grave move container to workspace $w0
+bindsym $alt+Shift+1 move container to workspace $w1
+bindsym $alt+Shift+2 move container to workspace $w2
+bindsym $alt+Shift+3 move container to workspace $w3
+bindsym $alt+Shift+4 move container to workspace $w4
+bindsym $alt+Shift+5 move container to workspace $w5
+bindsym $alt+Shift+6 move container to workspace $w6
+bindsym $alt+Shift+7 move container to workspace $w7
+bindsym $alt+Shift+8 move container to workspace $w8
+bindsym $alt+Shift+9 move container to workspace $w9
+bindsym $alt+Shift+0 move container to workspace $w10
+bindsym $alt+Shift+minus move container to workspace $w11
+bindsym $alt+Shift+equal move container to workspace $w12
+
+# always open some programs on specified workspace
+assign [class="google-chrome"]  $w3
+assign [class="qutebrowser"] 	$w3
+assign [class="Thunderbird"] 	$w4
+assign [class="QtCreator"]   	$w6
+assign [class="Eclipse"]   		$w6
+assign [class="VirtualBox"]  	$w10
+
+
+# ciclar entre workspaces
+bindsym $mod+shift+n workspace next
+bindsym $mod+shift+p workspace prev
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+shift+h move left
+bindsym $mod+shift+j move down
+bindsym $mod+shift+k move up
+bindsym $mod+shift+l move right
+
+# split in horizontal orientation
+bindsym $mod+o split h
+
+# split in vertical orientation
+bindsym $mod+p split v
+
+# resize
+bindsym $mod+shift+d resize shrink width 10 px or 10 ppt
+bindsym $mod+shift+s resize grow height 10 px or 10 ppt
+bindsym $mod+shift+a resize grow width 10 px or 10 ppt
+bindsym $mod+shift+w resize shrink height 10 px or 10 ppt
+
+# reload the configuration file
+bindsym $mod+shift+C reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+shift+R restart
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# cerrar
+bindsym $mod+shift+q kill
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, default)
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+e layout default
+
+# toggle tiling / floating
+bindsym $mod+shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# screenshot
+bindsym Print exec scrot ~/Pictures/Screenshots/screenshot_%Y_%m_%d_%H_%M_%S.png
+
+# volume controls
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +10%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -10%
+bindsym XF86AudioMute exec pactl set-sink-volume 0 0%
+
+# terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# start program launcher
+bindsym $mod+d exec $launcher
+bindsym $mod+F2 exec $launcher
+
+# lock screen
+bindsym $mod+Control+l exec i3lock -i ~/.i3/bsod.png -c 0000AA
+
+# ventanas
+assign [window_role="^browser$"] $w3
+assign [class="^emacs"] $ws_dos
+for_window [window_role="pop-up"] floating enable
+
+# init
+exec --no-startup-id synclient TouchpadOff=1
+exec --no-startup-id nm-applet
+exec --no-startup-id compton -CGb --vsync opengl
+exec --no-startup-id python /home/mauro/bin/rw -b -s -d /home/mauro/fondos/ -ti 30m &
+
+# # class                 border  bground text    indicator child_border
+# client.focused          #4C7899 #285577 #FFFFFF #2E9EF4   #285577
+# client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
+# client.unfocused        #333333 #222222 #888888 #292D2E   #222222
+# client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
+# client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+# client.background       #FFFFFF
+
+set $bg-color 	         #383C4A
+set $bd-color		     #84927D
+set $inactive-bg-color   #383C4A
+set $inactive-bd-color	 #383C4A
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+#				            border			background		text	 	 	     indicator	child border 
+client.focused          	$bd-color		$bg-color		$text-color   		 $bd-color	$bd-color  
+client.unfocused        	$bg-color		$bg-color 		$inactive-text-color $bg-color	$bg-color
+client.focused_inactive		$bg-color		$bg-color	 	$inactive-text-color $bg-color	$bg-color
+client.urgent           	$bg-color   	$bg-color		$text-color		     $bg-color	$bg-color
+client.background  					        $bg-color
+
+
+
+
+bar {
+  # status_command i3status
+  status_command ~/.config/i3/i3status-rust/target/release/i3status-rs ~/.config/i3/i3status-rust/config.toml
+    position top
+
+    # font xft:Inconsolata Nerd Font Medium, FontAwesome 11
+    # font pango:Inconsolata Nerd Font Medium, Icons 11
+    # font pango:Inconsolata, Icons 10
+    # font pango:Source Sans Pro, Icons 11
+    font pango:DejaVu Sans Mono, Icons 10
+
+    colors {
+      separator #666666
+        background #282c34
+        statusline #dddddd
+        focused_workspace #0088CC #0088CC #ffffff
+        active_workspace #268bd2 #268bd2 #268bd2
+        inactive_workspace #333333 #333333 #888888
+        urgent_workspace #2f343a #900000 #ffffff
+    }
+
+}
+
+
+# borders
+set $borders 0
+new_window pixel $borders
+new_float pixel $borders
+
+client.focused                  #$fgcolor #$fgcolor #$bgcolor
+client.unfocused                #$bgcolor #$bgcolor #$fgcolor
+client.focused_inactive         #$bgcolor #$bgcolor #$fgcolor
+client.urgent                   #$bgcolor #$bgcolor #$urgent
+
+
+
+
+
+
+
+
+#############################
+### settings for i3-gaps: ###
+#############################
+
+# Set inner/outer gaps
+for_window [class="^.*"] border pixel 1
+gaps inner 12
+gaps outer 1
+
+# Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
+# gaps inner|outer current|all set|plus|minus <px>
+# gaps inner all set 10
+# gaps outer all plus 5
+
+# Smart gaps (gaps used if only more than one container on the workspace)
+#smart_gaps on
+
+# Smart borders (draw borders around container only if it is not the only container on this workspace)
+# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
+smart_borders on
+
+# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+#############################
+### End settings for i3-gaps: ###
+#############################
