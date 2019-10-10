@@ -1,49 +1,71 @@
 # font
 # font pango:Ubuntu Mono Regular 20
-# font pango:Inconsolata Nerd Font Medium 20
+font pango:Inconsolata Nerd Font Medium 13
 # settings
-set $mod Mod4
+set $mod Mod1
+set $sup Mod4
+
 set $ws workspace
 set $laptop LVDS1
 
 # set $launcher dmenu_run -i -nb '#393939' -nf '#48B685' -sb '#dfefe2' -sf '#393939'
-set $launcher dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#005577' -sf '#EEEEEE' -fn 'monospace-10'
+# set $launcher dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#005577' -sf '#EEEEEE' -fn 'monospace-10'
+set $launcher \
+          exec rofi -show run \
+          -bg "#222222" -fg "#2ECC71" -hlbg "#445544" -hlfg "#2EEE71" \
+          -bw 4 -eh 1 -font "Roboto Slab 18" -opacity "80" \
+          -lines 8 -line-margin 4 -width 100 -padding 160 -terminal urxvtc
+
+# bindsym $mod+shift+b \
+#   exec rofi \
+#   -show window -terminal urxvtc -hide-scrollbar true  \
+#   -line-margin 0 -lines 20 -eh 1 -width 40 -bw 3 \
+#   -kb-mode-next      Alt+Tab \
+#   -kb-mode-previous  Alt+Control+Tab \
+#   -bg        "#222222"  -fg        "#2ECC71" \
+#   -hlbg      "#2ECC71"  -hlfg      "#222222" \
+#   -bg-active "#222222"  -fg-active "#2288DD" \
+#   -font      "Roboto Slab 12"   -opactiy 80
+
+
 
 # colors
-set $bgcolor 2c3340
-set $fgcolor 4a76ce
+set $bgcolor  2c3340
+set $fgcolor  4a76ce
 set $txtcolor ccd2cf
-set $urgent EF6155
+set $urgent   EF6155
 
 # define names for workspaces with some nice symbols
-set $w0 0✪
-set $w1 1❶ 
-set $w2 2❷ 
-set $w3 3❸ 
-set $w4 4❹ 
-set $w5 5❺ 
-set $w6 6❻ 
-set $w7 7❼ ☘
-set $w8 8❽ 
-set $w9 9❾ 
+# set $w0  0✪
+set $w0  🗔
+set $w1  1❶ 
+set $w2  2❷ 
+# set $w3  3❸ 
+set $w3  ❸🌍
+set $w4  4❹ 
+set $w5  5❺ 
+set $w6  6❻ 
+set $w7  7❼ ☘
+set $w8  8❽ 
+set $w9  9❾ 
 set $w10 10❿
 set $w11 11
 set $w12 12
 
 # switch to workspace
-bindsym $alt+grave workspace $w0
-bindsym $alt+1 workspace $w1
-bindsym $alt+2 workspace $w2
-bindsym $alt+3 workspace $w3
-bindsym $alt+4 workspace $w4
-bindsym $alt+5 workspace $w5
-bindsym $alt+6 workspace $w6
-bindsym $alt+7 workspace $w7
-bindsym $alt+8 workspace $w8
-bindsym $alt+9 workspace $w9
-bindsym $alt+0 workspace $w10
-bindsym $alt+minus workspace $w11
-bindsym $alt+equal workspace $w12
+bindsym $sup+grave workspace $w0
+bindsym $sup+1     workspace $w1
+bindsym $sup+2     workspace $w2
+bindsym $sup+3     workspace $w3
+bindsym $sup+4     workspace $w4
+bindsym $sup+5     workspace $w5
+bindsym $sup+6     workspace $w6
+bindsym $sup+7     workspace $w7
+bindsym $sup+8     workspace $w8
+bindsym $sup+9     workspace $w9
+bindsym $sup+0     workspace $w10
+bindsym $sup+minus workspace $w11
+bindsym $sup+equal workspace $w12
 
 # switch to next/prev workspace
 bindsym $sup+Right workspace next
@@ -53,27 +75,28 @@ workspace_auto_back_and_forth yes
 bindsym $sup+Tab [urgent=latest] focus
 
 # move focused container to workspace
-bindsym $alt+Shift+grave move container to workspace $w0
-bindsym $alt+Shift+1 move container to workspace $w1
-bindsym $alt+Shift+2 move container to workspace $w2
-bindsym $alt+Shift+3 move container to workspace $w3
-bindsym $alt+Shift+4 move container to workspace $w4
-bindsym $alt+Shift+5 move container to workspace $w5
-bindsym $alt+Shift+6 move container to workspace $w6
-bindsym $alt+Shift+7 move container to workspace $w7
-bindsym $alt+Shift+8 move container to workspace $w8
-bindsym $alt+Shift+9 move container to workspace $w9
-bindsym $alt+Shift+0 move container to workspace $w10
-bindsym $alt+Shift+minus move container to workspace $w11
-bindsym $alt+Shift+equal move container to workspace $w12
+bindsym $mod+Shift+grave move container to workspace $w0
+bindsym $mod+Shift+1     move container to workspace $w1
+bindsym $mod+Shift+2     move container to workspace $w2
+bindsym $mod+Shift+3     move container to workspace $w3
+bindsym $mod+Shift+4     move container to workspace $w4
+bindsym $mod+Shift+5     move container to workspace $w5
+bindsym $mod+Shift+6     move container to workspace $w6
+bindsym $mod+Shift+7     move container to workspace $w7
+bindsym $mod+Shift+8     move container to workspace $w8
+bindsym $mod+Shift+9     move container to workspace $w9
+bindsym $mod+Shift+0     move container to workspace $w10
+bindsym $mod+Shift+minus move container to workspace $w11
+bindsym $mod+Shift+equal move container to workspace $w12
 
 # always open some programs on specified workspace
-assign [class="google-chrome"]  $w3
-assign [class="qutebrowser"] 	$w3
-assign [class="Thunderbird"] 	$w4
-assign [class="QtCreator"]   	$w6
-assign [class="Eclipse"]   		$w6
-assign [class="VirtualBox"]  	$w10
+assign [class="google-chrome"] $w3
+assign [class="qutebrowser"]   $w3
+assign [class="Thunderbird"]   $w4
+assign [class="vlc"]           $w5
+assign [class="QtCreator"]     $w6
+assign [class="Eclipse"]       $w6
+assign [class="VirtualBox"]    $w10
 
 
 # ciclar entre workspaces
@@ -146,7 +169,12 @@ bindsym $mod+d exec $launcher
 bindsym $mod+F2 exec $launcher
 
 # lock screen
-bindsym $mod+Control+l exec i3lock -i ~/.i3/bsod.png -c 0000AA
+# bindsym $mod+Control+l exec i3lock -i ~/.config/i3/bsod.png -c 0000AA
+bindsym $mod+Control+l exec i3lock -i ~/.config/i3/wallpaper.jpg -c 0000AA
+
+# exec --no-startup-id feh –bg-scale ~/WallpaperStudio1.jpg
+
+# feh –bg-scale ~/WallpaperStudio1.jpg
 
 # ventanas
 assign [window_role="^browser$"] $w3
@@ -167,19 +195,19 @@ exec --no-startup-id python /home/mauro/bin/rw -b -s -d /home/mauro/fondos/ -ti 
 # client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 # client.background       #FFFFFF
 
-set $bg-color 	         #383C4A
-set $bd-color		     #84927D
+set $bg-color            #4a76ce
+set $bd-color            #84927D
 set $inactive-bg-color   #383C4A
-set $inactive-bd-color	 #383C4A
+set $inactive-bd-color   #383C4A
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
-#				            border			background		text	 	 	     indicator	child border 
-client.focused          	$bd-color		$bg-color		$text-color   		 $bd-color	$bd-color  
+
+  #				            border			background		text	 	 	         indicator	child border
+client.focused          	$bd-color		$bg-color		$text-color          $bd-color	$bd-color
 client.unfocused        	$bg-color		$bg-color 		$inactive-text-color $bg-color	$bg-color
 client.focused_inactive		$bg-color		$bg-color	 	$inactive-text-color $bg-color	$bg-color
-client.urgent           	$bg-color   	$bg-color		$text-color		     $bg-color	$bg-color
-client.background  					        $bg-color
-
+client.urgent           	$bg-color   	$bg-color		$text-color          $bg-color	$bg-color
+client.background  					         $bg-color
 
 
 
@@ -195,20 +223,21 @@ bar {
     font pango:DejaVu Sans Mono, Icons 10
 
     colors {
-      separator #666666
+      separator    #666666
         background #282c34
         statusline #dddddd
-        focused_workspace #0088CC #0088CC #ffffff
-        active_workspace #268bd2 #268bd2 #268bd2
+#                          border    bg     fg
+        focused_workspace  #4a76ce #4a76ce #ffffff
+        active_workspace   #268bd2 #268bd2 #268bd2
         inactive_workspace #333333 #333333 #888888
-        urgent_workspace #2f343a #900000 #ffffff
+        urgent_workspace   #2f343a #900000 #ffffff
     }
 
 }
 
 
 # borders
-set $borders 0
+set $borders 1
 new_window pixel $borders
 new_float pixel $borders
 
@@ -229,9 +258,13 @@ client.urgent                   #$bgcolor #$bgcolor #$urgent
 #############################
 
 # Set inner/outer gaps
-for_window [class="^.*"] border pixel 1
-gaps inner 12
-gaps outer 1
+for_window [class="^.*"] border pixel 3
+
+# Gap between each windows
+gaps inner 7
+
+# Gap around the screen
+gaps outer 0
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>

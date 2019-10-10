@@ -1,8 +1,84 @@
 # theme = "solarized-dark"
-theme = "slick"
+# theme = "slick"
 # theme = "plain"
 
-icons = "awesome"
+# icons = "awesome"
+[theme]
+name = "slick"
+
+[theme.overrides]
+# idle_bg      = "#4a76ce"
+# idle_fg      = "#abcdef"
+info_bg      = "#4a76ce"
+info_fg      = "#000000"
+good_bg      = "#4a76ce"
+good_fg      = "#FFFFFF"
+# warning_bg   = " "
+# warning_fg   = " "
+# critical_bg  = " "
+# critical_fg  = " "
+# separator    = "<"
+# separator_bg = "#FFFFFF"
+# separator_fg = "#000000"
+
+[icons]
+name            = "awesome"
+
+[icons.overrides]
+bat             = " | | "
+bat_full        = " "
+bat_charging    = "🔌 "
+bat_discharging = "⚡"
+volume_muted    = " 🔇 "
+volume_full     = " 🔊 "
+volume_half     = " 🔊 "
+# volume_empty    = " 🔇 "
+cpu             = " 💻 "
+time            = " 🕒 "
+music           = " 💿 "
+music_play      = " ⏸ "
+music_pause     = " ⏸ "
+music_next      = " >> "
+music_prev      = " << "
+# cogs            = " "
+# memory_mem      = " "
+# memory_swap     = " "
+# update          = " "
+# toggle_off      = " "
+# toggle_on       = " "
+# thermometer     = " "
+# xrandr          = " "
+
+
+
+
+# [[block]]
+# block = "mail"
+# interval = 60
+# inboxes = ["/home/user/mail/local", "/home/user/mail/gmail/Inbox"]
+# threshold_warning = 1
+# threshold_warning = 10
+
+# [theme]
+# name = "slick"
+# [theme.overrides]
+# idle_bg = "#303030"
+# idle_fg = "#C6C6C6"
+# info_bg = "#A83334"
+# info_fg = "#C6C6C6"
+# good_fg = "#C6C6C6"
+# warning_fg = "#C6C6C6"
+# critical_fg = "#C6C6C6"
+# [icons]
+# name = "awesome"
+
+[[block]]
+block = "music"
+
+# player = "vlc"
+# marquee = true
+# max_width = 20
+# buttons = ["play"]
 
 # [[block]]
 # block = "disk_space"
@@ -81,6 +157,8 @@ format = "{utilization}%"
 
 [[block]]
 block = "sound"
+# driver = "auto"
+on_click = "pactl set-sink-mute @DEFAULT_SINK@ toggle"
 # alias ="🔊"
 
 [[block]]
@@ -93,7 +171,7 @@ format = "{percentage}%"
 [[block]]
 block = "time"
 interval = 60
-format = "%a %h %d %I:%M"
+format = "%a %h-%d %I:%M %p"
 
 # [[block]]
 # block = "xrandr"
