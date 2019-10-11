@@ -28,23 +28,26 @@ set $launcher \
 #   -font      "Roboto Slab 12"   -opactiy 80
 
 
-
 # colors
-set $bgcolor  2c3340
-set $fgcolor  4a76ce
-set $txtcolor ccd2cf
-set $urgent   EF6155
+set $bgcolor      2c3340
+set $fgcolor      4a76ce
+set $border_color 555555
+set $txtcolor     ccd2cf
+set $urgent       EF6155
 
 # define names for workspaces with some nice symbols
 # set $w0  0✪
-set $w0  🗔
+set $w0  0 🗔
 set $w1  1❶ 
 set $w2  2❷ 
 # set $w3  3❸ 
-set $w3  ❸🌍
-set $w4  4❹ 
-set $w5  5❺ 
-set $w6  6❻ 
+# set $w3  ❸🌍
+set $w3  3 🦊
+set $w4  4 
+# set $w5  5❺ 
+set $w5   5 ▶
+# set $w6  6❻ 
+set $w6  6 🗁
 set $w7  7❼ ☘
 set $w8  8❽ 
 set $w9  9❾ 
@@ -71,7 +74,7 @@ bindsym $sup+equal workspace $w12
 bindsym $sup+Right workspace next
 bindsym $sup+Left  workspace prev
 bindsym $sup+Up    workspace back_and_forth
-workspace_auto_back_and_forth yes
+# workspace_auto_back_and_forth yes
 bindsym $sup+Tab [urgent=latest] focus
 
 # move focused container to workspace
@@ -94,7 +97,7 @@ assign [class="google-chrome"] $w3
 assign [class="qutebrowser"]   $w3
 assign [class="Thunderbird"]   $w4
 assign [class="vlc"]           $w5
-assign [class="QtCreator"]     $w6
+assign [class="nautilus"]      $w6
 assign [class="Eclipse"]       $w6
 assign [class="VirtualBox"]    $w10
 
@@ -172,7 +175,7 @@ bindsym $mod+F2 exec $launcher
 # bindsym $mod+Control+l exec i3lock -i ~/.config/i3/bsod.png -c 0000AA
 bindsym $mod+Control+l exec i3lock -i ~/.config/i3/wallpaper.jpg -c 0000AA
 
-# exec --no-startup-id feh –bg-scale ~/WallpaperStudio1.jpg
+exec --no-startup-id feh –bg-scale ~/WallpaperStudio1.jpg
 
 # feh –bg-scale ~/WallpaperStudio1.jpg
 
@@ -210,7 +213,6 @@ client.urgent           	$bg-color   	$bg-color		$text-color          $bg-color	
 client.background  					         $bg-color
 
 
-
 bar {
   # status_command i3status
   status_command ~/.config/i3/i3status-rust/target/release/i3status-rs ~/.config/i3/i3status-rust/config.toml
@@ -220,7 +222,7 @@ bar {
     # font pango:Inconsolata Nerd Font Medium, Icons 11
     # font pango:Inconsolata, Icons 10
     # font pango:Source Sans Pro, Icons 11
-    font pango:DejaVu Sans Mono, Icons 10
+    font pango:DejaVu Sans Mono, Icons 12
 
     colors {
       separator    #666666
@@ -232,16 +234,17 @@ bar {
         inactive_workspace #333333 #333333 #888888
         urgent_workspace   #2f343a #900000 #ffffff
     }
-
 }
 
+
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # borders
 set $borders 1
 new_window pixel $borders
 new_float pixel $borders
 
-client.focused                  #$fgcolor #$fgcolor #$bgcolor
+client.focused                  #$fgcolor #$border_color #$bgcolor
 client.unfocused                #$bgcolor #$bgcolor #$fgcolor
 client.focused_inactive         #$bgcolor #$bgcolor #$fgcolor
 client.urgent                   #$bgcolor #$bgcolor #$urgent

@@ -1,14 +1,11 @@
-# theme = "solarized-dark"
-# theme = "slick"
-# theme = "plain"
-
-# icons = "awesome"
 [theme]
 name = "slick"
+# name = "solarized-dark"
+# name = "plain"
 
 [theme.overrides]
 # idle_bg      = "#4a76ce"
-# idle_fg      = "#abcdef"
+idle_fg      = "#AAAAAA"
 info_bg      = "#4a76ce"
 info_fg      = "#000000"
 good_bg      = "#4a76ce"
@@ -25,21 +22,28 @@ good_fg      = "#FFFFFF"
 name            = "awesome"
 
 [icons.overrides]
-bat             = " | | "
-bat_full        = " "
-bat_charging    = "🔌 "
-bat_discharging = "⚡"
-volume_muted    = " 🔇 "
-volume_full     = " 🔊 "
-volume_half     = " 🔊 "
-# volume_empty    = " 🔇 "
-cpu             = " 💻 "
-time            = " 🕒 "
-music           = " 💿 "
-music_play      = " ⏸ "
-music_pause     = " ⏸ "
-music_next      = " >> "
-music_prev      = " << "
+bat                = " | | "
+# bat_full           = " "
+bat_full           = " 🗸"
+bat_charging       = " 🔌 "
+bat_discharging    = "⚡"
+# volume_muted       = " 🔇 "
+volume_full        = " 🔊 "
+volume_half        = " 🔉 "
+volume_empty       = " 🔇 "
+cpu                = " 💻 "
+time               = ""
+music              = " 💿 "
+# music              = " 🎵 "
+music_play         = "⏵"
+music_pause        = "⏸"
+music_next         = "⧐ "
+music_prev         = "⧏"
+backlight_empty    = " 🌑 "
+backlight_partial1 = " 🌘 "
+backlight_partial2 = " 🌗 "
+backlight_partial3 = " 🌖 "
+backlight_full     = " 🌕 "
 # cogs            = " "
 # memory_mem      = " "
 # memory_swap     = " "
@@ -49,132 +53,157 @@ music_prev      = " << "
 # thermometer     = " "
 # xrandr          = " "
 
-
-
+# [[block]]
+# block              = "maildir"
+# interval           = 60
+# inboxes            = ["/home/esk/mail/local", "/home/esk/mail/gmail/Inbox"]
+# threshold_warning  = 1
+# threshold_critical = 10
+# display_type       = "new"
 
 # [[block]]
-# block = "mail"
-# interval = 60
-# inboxes = ["/home/user/mail/local", "/home/user/mail/gmail/Inbox"]
+# block             = "mail"
+# interval          = 60
+# inboxes           = ["/home/user/mail/local", "/home/user/mail/gmail/Inbox"]
 # threshold_warning = 1
 # threshold_warning = 10
 
 # [theme]
-# name = "slick"
+# name        = "slick"
 # [theme.overrides]
-# idle_bg = "#303030"
-# idle_fg = "#C6C6C6"
-# info_bg = "#A83334"
-# info_fg = "#C6C6C6"
-# good_fg = "#C6C6C6"
-# warning_fg = "#C6C6C6"
+# idle_bg     = "#303030"
+# idle_fg     = "#C6C6C6"
+# info_bg     = "#A83334"
+# info_fg     = "#C6C6C6"
+# good_fg     = "#C6C6C6"
+# warning_fg  = "#C6C6C6"
 # critical_fg = "#C6C6C6"
 # [icons]
 # name = "awesome"
 
 [[block]]
-block = "music"
-
-# player = "vlc"
-# marquee = true
-# max_width = 20
-# buttons = ["play"]
+block     = "music"
+# player    = "spotify"
+marquee   = true
+marquee_interval = 3
+max_width = 10
+buttons   = ["prev", "play", "next"]
+on_collapsed_click = "vlc"
 
 # [[block]]
-# block = "disk_space"
-# path = "/"
-# alias = ""
+# block = "music"
+# player = "spotify"
+# buttons = ["play", "next"]
+
+# [[block]]
+# block     = "disk_space"
+# path      = "/"
+# alias     = ""
 # info_type = "available"
-# unit = "GB"
-# interval = 20
-# warning = 20.0
-# alert = 1.0
+# unit      = "GB"
+# interval  = 20
+# warning   = 20.0
+# alert     = 1.0
 
 # [[block]]
 # block = "focused_window"
-# max_width = 21
+# max_width = 10
 
 [[block]]
-block = "disk_space"
-path = "/"
-alias = "⛁"
+block     = "disk_space"
+path      = "/"
+alias     = "⛁"
 # info_type = "free"
 info_type = "available"
 # show_percentage = true
-unit = "GB"
-interval = 20
-warning = 1.0
-alert = 1.0
+unit      = "GB"
+interval  = 20
+warning   = 1.0
+alert     = 1.0
 
 # [[block]]
-# block = "memory"
+# block        = "memory"
 # display_type = "memory"
-# format_mem = "{Mup}%"
-# format_swap = "{SUp}%"
+# format_mem   = "{Mup}%"
+# format_swap  = "{SUp}%"
 
 # [[block]]
 # block = "cpu"
 # interval = 1
 
+# [[block]]
+# block           = "net"
+# device          = "wlp3s0"
+# ssid            = false
+# signal_strength = false
+# ip              = false
+# speed_up        = false
+# graph_up        = false
+# graph_down      = false
+# graph_up        = false
+# interval        = 3
+
 [[block]]
-block = "cpu"
-info = 40
-warning = 50
+block    = "cpu"
+info     = 60
+warning  = 70
 critical = 80
 interval = 1
-format = "{utilization}%"
+format   = "{utilization}%"
 
 # [[block]]
-# block = "custom"
-# cycle = ["echo ON", "echo OFF"]
-# on_click = "<command>"
+# block    = "load"
 # interval = 1
-
-# [[block]]
-# block = "load"
-# interval = 1
-# format = "{1m}"
-
-
-
-
-
-# [[block]]
-# block = "net"
-# device = "wlp3s0"
-# ssid = true
-# signal_strength = true
-# # ip = true
-# # speed_up = false
-# # graph_up = true
-# graph_down = true
-# interval = 5
-
-# [[block]]
-# block = "speedtest"
-# bytes = true
-# interval = 1800
+# format   = "{1m}"
 
 [[block]]
-block = "sound"
+block    = "speedtest"
+bytes    = true
+interval = 1000
+
+[[block]]
+block    = "sound"
+step_width = 2
 # driver = "auto"
 on_click = "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-# alias ="🔊"
+show_volume_when_muted = true
+
+# [[block]]
+# block = "backlight"
+# device = "intel_backlight"
+# # device = "/sys/class/backlight/intel_backlight/"
 
 [[block]]
-block = "battery"
+block    = "battery"
 # show = "both"
-device = "/sys/class/power_supply/BAT1/"
+device   = "/sys/class/power_supply/BAT2/"
+# device = "/sys/class/power_supply/BAT1/"
 interval = 10
-format = "{percentage}%"
+format   = "{percentage}%"
+
+# [[block]]
+# block = "uptime"
 
 [[block]]
-block = "time"
-interval = 60
-format = "%a %h-%d %I:%M %p"
+block = "bluetooth"
+mac = "34:88:5D:46:3A:C4"
 
 # [[block]]
 # block = "xrandr"
 # icons = true
 # resolution = true
 # interval = 2
+
+[[block]]
+block    = "time"
+interval = 60
+# format = " 🗓 %a %h-%d⏲%_I:%M %p"
+format   = " 📅 %a %h-%d 🕒%_I:%M %p"
+
+[[block]]
+block    = "custom"
+command  = "~/.rc/flag-script.sh"
+# cycle    = ["echo ON", "echo OFF"]
+on_click = "<command>"
+interval = 100
+
