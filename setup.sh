@@ -35,3 +35,13 @@ then
 else
   echo "~/.config/i3 directory dose not exist"
 fi
+
+if [ -d ~/.config/vifm ]
+then
+  if [ -f ~/.config/vifm/vifmrc ]
+  then
+    mv ~/.config/vifm/vifmrc ~/.config/vifm/vifmrc.backup
+  fi
+  ln -s ~/.rc/vifmrc ~/.config/vifm/vifmrc
+fi
+

@@ -135,12 +135,12 @@ alert     = 1.0
 # block           = "net"
 # device          = "wlp3s0"
 # ssid            = false
-# signal_strength = false
-# ip              = false
-# speed_up        = false
-# graph_up        = false
-# graph_down      = false
-# graph_up        = false
+# signal_strength = true
+# ip              = true
+# speed_up        = true
+# speed_down      = true
+# graph_down      = true
+# graph_up        = true
 # interval        = 3
 
 [[block]]
@@ -163,7 +163,7 @@ interval = 1000
 
 [[block]]
 block    = "sound"
-step_width = 2
+step_width = 1
 # driver = "auto"
 on_click = "pactl set-sink-mute @DEFAULT_SINK@ toggle"
 show_volume_when_muted = true
@@ -184,9 +184,10 @@ format   = "{percentage}%"
 # [[block]]
 # block = "uptime"
 
-[[block]]
-block = "bluetooth"
-mac = "34:88:5D:46:3A:C4"
+# [[block]]
+# block = "bluetooth"
+# mac = "34:88:5D:46:3A:C4"
+# # mac = "38:DE:AD:CC:40:B5"
 
 # [[block]]
 # block = "xrandr"
@@ -204,6 +205,6 @@ format   = " 📅 %a %h-%d 🕒%_I:%M %p"
 block    = "custom"
 command  = "~/.rc/flag-script.sh"
 # cycle    = ["echo ON", "echo OFF"]
-on_click = "<command>"
+# on_click = "exec code" # run vscode up on click
 interval = 100
 

@@ -18,7 +18,7 @@ set $launcher \
 
 # bindsym $mod+shift+b \
 #   exec rofi \
-#   -show window -terminal urxvtc -hide-scrollbar true  \
+#   -show window -terminal urxhttps://www.google.com/vtc -hide-scrollbar true  \
 #   -line-margin 0 -lines 20 -eh 1 -width 40 -bw 3 \
 #   -kb-mode-next      Alt+Tab \
 #   -kb-mode-previous  Alt+Control+Tab \
@@ -37,17 +37,17 @@ set $urgent       EF6155
 
 # define names for workspaces with some nice symbols
 # set $w0  0✪
-set $w0  0 🗔
+set $w0   🗔0
 set $w1  1❶ 
 set $w2  2❷ 
 # set $w3  3❸ 
 # set $w3  ❸🌍
-set $w3  3 🦊
-set $w4  4 
+set $w3   🦊3
+set $w4   4
 # set $w5  5❺ 
-set $w5   5 ▶
+set $w5    ▶5
 # set $w6  6❻ 
-set $w6  6 🗁
+set $w6   🗁6
 set $w7  7❼ ☘
 set $w8  8❽ 
 set $w9  9❾ 
@@ -97,6 +97,7 @@ assign [class="google-chrome"] $w3
 assign [class="qutebrowser"]   $w3
 assign [class="Thunderbird"]   $w4
 assign [class="vlc"]           $w5
+assign [class="spotify"]       $w5
 assign [class="nautilus"]      $w6
 assign [class="Eclipse"]       $w6
 assign [class="VirtualBox"]    $w10
@@ -175,7 +176,7 @@ bindsym $mod+F2 exec $launcher
 # bindsym $mod+Control+l exec i3lock -i ~/.config/i3/bsod.png -c 0000AA
 bindsym $mod+Control+l exec i3lock -i ~/.config/i3/wallpaper.jpg -c 0000AA
 
-exec --no-startup-id feh –bg-scale ~/WallpaperStudio1.jpg
+# exec --no-startup-id feh –bg-scale ~/WallpaperStudio1.jpg
 
 # feh –bg-scale ~/WallpaperStudio1.jpg
 

@@ -78,7 +78,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'junegunn/vim-easy-align'
   Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-surround'
-  " Plug 'christoomey/vim-tmux-navigator'
+  Plug 'christoomey/vim-tmux-navigator'
   Plug 'tpope/vim-unimpaired'
   " Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
   " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }

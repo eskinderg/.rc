@@ -168,7 +168,7 @@ bindkey '^ ' autosuggest-accept
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export NVM_DIR="/home/esk/.nvm"
+export NVM_DIR="/home/esk/.nvm" #Nodejs version manager
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 alias pbcopy="xclip -sel clip"
@@ -179,6 +179,9 @@ alias vi="nvim"
 alias v="nvim"
 alias vim="nvim"
 alias e="exit"
+alias vf="vifm"
+alias vif="vifm"
+alias f="vifm"
 
 ###-begin-ng-completion###
 #

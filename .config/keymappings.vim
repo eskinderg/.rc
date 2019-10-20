@@ -30,15 +30,15 @@ nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 "easier window navigation
 
-" nmap <C-h> <C-w>h
-" nmap <C-j> <C-w>j
-" nmap <C-k> <C-w>k
-" nmap <C-l> <C-w>l
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
 
-map <C-h> :call WinMove('h')<cr>
-map <C-j> :call WinMove('j')<cr>
-map <C-k> :call WinMove('k')<cr>
-map <C-l> :call WinMove('l')<cr>
+" map <C-h> :call WinMove('h')<cr>
+" map <C-j> :call WinMove('j')<cr>
+" map <C-k> :call WinMove('k')<cr>
+" map <C-l> :call WinMove('l')<cr>
 
 " Window movement shortcuts
 " move to the window in the direction shown, or create a new window
