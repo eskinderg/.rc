@@ -16,7 +16,7 @@ then
   mkdir -p ~/.config/nvim/colors
   ln -s ~/.rc/.themerc.vim ~/.config/nvim/colors/EskTheme.vim
 else
-  echo "Neovim direcotory ~/.config/nvim dose not exist"
+  echo "Neovim directory ~/.config/nvim does not exist"
 fi
 
 if [ -d ~/.vim ]                      # Check if vim is installed
@@ -24,7 +24,7 @@ then
   mkdir -p ~/.vim/colors
   ln -s ~/.rc/.themerc.vim ~/.vim/colors/EskTheme.vim
 else
-  echo "~/.vim directory dose not exist"
+  echo "~/.vim directory does not exist"
 fi
 
 #i3status and i3status-rust config
@@ -33,7 +33,7 @@ then
   ln -s ~/.rc/i3/config ~/.config/i3/config
   ln -s ~/.rc/i3/i3status-rust/config.toml ~/.config/i3/i3status-rust/config.toml
 else
-  echo "~/.config/i3 directory dose not exist"
+  echo "~/.config/i3 directory does not exist"
 fi
 
 if [ -d ~/.config/vifm ]
