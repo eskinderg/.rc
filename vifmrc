@@ -230,17 +230,6 @@ filetype *.o nm %f | less
 filetype *.[1-8] man ./%c
 fileviewer *.[1-8] man ./%c | col -b
 
-" Images
-filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
-        \ {View in sxiv}
-        \ sxiv %f,
-        \ {View in gpicview}
-        \ gpicview %c,
-        \ {View in shotwell}
-        \ shotwell,
-fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
-         \ convert -identify %f -verbose /dev/null
-
 " OpenRaster
 filextype *.ora
         \ {Edit in MyPaint}
@@ -453,19 +442,28 @@ nnoremap <f6> :move<cr>
 nnoremap <f7> :mkdir<space>
 nnoremap <f8> :delete<cr>
 
-
 " Images
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
         \ {View in sxiv}
-        \ sxiv %f,
-        \ {View in gpicview}
-        \ gpicview %c,
-        \ {View in shotwell}
-        \ shotwell,
-fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
-         \ imgt %px %py %pw %ph %c
-         \ %pc
-         \ imgc %px %py %pw %ph
+        \ sxiv -ia %c %d &,
+        \ {View in imv}
+        \ imv -b 1D2330 -d %d &,
+        \ {View in feh}
+        \ feh %d &,
+        \ {View in cacaview}
+        \ cacaview %c &,
+fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.xpm
+        \ vifmimg draw %px %py %pw %ph %c
+        \ %pc
+        \ vifmimg clear
+        " Get w3m image previews inside vifm
+		" \ imgt %px %py %pw %ph %c
+        " \ %pc
+        " \ imgc %px %py %pw %ph   NOT NEEDED IN XTERM
+fileviewer *.gif
+        \ vifmimg gifpreview %px %py %pw %ph %c
+        \ %pc
+        \ vifmimg clear
 
 " ------------------------------------------------------------------------------
 
