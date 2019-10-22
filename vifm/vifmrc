@@ -465,6 +465,9 @@ fileviewer *.gif
         \ %pc
         \ vifmimg clear
 
+" For icons
+source ~/.config/vifm/scripts/vifm_icons
+
 " ------------------------------------------------------------------------------
 
 " Various customization examples

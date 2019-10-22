@@ -84,7 +84,12 @@ then
   then
     mv ~/.config/vifm/vifmrc ~/.config/vifm/vifmrc.backup
   fi
-  ln -s $PWD/vifmrc ~/.config/vifm/vifmrc
+  ln -s $PWD/vifm/vifmrc ~/.config/vifm/vifmrc
+
+  if [ ! -f ~/.config/vifm/scripts/vifm_icons ]
+  then
+    ln -s $PWD/vifm/vifm_icons ~/.config/vifm/scripts/vifm_icons
+  fi
 fi
 
 GREEN="$(tput setaf 2)"
