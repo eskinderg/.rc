@@ -41,7 +41,10 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'mhartington/nvim-typescript', {'do': './install.sh'} " Autocompletion of Typescript
 
   " For C# Autocompletion
+  Plug 'adelarsq/vim-csharp'
   Plug 'OmniSharp/omnisharp-vim'
+  " CSV Plugin
+  Plug 'chrisbra/csv.vim'
 
   if has('nvim')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }

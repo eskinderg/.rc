@@ -172,56 +172,8 @@ command! reload :write | restart
 " program.
 
 " Pdf
-filextype *.pdf zathura %c %i &, apvlv %c, xpdf %c
-fileviewer *.pdf pdftotext -nopgbrk %c -
-
-" PostScript
-filextype *.ps,*.eps,*.ps.gz
-        \ {View in zathura}
-        \ zathura %f,
-        \ {View in gv}
-        \ gv %c %i &,
-
-" Djvu
-filextype *.djvu
-        \ {View in zathura}
-        \ zathura %f,
-        \ {View in apvlv}
-        \ apvlv %f,
-
-" Audio
-filetype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus
-       \ {Play using ffplay}
-       \ ffplay -nodisp %c,
-       \ {Play using MPlayer}
-       \ mplayer %f,
-fileviewer *.mp3 mp3info
-fileviewer *.flac soxi
-
-" Video
-filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
-         \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
-         \*.as[fx]
-        \ {View using ffplay}
-        \ ffplay -fs %f,
-        \ {View using Dragon}
-        \ dragon %f:p,
-        \ {View using mplayer}
-        \ mplayer %f,
-fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
-          \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
-          \*.as[fx]
-         \ ffprobe -pretty %c 2>&1
-
-" Web
-filextype *.html,*.htm
-        \ {Open with dwb}
-        \ dwb %f %i &,
-        \ {Open with firefox}
-        \ firefox %f &,
-        \ {Open with uzbl}
-        \ uzbl-browser %f %i &,
-filetype *.html,*.htm links, lynx
+fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
+         \ imgt %px %py %pw %ph %c
 
 " Object
 filetype *.o nm %f | less
@@ -443,19 +395,19 @@ nnoremap <f7> :mkdir<space>
 nnoremap <f8> :delete<cr>
 
 " Images
-filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
-        \ {View in sxiv}
-        \ sxiv -ia %c %d &,
-        \ {View in imv}
-        \ imv -b 1D2330 -d %d &,
-        \ {View in feh}
-        \ feh %d &,
-        \ {View in cacaview}
-        \ cacaview %c &,
-fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.xpm
-        \ vifmimg draw %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
+" filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
+"         \ {View in sxiv}
+"         \ sxiv -ia %c %d &,
+"         \ {View in imv}
+"         \ imv -b 1D2330 -d %d &,
+"         \ {View in feh}
+"         \ feh %d &,
+"         \ {View in cacaview}
+"         \ cacaview %c &,
+" fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.xpm
+"         \ vifmimg draw %px %py %pw %ph %c
+"         \ %pc
+"         \ vifmimg clear
         " Get w3m image previews inside vifm
 		" \ imgt %px %py %pw %ph %c
         " \ %pc
