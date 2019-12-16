@@ -44,8 +44,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'adelarsq/vim-csharp'
   Plug 'OmniSharp/omnisharp-vim'
   " CSV Plugin
-  Plug 'chrisbra/csv.vim'
-
+  " Plug 'chrisbra/csv.vim'
+  Plug 'mechatroner/rainbow_csv'
   if has('nvim')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   else
@@ -94,6 +94,11 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'ryanoasis/vim-devicons'
   " Plug 'maxbrunsfeld/vim-yankstack'
   Plug 'machakann/vim-highlightedyank'
+
+  " For vim Note taking
+  Plug 'xolox/vim-notes'
+  Plug 'xolox/vim-misc'
+
   " Plug 'VundleVim/Vundle.vim'
   " Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': ':UpdateRemotePlugins' }
   " Plug 'junegunn/fzf'

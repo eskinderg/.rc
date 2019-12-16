@@ -9,16 +9,15 @@ DEFAULT_USER=$USER
 # Path to your oh-my-zsh installation.
 export ZSH=/home/esk/.oh-my-zsh
 
-
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="spaceship"
 # ZSH_THEME="amuse"
 # ZSH_THEME="agnoster"
-ZSH_THEME="powerlevel9k/powerlevel9k"
+# ZSH_THEME="powerlevel9k/powerlevel9k"
+# ZSH_THEME=powerlevel10k/powerlevel10k
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 # POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_MODE='awesome-fontconfig'
 # POWERLEVEL9K_MODE='nerdfont-complete'
@@ -130,7 +129,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker npm node tmux zsh-completions vi-mode )
+plugins=(git docker npm node tmux zsh-completions vi-mode zsh-syntax-highlighting)
 autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
@@ -159,19 +158,11 @@ bindkey '^ ' autosuggest-accept
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 export NVM_DIR="/home/esk/.nvm" #Nodejs version manager
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 alias pbcopy="xclip -sel clip"
+
 
 alias suroot="sudo -E -s" # remain loggedin as root user
 alias c="clear"
@@ -182,64 +173,29 @@ alias e="exit"
 alias vf="vifm"
 alias vif="vifm"
 alias f="vifm"
+alias p="~/.xprofile"
+# alias ll='ls -alF'
+# alias la='ls -A'
+# alias l='ls -CF'
+# unalias la
+# unalias ls
+alias la='colorls -lA --sd --gs --group-directories-first'
+# alias ls='colorls --group-directories-first'
 
-###-begin-ng-completion###
-#
+# if [[ -z "$TMUX" ]]
+# then
+#     ID="`tmux ls | grep -vm1 attached | cut -d: -f1`"
+#     if [[ -z "$ID" ]]
+#     then
+#         tmux new-session
+#     else
+#         tmux attach-session -t "$ID"
+#     fi
+# fi
 
-# ng command completion script
-#   This command supports 3 cases.
-#   1. (Default case) It prints a common completion initialisation for both Bash and Zsh.
-#      It is the result of either calling "ng completion" or "ng completion -a".
-#   2. Produce Bash-only completion: "ng completion -b" or "ng completion --bash".
-#   3. Produce Zsh-only completion: "ng completion -z" or "ng completion --zsh".
-#
-# Usage: . <(ng completion --bash) # place it appropriately in .bashrc or
-#        . <(ng completion --zsh) # find a spot for it in .zshrc
-#
-_ng_completion () {
-  local words cword opts
-  read -Ac words
-  read -cn cword
-  let cword-=1
-
-  case $words[cword] in
-    ng|help) opts="--version -v b build completion doc e e2e eject g generate get help l lint n new s serve server set t test v version xi18n" ;;
-   b|build) opts="--aot --app --base-href --delete-output-path --deploy-url --environment --extract-css --extract-licenses --i18n-file --i18n-format --locale --output-hashing --output-path --poll --preserve-symlinks --progress --sourcemaps --stats-json --target --vendor-chunk --verbose --watch -a -aot -bh -d -dop -e -ec -extractLicenses -i18nFile -i18nFormat -locale -oh -op -poll -pr -preserveSymlinks -sm -statsJson -t -v -vc -w" ;;
-   completion) opts="--all --bash --zsh -a -b -z" ;;
-   doc) opts="--search -s" ;;
-   e|e2e) opts="--aot --app --base-href --config --delete-output-path --deploy-url --disable-host-check --element-explorer --environment --extract-css --extract-licenses --hmr --host --i18n-file --i18n-format --live-reload --locale --open --output-hashing --output-path --poll --port --preserve-symlinks --progress --proxy-config --public-host --serve --sourcemaps --specs --ssl --ssl-cert --ssl-key --target --vendor-chunk --verbose --watch --webdriver-update -H -a -aot -bh -c -d -disableHostCheck -dop -e -ec -ee -extractLicenses -hmr -i18nFile -i18nFormat -live-reload-client -locale -lr -o -oh -op -p -pc -poll -pr -preserveSymlinks -s -sm -sp -ssl -sslCert -sslKey -t -v -vc -w -wu" ;;
-   eject) opts="--aot --app --base-href --delete-output-path --deploy-url --environment --extract-css --extract-licenses --force --i18n-file --i18n-format --locale --output-hashing --output-path --poll --preserve-symlinks --progress --sourcemaps --target --vendor-chunk --verbose --watch -a -aot -bh -d -dop -e -ec -extractLicenses -force -i18nFile -i18nFormat -locale -oh -op -poll -pr -preserveSymlinks -sm -t -v -vc -w" ;;
-   g|generate) opts="--dry-run --lint-fix --verbose -d -lf -v" ;;
-   get) opts="--global -global" ;;
-   l|lint) opts="--fix --force --format --type-check -fix -force -format -typeCheck" ;;
-   n|new) opts="--directory --dry-run --inline-style --inline-template --link-cli --minimal --prefix --routing --skip-commit --skip-git --skip-install --skip-tests --source-dir --style --verbose -d -dir -is -it -lc -minimal -p -routing -sc -sd -sg -si -st -style -v" ;;
-   s|serve|server) opts="--aot --app --base-href --delete-output-path --deploy-url --disable-host-check --environment --extract-css --extract-licenses --hmr --host --i18n-file --i18n-format --live-reload --locale --open --output-hashing --output-path --poll --port --preserve-symlinks --progress --proxy-config --public-host --sourcemaps --ssl --ssl-cert --ssl-key --target --vendor-chunk --verbose --watch -H -a -aot -bh -d -disableHostCheck -dop -e -ec -extractLicenses -hmr -i18nFile -i18nFormat -live-reload-client -locale -lr -o -oh -op -p -pc -poll -pr -preserveSymlinks -sm -ssl -sslCert -sslKey -t -v -vc -w" ;;
-   set) opts="--global -g" ;;
-   t|test) opts="--app --browsers --code-coverage --colors --config --log-level --poll --port --progress --reporters --single-run --sourcemaps --watch -a -browsers -c -cc -colors -logLevel -poll -port -progress -reporters -sm -sr -w" ;;
-   --version|-v|v|version) opts="--verbose -verbose" ;;
-   xi18n) opts="--app --i18n-format --locale --out-file --output-path --progress --verbose -a -f -l -of -op -progress -verbose" ;;
-   *) opts="" ;;
-  esac
-
-  setopt shwordsplit
-  reply=($opts)
-  unset shwordsplit
-}
-
-compctl -K _ng_completion ng
-###-end-ng-completion###
-
-if [[ -z "$TMUX" ]]
-then
-    ID="`tmux ls | grep -vm1 attached | cut -d: -f1`"
-    if [[ -z "$ID" ]]
-    then
-        tmux new-session
-    else
-        tmux attach-session -t "$ID"
-    fi
-fi
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+source $(dirname $(gem which colorls))/tab_complete.sh
+source ~/powerlevel10k/powerlevel10k.zsh-theme

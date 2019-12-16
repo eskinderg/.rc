@@ -51,13 +51,17 @@ highlight SignColumn guibg=#282c34
 "highlights for git gutter
 " #61afef
 " #268bd2
-highlight GitGutterAdd guifg=#3c6b4a guibg=#3c6b4a
+" highlight GitGutterAdd guifg=#3c6b4a guibg=#3c6b4a
 " highlight GitGutterChange guifg=#4a76ce guibg=#4a76ce
-highlight GitGutterChange guifg=#3e5584 guibg=#3e5584
-highlight GitGutterDelete guifg=#763635 guibg=#763635
-highlight GitGutterChangeDelete guifg=#886f22 guibg=#886f22
+" highlight GitGutterChange guifg=#3e5584 guibg=#3e5584
+" highlight GitGutterDelete guifg=#763635 guibg=#763635
+" highlight GitGutterChangeDelete guifg=#886f22 guibg=#886f22
 " highlight GitGutterChangeDelete guifg=#4b5364 guibg=#b58900
 
+highlight GitGutterAdd guifg=#007c00
+highlight GitGutterChange guifg=#b58900
+highlight GitGutterDelete guifg=#dc322f
+highlight GitGutterChangeDelete guifg=#268bd2
 
 
 " for Plug 'machakann/vim-highlightedyank' setting
@@ -88,7 +92,7 @@ hi! typescriptRefD cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=green cter
 hi! qfFileName cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=#4a76ce ctermbg=NONE guibg=NONE
 hi! qfLineNr cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=#61afef ctermbg=NONE guibg=NONE
 
-hi! Comment cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=#4b5364 ctermbg=NONE guibg=NONE
+hi! Comment cterm=NONE gui=NONE, gui=italic cterm=italic ctermfg=11 guifg=#4b5364 ctermbg=NONE guibg=NONE
 hi! Constant cterm=NONE gui=NONE ctermfg=6 guifg=#2aa198 ctermbg=NONE guibg=NONE
 
 "this keyword
@@ -123,25 +127,7 @@ hi! typescriptClassBlock cterm=NONE gui=NONE ctermfg=4 guifg=#0e90f3 ctermbg=NON
 hi! typescriptProperty cterm=NONE gui=NONE ctermfg=4 guifg=green ctermbg=NONE guibg=NONE
 hi! typescriptPredefinedType cterm=NONE gui=NONE ctermfg=4 guifg=green ctermbg=NONE guibg=NONE
 hi! typescriptFuncCallArg cterm=NONE gui=NONE ctermfg=4 guifg=#b58900 ctermbg=NONE guibg=NONE
-" " hi! typescriptBlock cterm=NONE gui=NONE ctermfg=4 guifg=orange ctermbg=NONE guibg=NONE
-" hi! typescriptProp cterm=NONE gui=NONE ctermfg=4 guifg=red ctermbg=NONE guibg=NONE
 
-" if get(g:, 'solarized_old_cursor_style', 0)
-"   hi! Cursor cterm=NONE gui=NONE ctermfg=8 guifg=#282c34 ctermbg=14 guibg=#93a1a1
-" else
-"   hi! Cursor cterm=NONE gui=NONE ctermfg=15 guifg=#fdf6e3 ctermbg=4 guibg=#268bd2
-" endif
-" if get(g:, "solarized_visibility", "") == "high"
-"   hi! SpecialKey cterm=NONE,reverse gui=NONE,reverse ctermfg=9 guifg=#61afef ctermbg=NONE guibg=NONE
-"   hi! NonText cterm=NONE,bold gui=NONE,bold ctermfg=9 guifg=#61afef ctermbg=NONE guibg=NONE
-"   hi! CursorLineNr cterm=NONE, gui=NONE, ctermfg=9 guifg=#61afef
-"   hi! Title cterm=NONE,bold gui=NONE,bold ctermfg=3 guifg=#b58900 ctermbg=NONE guibg=NONE
-" elseif get(g:, "solarized_visibility", "") == "low"
-"   hi! SpecialKey cterm=NONE,bold gui=NONE,bold ctermfg=0 guifg=#282c34 ctermbg=NONE guibg=NONE
-"   hi! NonText cterm=NONE,bold gui=NONE,bold ctermfg=0 guifg=#282c34 ctermbg=NONE guibg=NONE
-"   hi! CursorLineNr cterm=NONE, gui=NONE, ctermfg=11 guifg=#4b5364
-"   hi! Title cterm=NONE,bold gui=NONE,bold ctermfg=11 guifg=#4b5364 ctermbg=NONE guibg=NONE
-" else
 hi! SpecialKey cterm=NONE,bold gui=NONE,bold ctermfg=12 guifg=#839496 ctermbg=0 guibg=#282c34
 hi! NonText cterm=NONE,bold gui=NONE,bold ctermfg=12 guifg=#839496 ctermbg=NONE guibg=NONE
 hi! CursorLineNr cterm=NONE, gui=NONE, ctermfg=14 guifg=#93a1a1
@@ -152,13 +138,7 @@ hi! InsertMode ctermfg=6 guifg=#2aa198 ctermbg=15 guibg=#fdf6e3 cterm=NONE,rever
 hi! ReplaceMode ctermfg=9 guifg=#61afef ctermbg=15 guibg=#fdf6e3 cterm=NONE,reverse gui=NONE,reverse
 hi! VisualMode ctermfg=5 guifg=#d33682 ctermbg=15 guibg=#fdf6e3 cterm=NONE,reverse gui=NONE,reverse
 hi! CommandMode ctermfg=5 guifg=#d33682 ctermbg=15 guibg=#fdf6e3 cterm=NONE,reverse gui=NONE,reverse
-" if get(g:, "solarized_statusline", "") == "low"
-"   hi! StatusLine ctermfg=11 guifg=#4b5364 ctermbg=15 guibg=#fdf6e3 cterm=NONE,reverse gui=NONE,reverse
-"   hi! StatusLineNC ctermfg=11 guifg=#4b5364 ctermbg=0 guibg=#282c34 cterm=NONE,reverse gui=NONE,reverse
-"   hi! TabLine ctermfg=11 guifg=#4b5364 ctermbg=0 guibg=#282c34 cterm=NONE,reverse gui=NONE,reverse
-"   hi! TabLineFill ctermfg=11 guifg=#4b5364 ctermbg=0 guibg=#282c34 cterm=NONE,reverse gui=NONE,reverse
-"   hi! TabLineSel ctermfg=14 guifg=#93a1a1 ctermbg=15 guibg=#fdf6e3 cterm=NONE,reverse gui=NONE,reverse
-" else
+
 hi! StatusLine ctermfg=14 guifg=#93a1a1 ctermbg=0 guibg=#282c34 cterm=NONE,reverse gui=NONE,reverse
 hi! StatusLineNC ctermfg=11 guifg=#202530 ctermbg=0 guibg=#282c34 cterm=NONE,reverse gui=NONE,reverse
 hi! TabLine ctermfg=11 guifg=#4b5364 ctermbg=0 guibg=#282c34 cterm=NONE,reverse gui=NONE,reverse
@@ -302,8 +282,7 @@ hi! vimSynType cterm=NONE gui=NONE ctermfg=6 guifg=#2aa198 ctermbg=NONE guibg=NO
 hi! vimHiLink cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
 hi! vimHiGroup cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
 hi! vimGroup cterm=NONE,bold gui=NONE,bold ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
-hi! link diffAdded Statement
-hi! link diffLine Identifier
+hi! diffAdded cterm=NONE gui=NONE ctermfg=2 guifg=#009900 ctermbg=0 guibg=#282c34 guisp=#009900
 hi! gitcommitComment cterm=NONE gui=NONE,italic ctermfg=11 guifg=#4b5364 ctermbg=NONE guibg=NONE
 hi! link gitcommitUntracked gitcommitComment
 hi! link gitcommitDiscarded gitcommitComment
@@ -455,15 +434,7 @@ hi! pandocMetadataKey ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE
 hi! pandocMetadata ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
 hi! link pandocMetadataTitle pandocMetadata
 
-if get(g:, "solarized_term_italics", 0) != 0
-  hi Comment cterm=italic
-  hi gitcommitComment cterm=italic
-  hi htmlSpecialTagName cterm=italic
-  hi pandocComment cterm=italic
-  hi pandocEmphasisDefinition cterm=italic
-  hi pandocEmphasisTable cterm=italic
-  hi pandocEmphasis cterm=italic
-endif
+" To make comments Italic
 
 "Trailing whitespaces
 "Must Me insetred before the colorscheme

@@ -22,6 +22,13 @@ let g:tmuxline_preset = {
 
 let g:gitgutter_diff_args = '-w'
 
+set updatetime=200
+let g:gitgutter_sign_added='┃'
+let g:gitgutter_sign_modified='┃'
+let g:gitgutter_sign_removed='┃'
+let g:gitgutter_sign_removed_first_line='┃'
+let g:gitgutter_sign_modified_removed='┃'
+
 "leafguard/typescript-vim configurations
 " let g:typescript_indent_disable = 1
 " let g:typescript_compiler_binary = 'tsc'

@@ -32,7 +32,7 @@ fi
 
 if [ ! -f ~/.Xresources ]               # theme for xterm
 then
-  ln -s $PWD/.Xresources ~/.Xresources # theme for xterm
+  ln -s $PWD/.Xresources ~/.Xresources  # theme for xterm
   xrdb -merge ~/.Xresources             # theme for xterm
 fi
 

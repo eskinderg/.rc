@@ -131,17 +131,17 @@ alert     = 1.0
 # block = "cpu"
 # interval = 1
 
-[[block]]
-block           = "net"
-device          = "wlp3s0"
-ssid            = false
-signal_strength = true
-ip              = true
-speed_up        = true
-speed_down      = true
-graph_down      = true
-graph_up        = true
-interval        = 3
+# [[block]]
+# block           = "net"
+# device          = "wlp3s0"
+# ssid            = false
+# signal_strength = true
+# ip              = true
+# speed_up        = true
+# speed_down      = true
+# graph_down      = true
+# graph_up        = true
+# interval        = 3
 
 [[block]]
 block    = "cpu"
