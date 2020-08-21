@@ -23,11 +23,29 @@ let g:tmuxline_preset = {
 let g:gitgutter_diff_args = '-w'
 
 set updatetime=200
-let g:gitgutter_sign_added='┃'
-let g:gitgutter_sign_modified='┃'
-let g:gitgutter_sign_removed='┃'
-let g:gitgutter_sign_removed_first_line='┃'
-let g:gitgutter_sign_modified_removed='┃'
+
+" let g:gitgutter_sign_added='┃'
+" let g:gitgutter_sign_modified='┃'
+" let g:gitgutter_sign_removed='┃'
+" let g:gitgutter_sign_removed_first_line='┃'
+" let g:gitgutter_sign_modified_removed='┃'
+
+" let g:gitgutter_sign_added='┃'
+" let g:gitgutter_sign_modified='┃'
+" let g:gitgutter_sign_removed='◢'
+" let g:gitgutter_sign_removed_first_line='◥'
+" let g:gitgutter_sign_modified_removed='◢'
+
+let g:gitgutter_sign_added            = '┃+'
+let g:gitgutter_sign_modified         = '┃±'
+let g:gitgutter_sign_removed          = '┃…'
+let g:gitgutter_sign_modified_removed = '┃−'
+
+" let g:gitgutter_sign_added              = '✚'
+" let g:gitgutter_sign_modified           = '✹'
+" let g:gitgutter_sign_removed            = '┃…'
+" let g:gitgutter_sign_removed_first_line = '-'
+" let g:gitgutter_sign_modified_removed   = '┃−'
 
 "leafguard/typescript-vim configurations
 " let g:typescript_indent_disable = 1
@@ -35,7 +53,7 @@ let g:gitgutter_sign_modified_removed='┃'
 " let g:typescript_compiler_options = ''
 " autocmd FileType typescript :set makeprg=tsc
 
-let g:NERDTreeIgnore=['\~$', 'vendor', 'bin', 'obj', 'release', 'node_modules', 'bower_components', 'dist', 'coverage', 'documentation']
+let g:NERDTreeIgnore=['\~$', 'vendor', '.git', 'bin', 'obj', 'release', 'node_modules', 'bower_components', 'dist', 'coverage', 'documentation']
 
 " let g:ycm_add_preview_to_completeopt=0
 " let g:ycm_confirm_extra_conf=0

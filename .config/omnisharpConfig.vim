@@ -23,11 +23,15 @@ set completeopt=longest,menuone
 " You might also want to look at the echodoc plugin.
 set previewheight=5
 
+" To use stdio version of omnishar
+" let g:OmniSharp_server_stdio = 1
+" Make sure to run :OmniSharpInstall
+
 " Tell ALE to use OmniSharp for linting C# files, and no other linters.
 " let g:ale_linters = { 'cs': ['OmniSharp'] }
 
 " Fetch semantic type/interface/identifier names on BufEnter and highlight them
-let g:OmniSharp_highlight_types = 1
+let g:OmniSharp_highlight_types = 2
 
 let g:OmniSharp_selector_ui = 'ctrlp'  " Use ctrlp.vim
 
@@ -76,9 +80,9 @@ augroup omnisharp_commands
 augroup END
 
 " Contextual code actions (uses fzf, CtrlP or unite.vim when available)
-nnoremap <Leader><Space> :OmniSharpGetCodeActions<CR>
+" nnoremap <Leader><Space> :OmniSharpGetCodeActions<CR>
 " Run code actions with text selected in visual mode to extract method
-xnoremap <Leader><Space> :call OmniSharp#GetCodeActions('visual')<CR>
+" xnoremap <Leader><Space> :call OmniSharp#GetCodeActions('visual')<CR>
 
 " Rename with dialog
 nnoremap <Leader>nm :OmniSharpRename<CR>

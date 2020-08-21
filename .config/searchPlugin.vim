@@ -1,3 +1,4 @@
+" =============================================================================================
 nnoremap <Leader>f :call SearchInput() <cr>
 
 function! SearchInput()
@@ -21,8 +22,11 @@ function! SearchInput()
   endif
 
 endfunction
+" =============================================================================================
 
 
+
+" =============================================================================================
 vnoremap <silent><leader>g :<c-u>call GrepOperator(visualmode())<cr>
 nnoremap <silent><leader>g :set operatorfunc=GrepOperator<cr>g@
 
@@ -46,6 +50,9 @@ function! GrepOperator(type)
   let @@ = saved_unnamed_register
 
 endfunction
+
+" =============================================================================================
+
 
 
 " Easily GREP current word in current file.

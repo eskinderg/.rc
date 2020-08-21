@@ -20,6 +20,11 @@ then
   ln -s $PWD/.zshrc ~/.zshrc
 fi
 
+if [ ! -f ~/.xprofile ]
+then
+  ln -s $PWD/.xprofile ~/.xprofile
+fi
+
 if [ ! -f ~/.profile ]
 then
   ln -s $PWD/.profile ~/.profile
@@ -96,5 +101,5 @@ GREEN="$(tput setaf 2)"
 printf '%s' "$GREEN"
 printf '%s\n'
 printf '===============================%s\n'
-printf '%s\n' 'Successful'
+printf '%s\n' 'Setup Successful'
 printf '===============================%s\n'

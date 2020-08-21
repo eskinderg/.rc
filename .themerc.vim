@@ -1,6 +1,5 @@
-" Name:         EskTheme colorscheme for Vim 8
+" Name:         EskTheme colorscheme for Vim & NVIM
 " Maintainer:   Eskinder <eskinderget@gmail.com>
-" License:      OSI approved MIT license (see end of this file)
 
 set background=dark
 
@@ -18,11 +17,6 @@ hi! Normal cterm=NONE gui=NONE ctermfg=14 guifg=#c5c7c4 ctermbg=8 guibg=#282c34
 autocmd BufRead,BufNewFile *.txt setlocal spell
 " colorscheme for text files
 autocmd BufRead,BufNewFile *.txt hi! Normal cterm=NONE gui=NONE ctermfg=14 guifg=#989a97 ctermbg=8 guibg=#282c34
-
-hi! CursorLineNr ctermbg=0 guibg=#282c34
-
-" hi! Number ctermbg=0 guibg=#282c34 guifg=red
-" hi! Boolean ctermbg=0 guibg=#282c34 guifg=green
 
 "Function frech brackets
 hi! Function ctermbg=0 guibg=#282c34 guifg=#767676
@@ -43,21 +37,19 @@ hi! FoldColumn ctermbg=0 guibg=#282c34
 " hi! FoldColumn ctermbg=0 guibg=#282c34
 " endif
 
+" Colors for the cursor
+highlight Cursor guifg=#FFFFFF guibg=#528bff gui=NONE
+highlight iCursor guifg=white guibg=red
+set guicursor=n-v-c:block-Cursor
+set guicursor+=i:ver100-Cursor
+set guicursor+=n-v-c:blinkon0
+" set guicursor+=i:blinkwait100-blinkon100-blinkoff250-iCursor
+" set guicursor=i-ci:hor10-iCursor
 
 " For the gutter color
 highlight SignColumn guibg=#282c34
 
-
 "highlights for git gutter
-" #61afef
-" #268bd2
-" highlight GitGutterAdd guifg=#3c6b4a guibg=#3c6b4a
-" highlight GitGutterChange guifg=#4a76ce guibg=#4a76ce
-" highlight GitGutterChange guifg=#3e5584 guibg=#3e5584
-" highlight GitGutterDelete guifg=#763635 guibg=#763635
-" highlight GitGutterChangeDelete guifg=#886f22 guibg=#886f22
-" highlight GitGutterChangeDelete guifg=#4b5364 guibg=#b58900
-
 highlight GitGutterAdd guifg=#007c00
 highlight GitGutterChange guifg=#b58900
 highlight GitGutterDelete guifg=#dc322f
@@ -68,16 +60,19 @@ highlight GitGutterChangeDelete guifg=#268bd2
 highlight HighlightedyankRegion guibg=#3e4451
 
 " typescriptOperator delete new instanceof typeof
-hi! typescriptOperator cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=#61afef ctermbg=NONE guibg=NONE
+hi! typescriptOperator cterm=NONE gui=NONE,bold cterm=italic ctermfg=11 guifg=#61afef ctermbg=NONE guibg=NONE
 " typescriptSource import export from as
 hi! typescriptSource cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=#61afef ctermbg=NONE guibg=NONE
 " typescriptBoolean true false
 hi! typescriptBoolean cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=#61afef ctermbg=NONE guibg=NONE
 hi! typescriptType cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=#61afef ctermbg=NONE guibg=NONE
+hi! typescriptVariableDeclaration cterm=NONE gui=NONE,bold ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
 "return
 hi! typescriptStatement cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=#61afef ctermbg=NONE guibg=NONE
-hi! typescriptDecorators cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=#61afef ctermbg=NONE guibg=NONE
+hi! typescriptDecorators cterm=NONE gui=NONE,bold, cterm=italic ctermfg=11 guifg=#61afef ctermbg=NONE guibg=NONE
+hi! typescriptDecorator cterm=NONE gui=NONE,bold, cterm=italic ctermfg=11 guifg=#61afef ctermbg=NONE guibg=NONE
 " syntax keyword typescriptHtmlElemProperties contained className clientHeight clientLeft clientTop clientWidth dir href id innerHTML lang length offsetHeight offsetLeft offsetParent offsetTop offsetWidth scrollHeight scrollLeft scrollTop scrollWidth style tabIndex target title
+hi! typescriptTypeReference cterm=NONE gui=NONE,bold cterm=italic ctermfg=11 guifg=#4a76ce ctermbg=NONE guibg=NONE
 hi! typescriptHtmlElemProperties cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=orange ctermbg=NONE guibg=NONE
 hi! typescriptParameters cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=orange ctermbg=NONE guibg=NONE
 hi! typescriptHtmlElemAttrs cterm=NONE gui=NONE, cterm=italic ctermfg=11 guifg=orange ctermbg=NONE guibg=NONE
@@ -107,26 +102,33 @@ hi! Error cterm=NONE,bold gui=NONE,bold ctermfg=1 guifg=#dc322f ctermbg=NONE gui
 hi! Todo cterm=NONE,bold gui=NONE,bold cterm=italic ctermfg=5 guifg=#d33682 ctermbg=NONE guibg=NONE
 hi! link QuickFixLine Search
 hi! MatchParen cterm=NONE,bold gui=NONE,bold ctermfg=15 guifg=#fdf6e3 ctermbg=0 guibg=#282c34
-
+hi! typescriptDocNamedParamType cterm=NONE gui=NONE,bold  cterm=italic ctermfg=11 guifg=#4b5364 ctermbg=NONE guibg=NONE
 hi! typescriptExport cterm=NONE gui=NONE ctermfg=4 guifg=#c678dd ctermbg=NONE guibg=NONE
 hi! typescriptImport cterm=NONE gui=NONE ctermfg=4 guifg=#c678dd ctermbg=NONE guibg=NONE
+hi! typescriptAssign cterm=NONE gui=NONE ctermfg=4 guifg=#c678dd ctermbg=NONE guibg=NONE
+hi! typescriptBinaryOp cterm=NONE gui=NONE ctermfg=4 guifg=#c678dd ctermbg=NONE guibg=NONE
 hi! typescriptCastKeyword cterm=NONE gui=NONE ctermfg=4 guifg=#c678dd ctermbg=NONE guibg=NONE
 hi! typescriptClassKeyword cterm=NONE gui=NONE ctermfg=4 guifg=#c678dd ctermbg=NONE guibg=NONE
-hi! typescriptDecorator cterm=NONE gui=NONE ctermfg=4 guifg=#61afef ctermbg=NONE guibg=NONE
-hi! typescriptClassHeritage cterm=NONE gui=NONE ctermfg=4 guifg=#61afef ctermbg=NONE guibg=NONE
-hi! typescriptClassName cterm=NONE gui=NONE ctermfg=4 guifg=#61afef ctermbg=NONE guibg=NONE
+hi! typescriptDecorator cterm=NONE gui=NONE,bold ctermfg=4 guifg=#61afef ctermbg=NONE guibg=NONE
+hi! typescriptClassHeritage cterm=NONE gui=NONE,bold ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
+hi! typescriptClassName cterm=NONE gui=NONE,bold ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
 hi! typescriptBlock cterm=NONE gui=NONE ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
 " hi! typescriptBlock cterm=NONE gui=NONE ctermfg=4 guifg=red ctermbg=NONE guibg=NONE
-" hi! typescriptIdentifierName cterm=NONE gui=NONE ctermfg=4 guifg=red ctermbg=NONE guibg=NONE
+hi! typescriptIdentifierName cterm=NONE gui=NONE,bold ctermfg=4 guifg=#b58900 ctermbg=NONE guibg=NONE
 " hi! typescriptIdentifier cterm=NONE gui=NONE ctermfg=4 guifg=blue ctermbg=NONE guibg=NONE
 hi! typescriptArray cterm=NONE gui=NONE ctermfg=4 guifg=#61afef ctermbg=NONE guibg=NONE
-hi! typescriptMember cterm=NONE gui=NONE ctermfg=4 guifg=#8e9eab ctermbg=NONE guibg=NONE
-hi! typescriptCall cterm=NONE gui=NONE ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
+hi! typescriptMember cterm=NONE gui=NONE,bold ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
+hi! typescriptCall cterm=NONE gui=NONE,italic ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
 " hi! typescriptArrowFuncArg cterm=NONE gui=NONE ctermfg=4 guifg=red ctermbg=NONE guibg=NONE
+hi typescriptArrowFunc cterm=NONE gui=NONE,bold cterm=italic ctermfg=11 guifg=#c678dd ctermbg=NONE guibg=NONE
+hi! typescriptParens cterm=NONE gui=NONE ctermfg=13 guifg=#6c71c4 ctermbg=NONE guibg=NONE
 hi! typescriptClassBlock cterm=NONE gui=NONE ctermfg=4 guifg=#0e90f3 ctermbg=NONE guibg=NONE
-hi! typescriptProperty cterm=NONE gui=NONE ctermfg=4 guifg=green ctermbg=NONE guibg=NONE
-hi! typescriptPredefinedType cterm=NONE gui=NONE ctermfg=4 guifg=green ctermbg=NONE guibg=NONE
-hi! typescriptFuncCallArg cterm=NONE gui=NONE ctermfg=4 guifg=#b58900 ctermbg=NONE guibg=NONE
+" hi! typescriptProperty cterm=NONE gui=NONE ctermfg=4 guifg=green ctermbg=NONE guibg=NONE
+" hi! typescriptProp cterm=NONE gui=NONE,italic ctermfg=4 guifg=green ctermbg=NONE guibg=NONE
+hi! typescriptPredefinedType cterm=NONE gui=NONE,italic ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
+hi! typescriptFuncCallArg cterm=NONE gui=NONE,italic ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
+
+hi! typescriptConditionalParen cterm=NONE gui=NONE,italic ctermfg=4 guifg=#61afef ctermbg=NONE guibg=NONE
 
 hi! SpecialKey cterm=NONE,bold gui=NONE,bold ctermfg=12 guifg=#839496 ctermbg=0 guibg=#282c34
 hi! NonText cterm=NONE,bold gui=NONE,bold ctermfg=12 guifg=#839496 ctermbg=NONE guibg=NONE
@@ -151,7 +153,6 @@ hi! Directory cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NON
 hi! ErrorMsg cterm=NONE,reverse gui=NONE,reverse ctermfg=1 guifg=#dc322f ctermbg=15 guibg=#fdf6e3
 hi! IncSearch cterm=NONE,standout gui=NONE,standout ctermfg=9 guifg=#61afef ctermbg=NONE guibg=NONE
 
-hi! CursorLine cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#2c323c guisp=#eee8d5
 " Transparent background for search
 " hi! Search cterm=NONE, gui=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#2c323c cterm=underline
 hi! Search cterm=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#474531 cterm=NONE, gui=NONE
@@ -184,38 +185,35 @@ hi def link NERDTreeFlags TreeFlags
 hi def link NERDTreePart Special
 hi def link NERDTreePartFile Type
 hi def link NERDTreeDirSlash Identifier
-hi def link NERDTreeGitStatusDirDirty GitDirty
+" hi def link NERDTreeGitStatusDirDirty GitDirty
+
+hi! NERDTreeGitStatusStaged cterm=NONE gui=NONE ctermfg=2 guifg=#2aa198 ctermbg=0 guisp=#2aa198
+" hi! NERDTreeFlags cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
+hi! NERDTreeGitStatusDirDirty cterm=NONE gui=NONE,bold ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
+hi! NERDTreeFile cterm=NONE gui=NONE ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
+hi! def link NERDTreeExecFile NERDTreeFile
+hi! NERDTreeGitStatusModified cterm=NONE gui=NONE,bold ctermfg=4 guifg=#b58900 ctermbg=NONE guibg=NONE
 
 hi! NerdBlue cterm=NONE gui=NONE ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
 hi! FileName cterm=NONE gui=NONE ctermfg=4 guifg=#93a1a1 ctermbg=NONE guibg=NONE
-hi! DirectoryFileName cterm=NONE gui=NONE ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
+hi! DirectoryFileName cterm=NONE gui=NONE,bold ctermfg=4 guifg=#8787af ctermbg=NONE guibg=NONE
 hi! OpenStateIcon cterm=NONE gui=NONE ctermfg=4 guifg=#61afef ctermbg=NONE guibg=NONE
 hi! CloseStateIcon cterm=NONE gui=NONE ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
 hi! GitDirty cterm=NONE gui=NONE ctermfg=4 guifg=#7d4700 ctermbg=NONE guibg=NONE
-hi! TreeFlags cterm=NONE gui=NONE ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
+hi! TreeFlags cterm=NONE,bold gui=NONE ctermfg=4 guifg=#8787af ctermbg=NONE guibg=NONE
 
 " End Nerdtree
 
-" if get(g:, "solarized_diffmode", "") == "high"
-"   hi! DiffAdd cterm=NONE,reverse gui=NONE,reverse ctermfg=2 guifg=#009900 ctermbg=NONE guibg=#009900
-"   hi! DiffChange cterm=NONE,reverse gui=NONE,reverse ctermfg=3 guifg=#b58900 ctermbg=NONE guibg=NONE
-"   hi! DiffDelete cterm=NONE,reverse gui=NONE,reverse ctermfg=1 guifg=#dc322f ctermbg=NONE guibg=NONE
-"   hi! DiffText cterm=NONE,reverse gui=NONE,reverse ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
-" elseif get(g:, "solarized_diffmode", "") == "low"
-"   hi! DiffAdd cterm=NONE gui=NONE ctermfg=2 guifg=#009900 ctermbg=NONE guibg=NONE guisp=#009900
-"   hi! DiffChange cterm=NONE gui=NONE ctermfg=3 guifg=#b58900 ctermbg=NONE guibg=NONE guisp=#b58900
-"   hi! DiffDelete cterm=NONE,bold gui=NONE,bold ctermfg=1 guifg=#dc322f ctermbg=NONE guibg=NONE
-"   hi! DiffText cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE guisp=#268bd2
-" elseif get(g:, "solarized_diffmode", "") == "bold"
-"   hi! DiffAdd cterm=NONE,bold gui=NONE,bold ctermfg=2 guifg=#009900 ctermbg=0 guibg=#282c34 guisp=#009900
-"   hi! DiffChange cterm=NONE,bold gui=NONE,bold ctermfg=3 guifg=#b58900 ctermbg=0 guibg=#282c34 guisp=#b58900
-"   hi! DiffDelete cterm=NONE,bold gui=NONE,bold ctermfg=1 guifg=#dc322f ctermbg=0 guibg=#282c34
-"   hi! DiffText cterm=NONE,bold gui=NONE,bold ctermfg=4 guifg=#268bd2 ctermbg=0 guibg=#282c34 guisp=#268bd2
-" else
-hi! DiffAdd cterm=NONE gui=NONE ctermfg=2 guifg=#009900 ctermbg=0 guibg=#282c34 guisp=#009900
-hi! DiffChange cterm=NONE gui=NONE ctermfg=3  ctermbg=0 guibg=#484938 guisp=#b58900
-hi! DiffDelete cterm=NONE gui=NONE ctermfg=1  ctermbg=0 guibg=#592a32
-hi! DiffText cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=0 guibg=#484938 guisp=#268bd2
+" hi! DiffAdd cterm=NONE gui=NONE ctermfg=2 guifg=#009900 ctermbg=0 guibg=#282c34 guisp=#009900
+" hi! DiffChange cterm=NONE gui=NONE ctermfg=3  ctermbg=0 guibg=#484938 guisp=#b58900
+" hi! DiffDelete cterm=NONE gui=NONE ctermfg=1  ctermbg=0 guibg=#592a32
+" hi! DiffText cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=0 guibg=#484938 guisp=#268bd2
+
+hi DiffAdd ctermbg=235 ctermfg=108 cterm=reverse guibg=#262626 guifg=#87af87 gui=reverse
+hi DiffChange ctermbg=235 ctermfg=103 cterm=reverse guibg=#262626 guifg=#8787af gui=reverse
+hi DiffDelete ctermbg=235 ctermfg=131 cterm=reverse guibg=#262626 guifg=#592a32 gui=reverse
+hi DiffText ctermbg=235 ctermfg=208 cterm=reverse guibg=#262626 guifg=#b58900 gui=reverse
+
 " endif
 hi! SignColumn cterm=NONE gui=NONE ctermfg=14 guifg=#93a1a1 ctermbg=NONE guibg=NONE
 hi! Conceal cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
@@ -224,43 +222,44 @@ hi! SpellCap cterm=NONE,undercurl gui=NONE,undercurl ctermfg=NONE guifg=NONE cte
 hi! SpellRare cterm=NONE,undercurl gui=NONE,undercurl ctermfg=NONE guifg=NONE ctermbg=NONE guibg=NONE guisp=#2aa198
 hi! SpellLocal cterm=NONE,undercurl gui=NONE,undercurl ctermfg=NONE guifg=NONE ctermbg=NONE guibg=NONE guisp=#b58900
 
-"Autocomplete menu "selection----------------------------------------------------------------------------
+" Autocomplete menu "selection----------------------------------------------------------------------------
 
 " Autocomplete menu background
 hi! Pmenu ctermfg=0 guifg=#abacac ctermbg=14 guibg=#383c4a cterm=NONE gui=NONE
 
 " Autocomplete menu selected text
-hi! PmenuSel ctermfg=15 guifg=#abacac ctermbg=11 guibg=#2c313a cterm=NONE gui=NONE
+" hi! PmenuSel ctermfg=15 guifg=white ctermbg=11 guibg=#3c85e4 cterm=NONE gui=NONE
+hi! PmenuSel ctermfg=15 guifg=black ctermbg=11 guibg=#61afef cterm=NONE,bold gui=NONE
 
 " End autocomplete menu "selection------------------------------------------------------------------------
 
-hi! PmenuSbar ctermfg=15 guifg=#fdf6e3 ctermbg=14 guibg=#93a1a1 cterm=NONE,reverse gui=NONE,reverse
-hi! PmenuThumb ctermfg=14 guifg=#93a1a1 ctermbg=8 guibg=#282c34 cterm=NONE,reverse gui=NONE,reverse
+hi! PmenuSbar ctermfg=15 guifg=black ctermbg=14 guibg=darkgrey cterm=NONE gui=NONE,
+hi! PmenuThumb ctermfg=14 guifg=#3c85e4 ctermbg=8 guibg=#282c34 cterm=NONE,reverse gui=NONE,reverse
 hi! CursorColumn cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#282c34
 "Visual transparent selection
 hi! CursorLine cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#2c323c guisp=#eee8d5
 hi! ColorColumn cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#282c34
 hi! link lCursor Cursor
-if has('nvim')
-  hi! link TermCursor Cursor
-  hi! TermCursorNC ctermfg=8 guifg=#282c34 ctermbg=11 guibg=#4b5364 cterm=NONE gui=NONE
-  let g:terminal_color_0 = '#282c34'
-  let g:terminal_color_1 = '#dc322f'
-  let g:terminal_color_2 = '#c678dd'
-  let g:terminal_color_3 = '#b58900'
-  let g:terminal_color_4 = '#268bd2'
-  let g:terminal_color_5 = '#d33682'
-  let g:terminal_color_6 = '#2aa198'
-  let g:terminal_color_7 = '#eee8d5'
-  let g:terminal_color_8 = '#282c34'
-  let g:terminal_color_9 = '#61afef'
-  let g:terminal_color_10 = '#586e75'
-  let g:terminal_color_11 = '#4b5364'
-  let g:terminal_color_12 = '#839496'
-  let g:terminal_color_13 = '#6c71c4'
-  let g:terminal_color_14 = '#93a1a1'
-  let g:terminal_color_15 = '#fdf6e3'
-endif
+" if has('nvim')
+"   hi! link TermCursor Cursor
+"   hi! TermCursorNC ctermfg=8 guifg=#282c34 ctermbg=11 guibg=#4b5364 cterm=NONE gui=NONE
+"   let g:terminal_color_0 = '#282c34'
+"   let g:terminal_color_1 = '#dc322f'
+"   let g:terminal_color_2 = '#c678dd'
+"   let g:terminal_color_3 = '#b58900'
+"   let g:terminal_color_4 = '#268bd2'
+"   let g:terminal_color_5 = '#d33682'
+"   let g:terminal_color_6 = '#2aa198'
+"   let g:terminal_color_7 = '#eee8d5'
+"   let g:terminal_color_8 = '#282c34'
+"   let g:terminal_color_9 = '#61afef'
+"   let g:terminal_color_10 = '#586e75'
+"   let g:terminal_color_11 = '#4b5364'
+"   let g:terminal_color_12 = '#839496'
+"   let g:terminal_color_13 = '#6c71c4'
+"   let g:terminal_color_14 = '#93a1a1'
+"   let g:terminal_color_15 = '#fdf6e3'
+" endif
 hi! link vimVar Identifier
 hi! link vimFunc Function
 hi! link vimUserFunc Function
@@ -281,7 +280,9 @@ hi! vimSynMtchOpt cterm=NONE gui=NONE ctermfg=3 guifg=#b58900 ctermbg=NONE guibg
 hi! vimSynType cterm=NONE gui=NONE ctermfg=6 guifg=#2aa198 ctermbg=NONE guibg=NONE
 hi! vimHiLink cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
 hi! vimHiGroup cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
-hi! vimGroup cterm=NONE,bold gui=NONE,bold ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
+hi! vimHiKeyList cterm=NONE,bold gui=NONE,bold ctermfg=4 guifg=#009900 ctermbg=NONE guibg=NONE
+hi! vimHiAttrib cterm=NONE,bold gui=NONE,bold ctermfg=4 guifg=#2aa198 ctermbg=NONE guibg=NONE
+hi! vimGroup cterm=NONE,bold gui=NONE,bold ctermfg=4 guifg=#6c71c4 ctermbg=NONE guibg=NONE
 hi! diffAdded cterm=NONE gui=NONE ctermfg=2 guifg=#009900 ctermbg=0 guibg=#282c34 guisp=#009900
 hi! gitcommitComment cterm=NONE gui=NONE,italic ctermfg=11 guifg=#4b5364 ctermbg=NONE guibg=NONE
 hi! link gitcommitUntracked gitcommitComment
@@ -434,10 +435,17 @@ hi! pandocMetadataKey ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE
 hi! pandocMetadata ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
 hi! link pandocMetadataTitle pandocMetadata
 
+
+hi! vimHighlight cterm=NONE gui=NONE,bold ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
+
+" Custom TypeScripts Themes
+
+hi! typescriptConditional cterm=NONE gui=NONE,bold ctermfg=4 guifg=#61afef ctermbg=NONE guibg=NONE
+hi! typescriptBraces cterm=NONE gui=NONE ctermfg=4 guifg=#61afef ctermbg=NONE guibg=NONE
+" hi! typescriptClassBlock cterm=NONE gui=NONE ctermfg=4 guifg=#0e90f3 ctermbg=NONE guibg=NONE
 " To make comments Italic
 
 "Trailing whitespaces
-"Must Me insetred before the colorscheme
 highlight UnwanttedTab ctermbg=red guibg=darkred
 highlight TrailSpace guibg=red ctermbg=darkred
 match UnwanttedTab /\t/
@@ -445,31 +453,3 @@ match TrailSpace / \+$/
 
 autocmd ColorScheme * highlight UnwanttedTab ctermbg=darkred guibg=darkred
 autocmd ColorScheme * highlight TrailSpace ctermbg=darkred guibg=red ctermbg=darkred
-
-" hi clear CursorLine
-" hi CursorLine gui=underline cterm=underline
-
-" License "{{{
-" ---------------------------------------------------------------------
-"
-" Copyright (c) 2018 Eskinder Gezahagne
-"
-" Permission is hereby granted, free of charge, to any person obtaining a copy
-" of this software and associated documentation files (the "Software"), to deal
-" in the Software without restriction, including without limitation the rights
-" to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-" copies of the Software, and to permit persons to whom the Software is
-" furnished to do so, subject to the following conditions:
-"
-" The above copyright notice and this permission notice shall be included in
-" all copies or substantial portions of the Software.
-"
-" THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-" IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-" FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-" AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-" LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-" OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-" THE SOFTWARE.
-"
-"}}}

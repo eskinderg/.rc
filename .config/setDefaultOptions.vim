@@ -25,6 +25,7 @@ set termguicolors
 set go-=L                      " Removes left hand scroll bar
 " set linespace=15             " For GUI vim or GVim
 set showmode                   " always show what mode we're currently editing in
+set nowrapscan
 set nowrap                     " don't wrap lines
 set tabstop=3                  " a tab is two spaces
 set smarttab
@@ -39,7 +40,7 @@ set backspace=indent,eol,start " allow backspacing over everything in insert mod
 set autoindent                 " always set autoindenting on
 set copyindent                 " copy the previous indentation on autoindenting
 set number                     " always show line numbers
-set relativenumber             " show relative numbering
+" set relativenumber             " show relative numbering
 set ignorecase                 " ignore case when searching
 set smartcase                  " ignore case if search pattern is all lowercase,
 set timeout timeoutlen=350 ttimeoutlen=350
@@ -56,10 +57,10 @@ set showcmd                    " Show (partial) command in the status line
 set conceallevel=1
 set laststatus=2               " Always show the statusline
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules,bower_components,dist,release,documentation,coverage,node,package-lock.json  "For Windows systems
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules/**,bower_components/**,dist/**,release/**,documentation/**,coverage/**,node/**,package-lock.json  "For Linux systems
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules,bower_components,dist,build,release,documentation,coverage,node,package-lock.json  "For Windows systems
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules/**,bower_components/**,dist/**,build/**,release/**,documentation/**,coverage/**,node/**,package-lock.json  "For Linux systems
 set statusline+=%F
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-set diffopt=filler,iwhite        " Vim Diff settings ignore whitespace
+" set diffopt=filler,iwhite        " Vim Diff settings ignore whitespace

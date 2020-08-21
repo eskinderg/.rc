@@ -27,7 +27,7 @@ POWERLEVEL9K_PROMPT_ADD_NEWLINE=true # new line
 
 # POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="↱"
 # POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="↳ "
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator context dir background_jobs status vcs dir_writable )
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator context dir background_jobs status vcs dir_writable)
 
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=( vi_mode)
 
@@ -166,6 +166,7 @@ alias pbcopy="xclip -sel clip"
 
 alias suroot="sudo -E -s" # remain loggedin as root user
 alias c="clear"
+alias t="tmux"
 alias vi="nvim"
 alias v="nvim"
 alias vim="nvim"
@@ -174,6 +175,8 @@ alias vf="vifm"
 alias vif="vifm"
 alias f="vifm"
 alias p="~/.xprofile"
+alias tor="~/.tor"
+# alias tor="~/Downloads/tor-browser-linux64-9.0.4_en-US/tor-browser_en-US/start-tor-browser.desktop"
 # alias ll='ls -alF'
 # alias la='ls -A'
 # alias l='ls -CF'

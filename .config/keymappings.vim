@@ -56,8 +56,8 @@ nmap <C-l> <C-w>l
 " endfunction
 
 " Mapping for switching buffers
-nmap <C-i> :bp<cr>
-nmap <C-o> :bn<cr>
+nmap <C-o> :bp<cr>
+nmap <C-i> :bn<cr>
 
 " noremap <C-k> <C-e> " Turns out tmux-vim-navigator already have those mappings
 " noremap <C-j> <C-y> " Turns out tmux-vim-navigator already have those mappings
@@ -95,6 +95,7 @@ let g:EasyMotion_leader_key = '<Leader>'
 map<leader>l "zdiwaconsole.log(<c-r>z);<esc>
 map<leader><leader>l "zdiwaconsole.log('<c-r>z');<esc>
 
+map <silent><leader>gdiff :Gdiffsplit<cr>
 vmap<leader>l "zdaconsole.log(<c-r>z);<esc>
 vmap<leader><leader>l "zdaconsole.log('<c-r>z');<esc>
 
@@ -117,16 +118,18 @@ nmap ,1  :call Class()<cr>
 " nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>ev :e ~/.rc/.vimrc<CR>
 nnoremap <leader>ep :e ~/.rc/.config/plugins.vim<CR>
+map <leader><leader>s :source $MYVIMRC<cr>
+
 " :nnoremap <leader>g :execute "vimgrep " . shellescape(expand("<cWORD>")) . " **/*.ts " " ."<cr>
 " Map ctrl + n for no search highlight
 " nnoremap <silent><C-n> :set hlsearch! <cr>
-nnoremap <C-n> :noh<cr>
+nnoremap <silent><C-n> :noh<cr>
 
-" Angular Files open key mappings
-nmap <silent><Leader>t :call OpenFile(expand('%:p:h').'/'.GetFileName().'.component.html') <cr>
-nmap <silent><Leader>s :call OpenFile(expand('%:p:h').'/'.GetFileName().'.component.scss') <cr>
-nmap <silent><Leader>c :call OpenFile(expand('%:p:h').'/'.GetFileName().'.component.ts') <cr>
-nmap <silent><Leader>d :call OpenFile(expand('%:p:h').'/'.GetFileName().'.module.ts') <cr>
+" Angular Files key mappings
+autocmd BufNewFile,BufReadPost *.ts nmap <silent><Leader>t :call OpenFile(expand('%:p:h').'/'.GetFileName().'.component.html') <cr>
+autocmd BufNewFile,BufReadPost *.ts nmap <silent><Leader>s :call OpenFile(expand('%:p:h').'/'.GetFileName().'.component.scss') <cr>
+autocmd BufNewFile,BufReadPost *.ts nmap <silent><Leader>c :call OpenFile(expand('%:p:h').'/'.GetFileName().'.component.ts') <cr>
+autocmd BufNewFile,BufReadPost *.ts nmap <silent><Leader>d :call OpenFile(expand('%:p:h').'/'.GetFileName().'.module.ts') <cr>
 
 " Show highlishting groups for the current word
 nmap <leader>u :call<SID>SynStack()<CR>
@@ -138,4 +141,4 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
-map <leader><leader>s :source $MYVIMRC<cr>
+nmap <cr> gx

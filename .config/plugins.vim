@@ -41,7 +41,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'mhartington/nvim-typescript', {'do': './install.sh'} " Autocompletion of Typescript
 
   " For C# Autocompletion
-  Plug 'adelarsq/vim-csharp'
+  Plug 'OrangeT/vim-csharp'
   Plug 'OmniSharp/omnisharp-vim'
   " CSV Plugin
   " Plug 'chrisbra/csv.vim'
@@ -90,13 +90,13 @@ call plug#begin('~/.config/nvim/plugged')
   " Plug 'vim-bookmarks'
   Plug 'kshenoy/vim-signature' " Displays Marker symbol on the side
   " Plug 'gregsexton/matchtag'
-  Plug 'sjl/gundo.vim' " Undu History log plugin
+  Plug 'sjl/gundo.vim' " Un do History log plugin
   Plug 'ryanoasis/vim-devicons'
   " Plug 'maxbrunsfeld/vim-yankstack'
   Plug 'machakann/vim-highlightedyank'
 
   " For vim Note taking
-  Plug 'xolox/vim-notes'
+  " Plug 'xolox/vim-notes'
   Plug 'xolox/vim-misc'
 
   " Plug 'VundleVim/Vundle.vim'
@@ -108,4 +108,6 @@ call plug#begin('~/.config/nvim/plugged')
   " For Denite features
   Plug 'Shougo/denite.nvim' , { 'do': ':UpdateRemotePlugins' }
   Plug 'vifm/vifm'
+  Plug 'junegunn/goyo.vim'
+  Plug 'pseewald/vim-anyfold'
 call plug#end()
