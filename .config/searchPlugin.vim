@@ -58,8 +58,6 @@ endfunction
 " Easily GREP current word in current file.
 " command GREP :execute 'vimgrep '.expand('<cword>').' '.expand('%') | :copen | :cc
 
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
 " NERDTree ignore directory
 
 " These are the tweaks I apply to YCM's config, you don't need them but they might help.

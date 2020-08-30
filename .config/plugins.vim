@@ -6,6 +6,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'Yggdroot/indentLine'
   Plug 'itchyny/lightline.vim'
   Plug 'scrooloose/nerdtree'
+  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'AndrewRadev/splitjoin.vim'
   Plug 'tpope/vim-repeat'
   Plug 'drewtempelmeyer/palenight.vim' "Theme Plugin
@@ -110,4 +111,11 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'vifm/vifm'
   Plug 'junegunn/goyo.vim'
   Plug 'pseewald/vim-anyfold'
+  " Plug 'mhinz/vim-signify' " Helps toggle gitdiff and highlights the changes
 call plug#end()
+
+" Automatically install missing plugins on startup
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif

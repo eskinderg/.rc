@@ -69,11 +69,6 @@ nmap 25 :vertical resize 40<cr>
 nmap 50 <c-w>=
 nmap 75 :vertical resize 120<cr>
 
-" NERDTree configurations
-nmap <C-b> :NERDTreeToggle<cr>
-nmap <leader>e :NERDTreeToggle<cr>
-nmap <C-f> :NERDTreeFind<cr>
-
 "Load the current buffer in Chrome
 nmap ,c :!open -a Google\ Chrome<cr>
 
@@ -142,3 +137,5 @@ function! <SID>SynStack()
 endfunc
 
 nmap <cr> gx
+
+" nmap <silent> <space>e :CocCommand explorer<CR>

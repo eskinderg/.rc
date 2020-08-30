@@ -22,5 +22,3 @@ autocmd FileType html setlocal shiftwidth=4 tabstop=4
 "
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
-
-" autocmd VimEnter * NERDTree " Start NERDTree on startup

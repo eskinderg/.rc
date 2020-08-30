@@ -209,10 +209,10 @@ hi! TreeFlags cterm=NONE,bold gui=NONE ctermfg=4 guifg=#8787af ctermbg=NONE guib
 " hi! DiffDelete cterm=NONE gui=NONE ctermfg=1  ctermbg=0 guibg=#592a32
 " hi! DiffText cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=0 guibg=#484938 guisp=#268bd2
 
-hi DiffAdd ctermbg=235 ctermfg=108 cterm=reverse guibg=#262626 guifg=#87af87 gui=reverse
-hi DiffChange ctermbg=235 ctermfg=103 cterm=reverse guibg=#262626 guifg=#8787af gui=reverse
-hi DiffDelete ctermbg=235 ctermfg=131 cterm=reverse guibg=#262626 guifg=#592a32 gui=reverse
-hi DiffText ctermbg=235 ctermfg=208 cterm=reverse guibg=#262626 guifg=#b58900 gui=reverse
+hi DiffAdd ctermbg=235 ctermfg=108 guibg=#87af87 guifg=#262626
+hi DiffChange ctermbg=235 ctermfg=103 guibg=#8787af guifg=#262626
+hi DiffDelete ctermbg=235 ctermfg=131 guibg=#592a32 guifg=#262626
+hi DiffText ctermbg=235 ctermfg=208 guibg=#b58900 guifg=#262626
 
 " endif
 hi! SignColumn cterm=NONE gui=NONE ctermfg=14 guifg=#93a1a1 ctermbg=NONE guibg=NONE
