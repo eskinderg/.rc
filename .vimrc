@@ -17,7 +17,7 @@ if (empty($TMUX))
 endif
 
 "For VIM
-if empty(glob('~/.vim/autoload//plug.vim')) " Setting up plug for the first time
+if empty(glob('~/.vim/autoload/plug.vim')) " Setting up plug for the first time
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall
 endif
