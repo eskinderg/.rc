@@ -97,6 +97,9 @@ then
   fi
 fi
 
+# Restore Gnome-Terminal Config
+dconf load /org/gnome/terminal/ < gnome_terminal_settings_backup.txt
+
 GREEN="$(tput setaf 2)"
 printf '%s' "$GREEN"
 printf '%s\n'
