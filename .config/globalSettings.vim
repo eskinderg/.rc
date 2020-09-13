@@ -1,4 +1,3 @@
-" let g:LanguageClient_loggingLevel = 'DEBUG'
 " let g:ycm_filepath_blacklist = {
 "       \ 'html': 1,
 "       \ 'js': 1,
@@ -11,7 +10,6 @@
 " let g:tern#arguments = ["--persistent"]
 " let g:nvim_typescript#type_info_on_hold = 1
 
-
 let g:tmuxline_preset = {
       \'a'    : '#S',
       \'win'  : ['#I', '#W'],
@@ -20,32 +18,7 @@ let g:tmuxline_preset = {
       \'y'    : '%d',
       \'z'    : '%r'}
 
-let g:gitgutter_diff_args = '-w'
-
 set updatetime=200
-
-" let g:gitgutter_sign_added='┃'
-" let g:gitgutter_sign_modified='┃'
-" let g:gitgutter_sign_removed='┃'
-" let g:gitgutter_sign_removed_first_line='┃'
-" let g:gitgutter_sign_modified_removed='┃'
-
-" let g:gitgutter_sign_added='┃'
-" let g:gitgutter_sign_modified='┃'
-" let g:gitgutter_sign_removed='◢'
-" let g:gitgutter_sign_removed_first_line='◥'
-" let g:gitgutter_sign_modified_removed='◢'
-
-let g:gitgutter_sign_added            = '┃+'
-let g:gitgutter_sign_modified         = '┃±'
-let g:gitgutter_sign_removed          = '┃…'
-let g:gitgutter_sign_modified_removed = '┃−'
-
-" let g:gitgutter_sign_added              = '✚'
-" let g:gitgutter_sign_modified           = '✹'
-" let g:gitgutter_sign_removed            = '┃…'
-" let g:gitgutter_sign_removed_first_line = '-'
-" let g:gitgutter_sign_modified_removed   = '┃−'
 
 "leafguard/typescript-vim configurations
 " let g:typescript_indent_disable = 1
@@ -53,11 +26,8 @@ let g:gitgutter_sign_modified_removed = '┃−'
 " let g:typescript_compiler_options = ''
 " autocmd FileType typescript :set makeprg=tsc
 
-let g:NERDTreeIgnore=['\~$', 'vendor', '.git', 'bin', 'obj', 'release', 'node_modules', 'bower_components', 'dist', 'coverage', 'documentation']
-
 " let g:ycm_add_preview_to_completeopt=0
 " let g:ycm_confirm_extra_conf=0
-
 
 "jsx settings
 " let g:jsx_ext_required = 1
@@ -79,28 +49,6 @@ let g:javascript_plugin_flow = 1
 " let g:javascript_conceal_arrow_function       = "⇒"
 " let g:javascript_conceal_noarg_arrow_function = "🞅"
 " let g:javascript_conceal_underscore_arrow_function = "🞅"
-
-
-" Powerline (Fancy thingy at bottom stuff)
-"let g:Powerline_symbols = 'fancy'
-" Omni Completeion Settings
-" let g:OmniSharp_server_type = 'roslyn'
-" let g:OmniSharp_prefer_global_sln = 1
-" let g:OmniSharp_timeout = 10
-" let g:OmniSharp_server_path ='/home/esk/omnisharp-server/OmniSharp/bin/Debug/OmniSharp.exe'
-" let g:OmniSharp_server_path = '/home/esk/omnisharp-server/OmniSharp/bin/Debug/OmniSharp.exe'
-" let g:OmniSharp_server_path = '/home/esk/.vim/bundle/omnisharp-linux-x64/run'
-" let g:OmniSharp_server_path = '/home/esk/.vscode/extensions/ms-vscode.csharp-1.15.2/.omnisharp/1.30.1/omnisharp/OmniSharp.exe'
-" let g:OmniSharp_server_use_mono = 1
-" let g:omnisharp_proc_debug = 1
-" let g:OmniSharp_start_server = 0
-" let g:Omnisharp_start_server = 1
-" let g:Omnisharp_stop_server = 2  " Automatically stop the server
-
-" Enable autocompletion
-" set omnifunc=syntaxcomplete#Complete
-" Select keyword as you type
-" set completeopt=longest,menuone
 
 " If you prefer the Omni-Completion tip window to close when a selection is
 " made, these lines close it on movement in insert mode or when leaving

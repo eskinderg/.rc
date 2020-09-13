@@ -11,10 +11,12 @@ let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
 " close NERDTree after a file is opened
 let g:NERDTreeQuitOnOpen=0
 " show hidden files in NERDTree
-" let NERDTreeShowHidden=1
+let NERDTreeShowHidden=1
 
 " Change default preview key of "go" to "p"
 " let g:NERDTreeMapPreview = "p"
+
+let g:NERDTreeIgnore=['\~$', 'vendor', '.git', 'bin', 'obj', 'release', 'node_modules', 'bower_components', 'dist', 'coverage', 'documentation']
 
 " NERDTree configurations
 nmap <C-b> :NERDTreeToggle<cr>

@@ -118,3 +118,5 @@ fi
 #TERM=screen-256color
 #export TERM=xterm-256color
 export TERM=xterm-256color-italic
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

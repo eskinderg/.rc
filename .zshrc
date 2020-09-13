@@ -32,9 +32,12 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator context dir background
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=( vi_mode)
 
 POWERLEVEL9K_STATUS_OK=false
-# POWERLEVEL9K_HOME_ICON=''
-# POWERLEVEL9K_HOME_SUB_ICON=''
-# POWERLEVEL9K_FOLDER_ICON=''
+# POWERLEVEL9K_HOME_ICON=' '
+POWERLEVEL9K_HOME_SUB_ICON=' '
+# POWERLEVEL9K_FOLDER_ICON=' '
+POWERLEVEL9K_ETC_ICON=' '
+POWERLEVEL9K_LINUX_ICON='\uf300'
+
 ## POWERLEVEL9K SETTINGS ##
 POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_STATUS_OK_IN_NON_VERBOSE=true
@@ -171,6 +174,7 @@ alias vi="nvim"
 alias v="nvim"
 alias vim="nvim"
 alias e="exit"
+alias mv="mv -i" #Interactive move
 alias vf="vifm"
 alias vif="vifm"
 alias f="vifm"
@@ -202,3 +206,5 @@ alias la='colorls -lA --sd --gs --group-directories-first'
 export PATH="$PATH:$HOME/.rvm/bin"
 source $(dirname $(gem which colorls))/tab_complete.sh
 source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

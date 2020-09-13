@@ -97,5 +97,26 @@ nnoremap <Leader>cf :OmniSharpCodeFormat<CR>
 nnoremap <Leader>ss :OmniSharpStartServer<CR>
 nnoremap <Leader>sp :OmniSharpStopServer<CR>
 
+" Powerline (Fancy thingy at bottom stuff)
+"let g:Powerline_symbols = 'fancy'
+" Omni Completeion Settings
+" let g:OmniSharp_server_type = 'roslyn'
+" let g:OmniSharp_prefer_global_sln = 1
+" let g:OmniSharp_timeout = 10
+" let g:OmniSharp_server_path ='/home/esk/omnisharp-server/OmniSharp/bin/Debug/OmniSharp.exe'
+" let g:OmniSharp_server_path = '/home/esk/omnisharp-server/OmniSharp/bin/Debug/OmniSharp.exe'
+" let g:OmniSharp_server_path = '/home/esk/.vim/bundle/omnisharp-linux-x64/run'
+" let g:OmniSharp_server_path = '/home/esk/.vscode/extensions/ms-vscode.csharp-1.15.2/.omnisharp/1.30.1/omnisharp/OmniSharp.exe'
+" let g:OmniSharp_server_use_mono = 1
+" let g:omnisharp_proc_debug = 1
+" let g:OmniSharp_start_server = 0
+" let g:Omnisharp_start_server = 1
+" let g:Omnisharp_stop_server = 2  " Automatically stop the server
+
+" Enable autocompletion
+" set omnifunc=syntaxcomplete#Complete
+" Select keyword as you type
+" set completeopt=longest,menuone
+
 " Enable snippet completion
 " let g:OmniSharp_want_snippet=1

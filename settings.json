@@ -1,0 +1,95 @@
+{
+    "vim.easymotion": true,
+    "vim.sneak": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "d"
+            ],
+            "after": [
+                "d",
+                "d"
+            ]
+        },
+        {
+            "before": [
+                "<C-n>"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": ":nohl"
+                }
+            ]
+        }
+    ],
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false
+    },
+    "editor.fontSize": 13,
+    "editor.cursorStyle": "block",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/bin": true,
+        "**/obj": true,
+        "**/bower_components": true,
+        "**/node_modules": true,
+        "**/.DS_Store": true
+    },
+    "editor.fontFamily": "'Khmer OS System Regular', 'monospace', monospace, 'Droid Sans Fallback'",
+    "gitlens.advanced.messages": {
+        "suppressResultsExplorerNotice": true,
+        "suppressShowKeyBindingsNotice": true
+    },
+    "gitlens.gitExplorer.files.layout": "auto",
+    "window.menuBarVisibility": "default",
+    "gitlens.historyExplorer.enabled": true,
+    "omnisharp.useGlobalMono": "always",
+    "window.zoomLevel": 0,
+    "files.watcherExclude": {
+        "**/bin/**": true,
+        "**/dist/**": true,
+        "**/obj/**": true,
+        "**/release/**": true
+    },
+    "gitlens.views.repositories.files.layout": "auto",
+    "gitlens.views.fileHistory.enabled": true,
+    "gitlens.views.lineHistory.enabled": true,
+    "window.titleBarStyle": "native",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.colorTheme": "Atom One Dark",
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#282c34"
+    },
+    "vim.neovimPath": "/usr/bin/nvim",
+    "workbench.iconTheme": "eq-material-theme-icons-light",
+    "workbench.statusBar.visible": true,
+    "vim.highlightedyank.enable": true,
+    "workbench.sideBar.location": "left",
+    "breadcrumbs.enabled": true,
+    "editor.renderControlCharacters": true,
+    "workbench.startupEditor": "welcomePage",
+    "diffEditor.ignoreTrimWhitespace": false
+}
