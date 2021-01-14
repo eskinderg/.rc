@@ -179,7 +179,7 @@ alias vf="vifm"
 alias vif="vifm"
 alias f="vifm"
 alias p="~/.xprofile"
-alias tor="~/.tor"
+# alias tor="~/.tor"
 # alias tor="~/Downloads/tor-browser-linux64-9.0.4_en-US/tor-browser_en-US/start-tor-browser.desktop"
 # alias ll='ls -alF'
 # alias la='ls -A'
@@ -208,3 +208,4 @@ source $(dirname $(gem which colorls))/tab_complete.sh
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /home/esk/.gulp.plugin.zsh/gulp.plugin.zsh

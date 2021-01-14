@@ -136,6 +136,8 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
+nmap <silent>gl :0Glog<CR>
+
 " nmap <cr> gx
 
 " nmap <silent> <space>e :CocCommand explorer<CR>
