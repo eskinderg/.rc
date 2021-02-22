@@ -14,6 +14,7 @@ set noswapfile
 " set directory=~/.vim/.swp//  " change swap and backup directory
 set undodir=~/.vim/.undo//
 set backupdir=~/.vim/.backup//
+set viminfo='1000,:300000,/300000,<500    " Save Command-line and Search pattern history, number of lines saved for each registers
 " set wildmenu
 " set path+=**
 syntax on
@@ -54,6 +55,8 @@ set backup
 set wildignore+=*/vendor/**
 set wildignore+=*/public/forum/**
 set showcmd                    " Show (partial) command in the status line
+" set inccommand=nosplit       " Show live preview of substitute command. Works only on neovim compiled with python
+set inccommand=split           " Show live preview of substitute command. Works only on neovim compiled with python
 set conceallevel=1
 set laststatus=2               " Always show the statusline
 set runtimepath^=~/.vim/bundle/ctrlp.vim
