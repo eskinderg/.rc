@@ -55,8 +55,12 @@ set backup
 set wildignore+=*/vendor/**
 set wildignore+=*/public/forum/**
 set showcmd                    " Show (partial) command in the status line
-" set inccommand=nosplit       " Show live preview of substitute command. Works only on neovim compiled with python
-set inccommand=split           " Show live preview of substitute command. Works only on neovim compiled with python
+
+if has('nvim')
+  " set inccommand=nosplit     " Show live preview of substitute command. Works only on neovim compiled with python
+  set inccommand=split         " Show live preview of substitute command. Works only on neovim compiled with python
+endif
+
 set conceallevel=1
 set laststatus=2               " Always show the statusline
 set runtimepath^=~/.vim/bundle/ctrlp.vim

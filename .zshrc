@@ -179,6 +179,14 @@ alias vf="vifm"
 alias vif="vifm"
 alias f="vifm"
 alias p="~/.xprofile"
+
+# Define words using googler. googler must be installed for this to work
+alias define='googler --noprompt -n 3 define'
+
+# fetches 7 results from the Google US server, with preference towards results in US.
+alias g='googler --noprompt  -n 8 -c us -l us'
+alias googler='googler --noprompt  -n 8 -c us -l us'
+
 # alias tor="~/.tor"
 # alias tor="~/Downloads/tor-browser-linux64-9.0.4_en-US/tor-browser_en-US/start-tor-browser.desktop"
 # alias ll='ls -alF'
