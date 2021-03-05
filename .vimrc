@@ -18,18 +18,18 @@ if (empty($TMUX))
 endif
 
 "Plug For VIM
-if empty(glob('~/.vim/autoload/plug.vim')) " Setting up plug for the first time
+if empty(glob('~/.vim/autoload/plug.vim')) " Setting up plug for first time use
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall
 endif
 
 "Plug For Neovim
-if empty(glob('~/.config/nvim/autoload/plug.vim')) " Setting up plug for the first time
+if empty(glob('~/.config/nvim/autoload/plug.vim')) " Setting up plug for first time use
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall
 endif
 
-" Source all fire iteratively
+" Source all file iteratively
 " for f in split(glob('~/.rc/.config/*.vim'), '\n') " Include files from config directory
 "     exe 'source' f
 " endfor

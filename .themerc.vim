@@ -155,7 +155,7 @@ hi! IncSearch cterm=NONE,standout gui=NONE,standout ctermfg=9 guifg=#61afef cter
 
 " Transparent background for search
 " hi! Search cterm=NONE, gui=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#2c323c cterm=underline
-hi! Search cterm=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#474531 cterm=NONE, gui=NONE
+hi! Search guifg=#000000 ctermbg=NONE guibg=#9CBAF9
 
 hi! MoreMsg cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
 hi! ModeMsg cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE

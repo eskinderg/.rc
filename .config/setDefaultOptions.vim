@@ -1,18 +1,19 @@
 set encoding=utf-8
-set nocompatible               " Disable vi-compatibility
+set nocompatible                          " Disable vi-compatibility
 set t_Co=256
 set t_ut=
 set background=dark
 set showmatch
-set noshowmode                 " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set incsearch
-set cursorline                 " highlight current line
-set cursorcolumn               " highlight current column
-set history=10000
-set sessionoptions-=options    " Don't save vim options when mksession
+set cursorline                            " highlight current line
+set cursorcolumn                          " highlight current column
+set history=10000                         " Incrementa Search. highlight search results as you type
+set sessionoptions-=options               " Don't save vim options when mksession
 set noswapfile
-" set directory=~/.vim/.swp//  " change swap and backup directory
-set undodir=~/.vim/.undo//
+" set undofile                            " Set a directory to keep track of undo of each file
+" set undodir=~/.vim/.undo//              " Set a directory to keep the undo file
+" set directory=~/.vim/.swp//             " change swap and backup directory
+
 set backupdir=~/.vim/.backup//
 set viminfo='1000,:300000,/300000,<500    " Save Command-line and Search pattern history, number of lines saved for each registers
 " set wildmenu
@@ -25,6 +26,7 @@ set hidden
 set termguicolors
 set go-=L                      " Removes left hand scroll bar
 " set linespace=15             " For GUI vim or GVim
+" set noshowmode               " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set showmode                   " always show what mode we're currently editing in
 set nowrapscan
 set nowrap                     " don't wrap lines
@@ -41,8 +43,9 @@ set backspace=indent,eol,start " allow backspacing over everything in insert mod
 set autoindent                 " always set autoindenting on
 set copyindent                 " copy the previous indentation on autoindenting
 set number                     " always show line numbers
-" set relativenumber             " show relative numbering
-set ignorecase                 " ignore case when searching
+" set relativenumber           " show relative numbering
+" set ignorecase               " ignore case when searching
+set confirm
 set smartcase                  " ignore case if search pattern is all lowercase,
 set timeout timeoutlen=350 ttimeoutlen=350
 set updatetime=350             " Update time for vim-gitgutter
