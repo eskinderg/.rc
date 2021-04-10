@@ -166,7 +166,6 @@ export NVM_DIR="/home/esk/.nvm" #Nodejs version manager
 
 alias pbcopy="xclip -sel clip"
 
-
 alias suroot="sudo -E -s" # remain loggedin as root user
 alias c="clear"
 alias t="tmux"
@@ -179,6 +178,7 @@ alias vf="vifm"
 alias vif="vifm"
 alias f="vifm"
 alias p="~/.xprofile"
+alias python='python3.6' 
 
 # Define words using googler. googler must be installed for this to work
 alias define='googler --noprompt -n 3 define'
@@ -217,3 +217,4 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /home/esk/.gulp.plugin.zsh/gulp.plugin.zsh
+export PATH=$HOME/.config/nvcode/utils/bin:$PATH

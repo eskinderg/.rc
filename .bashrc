@@ -120,3 +120,4 @@ fi
 export TERM=xterm-256color-italic
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export PATH=$HOME/.config/nvcode/utils/bin:$PATH

@@ -155,7 +155,7 @@ hi! IncSearch cterm=NONE,standout gui=NONE,standout ctermfg=9 guifg=#61afef cter
 
 " Transparent background for search
 " hi! Search cterm=NONE, gui=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#2c323c cterm=underline
-hi! Search guifg=#000000 ctermbg=NONE guibg=#9CBAF9
+hi! Search guifg=#000000 ctermbg=NONE guibg=#6c71c4
 
 hi! MoreMsg cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
 hi! ModeMsg cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
@@ -236,10 +236,12 @@ hi! PmenuSel ctermfg=15 guifg=black ctermbg=11 guibg=#61afef cterm=NONE,bold gui
 hi! PmenuSbar ctermfg=15 guifg=black ctermbg=14 guibg=darkgrey cterm=NONE gui=NONE,
 hi! PmenuThumb ctermfg=14 guifg=#3c85e4 ctermbg=8 guibg=#282c34 cterm=NONE,reverse gui=NONE,reverse
 hi! CursorColumn cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#282c34
-"Visual transparent selection
+
+"Visual cursor transparent selection
 hi! CursorLine cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#2c323c guisp=#eee8d5
 hi! ColorColumn cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#282c34
 hi! link lCursor Cursor
+
 " if has('nvim')
 "   hi! link TermCursor Cursor
 "   hi! TermCursorNC ctermfg=8 guifg=#282c34 ctermbg=11 guibg=#4b5364 cterm=NONE gui=NONE
@@ -445,11 +447,14 @@ hi! typescriptBraces cterm=NONE gui=NONE ctermfg=4 guifg=#61afef ctermbg=NONE gu
 " hi! typescriptClassBlock cterm=NONE gui=NONE ctermfg=4 guifg=#0e90f3 ctermbg=NONE guibg=NONE
 " To make comments Italic
 
-"Trailing whitespaces
-highlight UnwanttedTab ctermbg=red guibg=darkred
-highlight TrailSpace guibg=red ctermbg=darkred
-match UnwanttedTab /\t/
-match TrailSpace / \+$/
+" Color trailing white spaces and tabs
+highlight UnwanttedTab guibg=#4a76ce
+highlight TrailSpace guibg=#4a76ce
+highlight BlankLines guibg=#268bd2
 
-autocmd ColorScheme * highlight UnwanttedTab ctermbg=darkred guibg=darkred
-autocmd ColorScheme * highlight TrailSpace ctermbg=darkred guibg=red ctermbg=darkred
+match UnwanttedTab /\t/
+match TrailSpace /\s\+$/
+match BlankLines /^\(\n\)\{2,}/
+
+" autocmd ColorScheme * highlight UnwanttedTab guibg=darkred guibg=darkred
+" autocmd ColorScheme * highlight TrailSpace guibg=darkred guibg=darkred

@@ -18,6 +18,8 @@ set backupdir=~/.vim/.backup//
 set viminfo='1000,:300000,/300000,<500    " Save Command-line and Search pattern history, number of lines saved for each registers
 " set wildmenu
 " set path+=**
+" set wildmode=list:longest                 " suggestion for normal mode commands
+
 syntax on
 filetype on
 filetype plugin on
@@ -32,6 +34,8 @@ set nowrapscan
 set nowrap                     " don't wrap lines
 set tabstop=3                  " a tab is two spaces
 set smarttab
+" set list                     " Show hidden characters
+" set listchars=tab:>\ ,eol:¬  " Display hidden characters like new line
 set tags=tags
 set foldmethod=syntax
 set foldlevel=3
@@ -49,8 +53,8 @@ set confirm
 set smartcase                  " ignore case if search pattern is all lowercase,
 set timeout timeoutlen=350 ttimeoutlen=350
 set updatetime=350             " Update time for vim-gitgutter
-set visualbell                 " don't beep
-set noerrorbells               " don't beep
+" set visualbell               " don't beep
+" set noerrorbells             " don't beep
 set autowrite                  " Save on buffer switch
 set mouse=a
 set clipboard=unnamedplus      " Use System clipboard

@@ -23,6 +23,7 @@ fi
 if [ ! -f ~/.xprofile ]
 then
   ln -s $PWD/.xprofile ~/.xprofile
+  chmod +x ~/.xprofile
 fi
 
 if [ ! -f ~/.profile ]
