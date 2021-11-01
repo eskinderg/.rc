@@ -48,7 +48,7 @@ set autoindent                 " always set autoindenting on
 set copyindent                 " copy the previous indentation on autoindenting
 set number                     " always show line numbers
 " set relativenumber           " show relative numbering
-" set ignorecase               " ignore case when searching
+set ignorecase               " ignore case when searching
 set confirm
 set smartcase                  " ignore case if search pattern is all lowercase,
 set timeout timeoutlen=350 ttimeoutlen=350

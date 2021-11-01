@@ -8,7 +8,7 @@ filetype plugin on
 " Timeout in seconds to wait for a response from the server
 let g:OmniSharp_timeout = 5
 
-let g:OmniSharp_server_stdio = 0
+let g:OmniSharp_server_stdio = 1
 
 " Don't autoselect first omnicomplete option, show options even if there is only
 " one (so the preview documentation is accessible). Remove 'preview' if you
@@ -50,7 +50,7 @@ augroup omnisharp_commands
 
 
   " Show type information automatically when the cursor stops moving
-  autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
+  " autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
 
   " Update the highlighting whenever leaving insert mode
   autocmd InsertLeave *.cs call OmniSharp#HighlightBuffer()
