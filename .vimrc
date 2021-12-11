@@ -57,3 +57,4 @@ source $HOME/.rc/.config/searchPlugin.vim
 source $HOME/.rc/.config/syntasticPluginConfig.vim
 source $HOME/.rc/.config/vim-fold.vim
 source $HOME/.rc/.config/vim-note.vim
+source $HOME/.rc/.config/vim-javacomplete2.vim

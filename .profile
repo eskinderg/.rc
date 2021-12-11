@@ -8,7 +8,7 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 export TERM=xterm-256color
-export QT_SCALE_FACTOR=0.5
+# export QT_SCALE_FACTOR=0.5
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
@@ -33,3 +33,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # feh –bg-scale ~/WallpaperStudio1.jpg
+
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+# export QT_FONT_DPI=120
+export QT_FONT_DPI=96

@@ -113,6 +113,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'pseewald/vim-anyfold'
   " Plug 'mhinz/vim-signify' " Helps toggle gitdiff and highlights the changes
   Plug 'lambdalisue/suda.vim'
+  Plug 'artur-shaik/vim-javacomplete2'
 call plug#end()
 
 " Automatically install missing plugins on startup
