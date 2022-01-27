@@ -196,7 +196,7 @@ alias googler='googler --noprompt  -n 8 -c us -l us'
 # unalias la
 # unalias ls
 alias la='colorls -lA --sd --gs --group-directories-first'
-# alias ls='colorls --group-directories-first'
+alias ls='colorls --group-directories-first'
 
 # if [[ -z "$TMUX" ]]
 # then
@@ -220,3 +220,13 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 source /home/esk/.gulp.plugin.zsh/gulp.plugin.zsh
 export PATH=$HOME/.config/nvcode/utils/bin:$PATH
 source /home/esk/.gulp.plugin.zsh/gulp.plugin.zsh
+
+# For Android Studio android development
+# export ANDROID_HOME=$HOME/Android/Sdk
+# export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+###-tns-completion-start-###
+# if [ -f /home/esk/.tnsrc ]; then
+    # source /home/esk/.tnsrc
+# fi
+###-tns-completion-end-###
