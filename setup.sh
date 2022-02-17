@@ -88,7 +88,12 @@ then
     ln -s $PWD/i3/i3status-rust/config.toml ~/.config/i3/i3status-rust/config.toml
   fi
 else
-  echo "~/.config/i3 directory does not exist"
+  YELLOW="$(tput setaf 3)"
+  printf '%s' "$YELLOW"
+  printf '%s\n'
+  printf '===============================%s\n'
+  printf '%s\n' 'Warning: I3 is not installed'
+  printf '===============================%s\n'
 fi
 
 if [ -d ~/.config/vifm ]
