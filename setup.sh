@@ -33,7 +33,9 @@ fi
 
 if [ ! -f ~/.config/mpv/mpv.conf ]
 then
-  ln -s $PWD/mpv.conf ~/.config/mpv/mpv.conf
+  mkdir -p ~/.config/mpv
+  ln -s $PWD/mpv/mpv.conf ~/.config/mpv/mpv.conf
+  ln -s $PWD/mpv/input.conf ~/.config/mpv/input.conf
 fi
 
 if [ ! -f ~/.xinitrc ]
