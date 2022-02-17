@@ -10,6 +10,7 @@ DEFAULT_USER=$USER
 export ZSH=/home/esk/.oh-my-zsh
 
 # ZSH_THEME="robbyrussell"
+# ZSH_THEME="duellj"
 # ZSH_THEME="spaceship"
 # ZSH_THEME="amuse"
 # ZSH_THEME="agnoster"
@@ -67,6 +68,8 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 bindkey '^ ' autosuggest-accept
 
+# export KEYTIMEOUT=1
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -86,6 +89,29 @@ bindkey '^ ' autosuggest-accept
 
 export NVM_DIR="/home/esk/.nvm" #Nodejs version manager
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Auto switch node version from .nvmrc ===============================================================
+autoload -U add-zsh-hook
+load-nvmrc() {
+local node_version="$(nvm version)"
+local nvmrc_path="$(nvm_find_nvmrc)"
+
+if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+        nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+        nvm use
+    fi
+elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+# Auto switch node version from .nvmrc ===============================================================
 
 alias pbcopy="xclip -sel clip"
 
@@ -151,6 +177,6 @@ source /home/esk/.gulp.plugin.zsh/gulp.plugin.zsh
 
 ###-tns-completion-start-###
 # if [ -f /home/esk/.tnsrc ]; then
-    # source /home/esk/.tnsrc
+# source /home/esk/.tnsrc
 # fi
 ###-tns-completion-end-###

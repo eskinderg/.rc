@@ -31,6 +31,11 @@ then
   ln -s $PWD/.profile ~/.profile
 fi
 
+if [ ! -f ~/.config/mpv/mpv.conf ]
+then
+  ln -s $PWD/mpv.conf ~/.config/mpv/mpv.conf
+fi
+
 if [ ! -f ~/.xinitrc ]
 then
   ln -s $PWD/.xinitrc ~/.xinitrc

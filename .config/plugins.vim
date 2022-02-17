@@ -114,6 +114,18 @@ call plug#begin('~/.config/nvim/plugged')
   " Plug 'mhinz/vim-signify' " Helps toggle gitdiff and highlights the changes
   Plug 'lambdalisue/suda.vim'
   Plug 'artur-shaik/vim-javacomplete2'
+
+"===================================================Neovim 6.0 Plugins=============================
+"Telescope Plugins
+" if has('nvim')
+  " Plug 'nvim-lua/plenary.nvim'
+  " Plug 'nvim-telescope/telescope.nvim'
+" endif
+
+" if has('nvim')
+  " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" endif
+"================================================End Neovim 6.0 Plugins=============================
 call plug#end()
 
 " Automatically install missing plugins on startup
