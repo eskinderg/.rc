@@ -1,1 +1,1 @@
-autocmd Filetype * AnyFoldActivate               " activate for all filetypes
+" autocmd Filetype * AnyFoldActivate               " activate for all filetypes

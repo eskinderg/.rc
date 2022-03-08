@@ -37,7 +37,7 @@ set smarttab
 " set list                     " Show hidden characters
 " set listchars=tab:>\ ,eol:¬  " Display hidden characters like new line
 set tags=tags
-set foldmethod=syntax
+" set foldmethod=syntax
 set foldlevel=3
 set softtabstop=4              " when hitting <BS>, pretend like a tab is removed, even if spaces
 set expandtab                  " expand tabs by default (overloadable per file type later)

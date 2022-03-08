@@ -182,7 +182,6 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /home/esk/.gulp.plugin.zsh/gulp.plugin.zsh
 export PATH=$HOME/.config/nvcode/utils/bin:$PATH
-source /home/esk/.gulp.plugin.zsh/gulp.plugin.zsh
 
 # For Android Studio android development
 # export ANDROID_HOME=$HOME/Android/Sdk
