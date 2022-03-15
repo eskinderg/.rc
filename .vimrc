@@ -40,7 +40,7 @@ source $HOME/.rc/.config/plugins.vim
 source $HOME/.rc/.config/globalSettings.vim
 source $HOME/.rc/.themerc.vim
 source $HOME/.rc/.config/keymappings.vim
-source $HOME/.rc/.config/deoplete.vim
+" source $HOME/.rc/.config/deoplete.vim
 source $HOME/.rc/.config/airlinePluginConfig.vim
 source $HOME/.rc/.config/ale.vim
 source $HOME/.rc/.config/AngularFilesPlugin.vim
@@ -58,3 +58,7 @@ source $HOME/.rc/.config/syntasticPluginConfig.vim
 source $HOME/.rc/.config/vim-fold.vim
 source $HOME/.rc/.config/vim-note.vim
 source $HOME/.rc/.config/vim-javacomplete2.vim
+luafile $HOME/.rc/.config/lsp-config.lua
+luafile $HOME/.rc/.config/compe-config.lua
+luafile $HOME/.rc/.config/angular-ls-config.lua
+

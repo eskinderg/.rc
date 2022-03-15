@@ -26,3 +26,4 @@ nmap <C-f> :NERDTreeFind<cr>
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " autocmd VimEnter * NERDTree " Start NERDTree on startup
+let g:NERDTreeRespectWildIgnore = 1

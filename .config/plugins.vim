@@ -36,10 +36,13 @@ call plug#begin('~/.config/nvim/plugged')
   " Plug 'Quramy/tsuquyomi'
   " Plug 'Shougo/vimproc.vim' " Required for Defenition navigation for typescript
   "Deoplete Required Plugins
-  Plug 'KeitaNakamura/highlighter.nvim', { 'do': ':UpdateRemotePlugins' } " For C#
+  " Plug 'KeitaNakamura/highlighter.nvim', { 'do': ':UpdateRemotePlugins' } " For C#
   Plug 'HerringtonDarkholme/yats.vim' "Typescript syntax highlight
-  Plug 'leafgarland/typescript-vim', { 'for': 'typescript' } "Typescript syntax highlight
-  Plug 'mhartington/nvim-typescript', {'do': './install.sh'} " Autocompletion of Typescript
+  " Plug 'leafgarland/typescript-vim', { 'for': 'typescript' } "Typescript syntax highlight
+  " Plug 'mhartington/nvim-typescript', {'do': './install.sh'} " Autocompletion of Typescript
+
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'hrsh7th/nvim-compe'
 
   " For C# Autocompletion
   Plug 'OrangeT/vim-csharp'
@@ -47,22 +50,14 @@ call plug#begin('~/.config/nvim/plugged')
   " CSV Plugin
   " Plug 'chrisbra/csv.vim'
   Plug 'mechatroner/rainbow_csv'
-  if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  else
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
-  endif
 
-  Plug 'ervandew/supertab'
+  " Plug 'ervandew/supertab'
   " Plug 'Shougo/denite.nvim'
   " Plug 'Quramy/vim-dtsm'
   " Plug 'Quramy/vim-js-pretty-template'
   " Plug 'vim-syntastic/syntastic' " Syntax error checking
   Plug 'majutsushi/tagbar'
   " Plug 'ternjs/tern_for_vim', { 'do': 'npm install' } " do npm install -g tern
-  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
   " Plug 'othree/jspc.vim'
   " Plug 'edkolev/tmuxline.vim'
   Plug 'hail2u/vim-css3-syntax'
