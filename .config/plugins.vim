@@ -41,9 +41,10 @@ call plug#begin('~/.config/nvim/plugged')
   " Plug 'leafgarland/typescript-vim', { 'for': 'typescript' } "Typescript syntax highlight
   " Plug 'mhartington/nvim-typescript', {'do': './install.sh'} " Autocompletion of Typescript
 
-  Plug 'neovim/nvim-lspconfig'
-  Plug 'hrsh7th/nvim-compe'
-
+  if (has("nvim"))
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/nvim-compe'
+  endif
   " For C# Autocompletion
   Plug 'OrangeT/vim-csharp'
   Plug 'OmniSharp/omnisharp-vim'
@@ -102,7 +103,7 @@ call plug#begin('~/.config/nvim/plugged')
   " Plug 'neoclide/coc.nvim', {'do': 'yarn install'}
   " Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh' }
   " For Denite features
-  Plug 'Shougo/denite.nvim' , { 'do': ':UpdateRemotePlugins' }
+  " Plug 'Shougo/denite.nvim' , { 'do': ':UpdateRemotePlugins' }
   Plug 'vifm/vifm'
   Plug 'junegunn/goyo.vim'
   Plug 'pseewald/vim-anyfold'
