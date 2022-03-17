@@ -79,6 +79,10 @@ require('lspconfig')['tsserver'].setup {
   capabilities = capabilities
 }
 
+require'lspconfig'.angularls.setup{
+  capabilities = capabilities
+}
+
 require('lspconfig')['cssls'].setup {
   capabilities = capabilities
 }
