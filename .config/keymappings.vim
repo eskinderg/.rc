@@ -8,6 +8,9 @@ let mapleader = "\<Space>"
 autocmd FileType html nnoremap <silent><buffer> <c-]> :lua vim.lsp.buf.definition()<cr>
 autocmd FileType typescript nnoremap <silent><buffer> <c-]> :lua vim.lsp.buf.definition()<cr>
 autocmd FileType javascript nnoremap <silent><buffer> <c-]> :lua vim.lsp.buf.definition()<cr>
+
+nnoremap <silent><leader><leader>= <cmd>lua vim.lsp.buf.formatting()<CR>
+
 " nmap <c-m> :TSImport<cr>
 " inoremap <C-k> <C-O>:
 " vmap <buffer> ;bo "zdi<B><c-r>z</B><esc>
