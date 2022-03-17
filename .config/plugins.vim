@@ -43,7 +43,12 @@ call plug#begin('~/.config/nvim/plugged')
 
   if (has("nvim"))
     Plug 'neovim/nvim-lspconfig'
-    Plug 'hrsh7th/nvim-compe'
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/cmp-path'
+    Plug 'hrsh7th/cmp-cmdline'
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'onsails/lspkind-nvim' " For Icons
   endif
   " For C# Autocompletion
   Plug 'OrangeT/vim-csharp'

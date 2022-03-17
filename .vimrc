@@ -61,6 +61,4 @@ source $HOME/.rc/.config/vim-javacomplete2.vim
 
 if (has("nvim"))
   luafile $HOME/.rc/.config/lsp-config.lua
-  luafile $HOME/.rc/.config/compe-config.lua
-  luafile $HOME/.rc/.config/angular-ls-config.lua
 endif

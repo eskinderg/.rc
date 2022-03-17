@@ -78,3 +78,5 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 " set diffopt=filler,iwhite        " Vim Diff settings ignore whitespace
+
+set completeopt=menu,menuone,noselect
