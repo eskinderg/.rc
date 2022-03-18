@@ -5,11 +5,11 @@ let mapleader = "\<Space>"
 
 " nvim-typescript goto defenition
 " autocmd FileType typescript nnoremap <buffer> <c-]> :TSTypeDef<cr>
-autocmd FileType html nnoremap <silent><buffer> <c-]> :lua vim.lsp.buf.definition()<cr>
-autocmd FileType typescript nnoremap <silent><buffer> <c-]> :lua vim.lsp.buf.definition()<cr>
-autocmd FileType javascript nnoremap <silent><buffer> <c-]> :lua vim.lsp.buf.definition()<cr>
+" autocmd FileType html nnoremap <silent><buffer> <c-]> :lua vim.lsp.buf.definition()<cr>
+" autocmd FileType typescript nnoremap <silent><buffer> <c-]> :lua vim.lsp.buf.definition()<cr>
+" autocmd FileType javascript nnoremap <silent><buffer> <c-]> :lua vim.lsp.buf.definition()<cr>
 
-nnoremap <silent><leader><leader>= <cmd>lua vim.lsp.buf.formatting()<CR>
+" nnoremap <silent><leader><leader>= <cmd>lua vim.lsp.buf.formatting()<CR>
 
 " nmap <c-m> :TSImport<cr>
 " inoremap <C-k> <C-O>:
