@@ -1,5 +1,5 @@
 " =============================================================================================
-nnoremap <Leader>f :call SearchInput() <cr>
+" nnoremap <Leader>f :call SearchInput() <cr>
 
 function! SearchInput()
   " let curline = getline('.')

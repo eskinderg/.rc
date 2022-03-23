@@ -310,7 +310,7 @@ hi! htmlEndTag cterm=NONE gui=NONE ctermfg=11 guifg=#4b5364 ctermbg=NONE guibg=N
 hi! htmlTagN cterm=NONE,bold gui=NONE,bold ctermfg=7 guifg=#eee8d5 ctermbg=NONE guibg=NONE
 hi! htmlTagName cterm=NONE,bold gui=NONE,bold cterm=italic ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
 hi! htmlSpecialTagName cterm=NONE gui=NONE,italic ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
-hi! htmlArg cterm=NONE gui=NONE ctermfg=12 guifg=#4b5364 ctermbg=NONE guibg=NONE
+hi! htmlArg cterm=NONE gui=NONE ctermfg=12 guifg=#d19a62 ctermbg=NONE guibg=NONE
 hi! javaScript cterm=NONE gui=NONE ctermfg=3 guifg=#b58900 ctermbg=NONE guibg=NONE
 hi! perlHereDoc ctermfg=7 guifg=#eee8d5 ctermbg=8 guibg=#282c34 cterm=NONE gui=NONE
 hi! perlVarPlain ctermfg=3 guifg=#b58900 ctermbg=8 guibg=#282c34 cterm=NONE gui=NONE
