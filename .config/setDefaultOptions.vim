@@ -71,8 +71,8 @@ endif
 set conceallevel=1
 set laststatus=2               " Always show the statusline
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules,.vscode,.angular,bower_components,dist,build,release,documentation,coverage,node,package-lock.json  "For Windows systems
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules/**,.vscode/**,.angular/**,bower_components/**,dist/**,build/**,release/**,documentation/**,coverage/**,node/**,package-lock.json  "For Linux systems
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules,.vscode,docs,.angular,bower_components,dist,build,release,documentation,coverage,node,package-lock.json  "For Windows systems
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules/**,.vscode/**,docs/**,.angular/**,bower_components/**,dist/**,build/**,release/**,documentation/**,coverage/**,node/**,package-lock.json  "For Linux systems
 set statusline+=%F
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}

@@ -41,6 +41,8 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
+nmap <silent><C-p> :Telescope find_files<cr>
+
 " map <C-h> :call WinMove('h')<cr>
 " map <C-j> :call WinMove('j')<cr>
 " map <C-k> :call WinMove('k')<cr>
@@ -84,6 +86,8 @@ nmap :sp :rightbelow sp<cr>
 " Quickly go forward or backward to buffer
 nnoremap :bp :BufSurfBack<cr>
 nnoremap :bn :BufSurfForward<cr>
+
+nmap <silent><c-t> :TroubleToggle<cr>
 
 " Toggle tag bar
 " map <Leader>t :TagbarToggle<cr>

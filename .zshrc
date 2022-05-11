@@ -72,7 +72,7 @@ setopt HIST_SAVE_NO_DUPS
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker npm node tmux zsh-completions vi-mode zsh-syntax-highlighting)
+plugins=(git docker npm node tmux zsh-completions vi-mode zsh-syntax-highlighting autoupdate)
 autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
@@ -115,10 +115,12 @@ if [ -n "$nvmrc_path" ]; then
     if [ "$nvmrc_node_version" = "N/A" ]; then
         nvm install
     elif [ "$nvmrc_node_version" != "$node_version" ]; then
+        # nvm use --silent
         nvm use
     fi
 elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
+    # echo "Reverting to nvm default version"
+    # nvm use default --silent
     nvm use default
 fi
 }

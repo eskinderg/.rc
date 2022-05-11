@@ -1,7 +1,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
   Plug 'jiangmiao/auto-pairs' " Autoclose {} [] ()
-  Plug 'ctrlpvim/ctrlp.vim' " Vim-devicons compatible ctrlp
+  " Plug 'ctrlpvim/ctrlp.vim' " Vim-devicons compatible ctrlp
   Plug 'fisadev/vim-ctrlp-cmdpalette'
   Plug 'Yggdroot/indentLine'
   Plug 'itchyny/lightline.vim'
@@ -116,21 +116,30 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'lambdalisue/suda.vim'
   Plug 'artur-shaik/vim-javacomplete2'
 
-"===================================================Neovim 6.0 Plugins=============================
-"Telescope Plugins
-" if has('nvim')
+  if (has("nvim"))
+    Plug 'folke/trouble.nvim'
+  endif
+
+  if (has("nvim")) " For Telescope
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+  endif
+
+  "===================================================Neovim 6.0 Plugins=============================
+  "Telescope Plugins
+  " if has('nvim')
   " Plug 'nvim-lua/plenary.nvim'
   " Plug 'nvim-telescope/telescope.nvim'
-" endif
+  " endif
 
-" if has('nvim')
+  " if has('nvim')
   " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-" endif
-"================================================End Neovim 6.0 Plugins=============================
-call plug#end()
+  " endif
+  "================================================End Neovim 6.0 Plugins=============================
+  call plug#end()
 
-" Automatically install missing plugins on startup
-autocmd VimEnter *
-  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \|   PlugInstall --sync | q
-  \| endif
+  " Automatically install missing plugins on startup
+  autocmd VimEnter *
+        \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+        \|   PlugInstall --sync | q
+        \| endif
