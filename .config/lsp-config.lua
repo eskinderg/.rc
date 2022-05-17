@@ -79,11 +79,10 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 nvim_lsp = require('lspconfig')
 local servers = { 'tsserver', 'angularls', 'cssls', 'eslint' }
 
-
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
 
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -137,3 +136,11 @@ require("trouble").setup {
 -- require('lspconfig')['eslint'].setup {
 --   capabilities = capabilities
 -- }
+-- omnisharp lsp config
+require'lspconfig'.omnisharp.setup {
+  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+  on_attach = function(_, bufnr)
+    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  end,
+  cmd = { "/home/esk/.vscode/extensions/ms-dotnettools.csharp-1.24.4-linux-x64/.omnisharp/1.38.2/run", "--languageserver" , "--hostPID", tostring(pid) },
+}
