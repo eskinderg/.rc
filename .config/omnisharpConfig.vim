@@ -63,11 +63,11 @@ augroup omnisharp_commands
 
   " The following commands are contextual, based on the cursor position.
   " autocmd FileType cs nnoremap <buffer> gd :OmniSharpGotoDefinition<CR>
-  autocmd FileType cs nnoremap <buffer> <C-]> :OmniSharpGotoDefinition<CR>
-  autocmd FileType cs nnoremap <buffer> <C-[> :OmniSharpFindImplementations<CR>
+  autocmd FileType cs nnoremap <buffer> <C-[> :OmniSharpGotoDefinition<CR>
+  autocmd FileType cs nnoremap <buffer> <C-]> :OmniSharpFindImplementations<CR>
   autocmd FileType cs nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
   autocmd FileType cs nnoremap <buffer> <Leader>fs :OmniSharpFindSymbol<CR>
-  autocmd FileType cs nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>
+  autocmd FileType cs nnoremap <buffer> <Leader>r :OmniSharpFindUsages<CR>
 
   " Finds members in the current buffer
   autocmd FileType cs nnoremap <buffer> <Leader>fm :OmniSharpFindMembers<CR>
@@ -79,6 +79,10 @@ augroup omnisharp_commands
   autocmd FileType cs inoremap <buffer> <C-\> <C-o>:OmniSharpSignatureHelp<CR>
   autocmd FileType cs nnoremap <buffer> <Leader>= :OmniSharpCodeFormat<CR>
 
+  " Rename with dialog
+  autocmd FileType cs nnoremap <Leader>rn :OmniSharpRename<CR>
+  autocmd FileType cs nnoremap <F2> :OmniSharpRename<CR> " Rename without dialog - with cursor on the symbol to rename: `:Rename newname`
+  command! -nargs=1 Rename :call OmniSharp#RenameTo("<args>")
   " Navigate up and down by method/property/field
   " autocmd FileType cs nnoremap <buffer> <C-k> :OmniSharpNavigateUp<CR>
   " autocmd FileType cs nnoremap <buffer> <C-j> :OmniSharpNavigateDown<CR>
@@ -88,13 +92,6 @@ augroup END
 " nnoremap <Leader><Space> :OmniSharpGetCodeActions<CR>
 " Run code actions with text selected in visual mode to extract method
 " xnoremap <Leader><Space> :call OmniSharp#GetCodeActions('visual')<CR>
-
-" Rename with dialog
-nnoremap <Leader>nm :OmniSharpRename<CR>
-nnoremap <F2> :OmniSharpRename<CR> " Rename without dialog - with cursor on the symbol to rename: `:Rename newname`
-command! -nargs=1 Rename :call OmniSharp#RenameTo("<args>")
-
-" nnoremap <Leader>cf :OmniSharpCodeFormat<CR>
 
 " Start the omnisharp server for the current solution
 nnoremap <Leader>ss :OmniSharpStartServer<CR>
