@@ -116,9 +116,8 @@ for _,lsp in ipairs(servers) do
 end
 
 require("trouble").setup {
-  -- your configuration comes here
-  -- or leave it empty to use the default settings
-  -- refer to the configuration section below
+  icons=false,
+  use_diagnostic_signs=true
 }
 
 -- require('lspconfig')['tsserver'].setup {

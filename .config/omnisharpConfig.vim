@@ -50,21 +50,19 @@ augroup omnisharp_commands
   " (TextChanged requires Vim 7.4)
   " autocmd BufEnter,TextChanged,InsertLeave *.cs SyntasticCheck
 
-
   " Show type information automatically when the cursor stops moving
   " autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
 
   " Update the highlighting whenever leaving insert mode
   " autocmd InsertLeave *.cs call OmniSharp#HighlightBuffer()
 
-
   " Alternatively, use a mapping to refresh highlighting for the current buffer
   autocmd FileType cs nnoremap <buffer> <Leader>th :OmniSharpHighlightTypes<CR>
 
   " The following commands are contextual, based on the cursor position.
   " autocmd FileType cs nnoremap <buffer> gd :OmniSharpGotoDefinition<CR>
-  autocmd FileType cs nnoremap <buffer> <C-[> :OmniSharpGotoDefinition<CR>
-  autocmd FileType cs nnoremap <buffer> <C-]> :OmniSharpFindImplementations<CR>
+  autocmd FileType cs nnoremap <buffer> <C-]> :OmniSharpGotoDefinition<CR>
+  autocmd FileType cs nnoremap <buffer> <C-[> :OmniSharpFindImplementations<CR>
   autocmd FileType cs nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
   autocmd FileType cs nnoremap <buffer> <Leader>fs :OmniSharpFindSymbol<CR>
   autocmd FileType cs nnoremap <buffer> <Leader>r :OmniSharpFindUsages<CR>
