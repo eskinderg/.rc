@@ -61,5 +61,6 @@ source $HOME/.rc/.config/vim-javacomplete2.vim
 
 if (has("nvim"))
   luafile $HOME/.rc/.config/lsp-config.lua
+  luafile $HOME/.rc/.config/lsp-config-icons.lua
   luafile $HOME/.rc/.config/telescope.lua
 endif

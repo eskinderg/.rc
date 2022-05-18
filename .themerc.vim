@@ -458,3 +458,8 @@ match BlankLines /^\(\n\)\{2,}/
 
 " autocmd ColorScheme * highlight UnwanttedTab guibg=darkred guibg=darkred
 " autocmd ColorScheme * highlight TrailSpace guibg=darkred guibg=darkred
+
+hi DiagnosticError guifg=Red
+hi DiagnosticWarn guifg=DarkOrange
+hi DiagnosticInfo guifg=Blue
+hi DiagnosticHint guifg=Yellow
