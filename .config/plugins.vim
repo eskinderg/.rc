@@ -1,7 +1,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
   Plug 'jiangmiao/auto-pairs' " Autoclose {} [] ()
-  " Plug 'ctrlpvim/ctrlp.vim' " Vim-devicons compatible ctrlp
+  Plug 'ctrlpvim/ctrlp.vim' " Vim-devicons compatible ctrlp
   Plug 'fisadev/vim-ctrlp-cmdpalette'
   Plug 'Yggdroot/indentLine'
   Plug 'itchyny/lightline.vim'
@@ -44,9 +44,9 @@ call plug#begin('~/.config/nvim/plugged')
   if (has("nvim"))
     Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/cmp-nvim-lsp'
-    Plug 'hrsh7th/cmp-buffer'
-    Plug 'hrsh7th/cmp-path'
-    Plug 'hrsh7th/cmp-cmdline'
+    " Plug 'hrsh7th/cmp-buffer'
+    " Plug 'hrsh7th/cmp-path'
+    " Plug 'hrsh7th/cmp-cmdline'
     Plug 'hrsh7th/nvim-cmp'
     Plug 'onsails/lspkind-nvim' " For Icons
   endif
@@ -121,8 +121,8 @@ call plug#begin('~/.config/nvim/plugged')
   endif
 
   if (has("nvim")) " For Telescope
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim'
+    " Plug 'nvim-lua/plenary.nvim'
+    " Plug 'nvim-telescope/telescope.nvim'
   endif
 
   "===================================================Neovim 6.0 Plugins=============================
