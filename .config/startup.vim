@@ -13,7 +13,7 @@ autocmd BufNewFile,BufReadPost *.ts set filetype=typescript
 
 " autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 
-autocmd FileType html setlocal shiftwidth=4 tabstop=4
+" autocmd FileType html setlocal shiftwidth=4 tabstop=4
 
 " autocmd FileType cs OmniSharp_highlight_types
 

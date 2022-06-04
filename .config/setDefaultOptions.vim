@@ -32,7 +32,7 @@ set go-=L                      " Removes left hand scroll bar
 set showmode                   " always show what mode we're currently editing in
 set nowrapscan
 set nowrap                     " don't wrap lines
-set tabstop=3                  " a tab is two spaces
+" set tabstop=3                  " a tab is two spaces
 set smarttab
 " set list                     " Show hidden characters
 " set listchars=tab:>\ ,eol:¬  " Display hidden characters like new line

@@ -141,5 +141,5 @@ require'lspconfig'.omnisharp.setup {
   on_attach = function(_, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
   end,
-  cmd = { "/home/esk/.vscode/extensions/ms-dotnettools.csharp-1.24.4-linux-x64/.omnisharp/1.38.2/run", "--languageserver" , "--hostPID", tostring(pid) },
+  cmd = { "/home/esk/.vscode/extensions/ms-dotnettools.csharp-1.25.0-linux-x64/.omnisharp/1.39.0-net6.0/OmniSharp", "--languageserver" , "--hostPID", tostring(pid) },
 }
