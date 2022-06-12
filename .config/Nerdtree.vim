@@ -13,6 +13,8 @@ let g:NERDTreeQuitOnOpen=0
 " show hidden files in NERDTree
 let NERDTreeShowHidden=1
 
+let NERDTreeWinSize = 40 " Set the default size
+
 " Change default preview key of "go" to "p"
 " let g:NERDTreeMapPreview = "p"
 
