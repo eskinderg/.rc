@@ -28,12 +28,10 @@
     " autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " augroup end
 
-
 " let g:LanguageClient_serverCommands = {
 "     \ 'typescript': ['javascript-typescript-stdio'],
 "     \ 'javascript': ['javascript-typescript-stdio'],
 "     \ }
-
 
 " let g:LanguageClient_serverCommands = {
 "       \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
@@ -45,7 +43,6 @@
 "       \ 'c': ['clangd'],
 "       \ 'objcpp': ['clangd']
 "       \ }
-
 
 " " Automatically start language servers.
 " let g:LanguageClient_autoStart = 1

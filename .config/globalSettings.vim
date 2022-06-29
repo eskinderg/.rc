@@ -82,7 +82,6 @@ let g:tagbar_type_typescript = {
   \ 'sort' : 0
 \ }
 
-
 " vim-indent-guides ========================================================
 " let g:indentLine_char = '.'
 let g:indentLine_char = '│'

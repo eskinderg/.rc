@@ -1,7 +1,6 @@
 " OmniSharp won't work without this setting
 filetype plugin on
 
-
 " Set the type lookup function to use the preview window instead of echoing it
 "let g:OmniSharp_typeLookupInPreview = 1
 

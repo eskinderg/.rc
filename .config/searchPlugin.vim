@@ -24,12 +24,9 @@ function! SearchInput()
 endfunction
 " =============================================================================================
 
-
-
 " =============================================================================================
 vnoremap <silent><leader>g :<c-u>call GrepOperator(visualmode())<cr>
 nnoremap <silent><leader>g :set operatorfunc=GrepOperator<cr>g@
-
 
 function! GrepOperator(type)
 
@@ -52,8 +49,6 @@ function! GrepOperator(type)
 endfunction
 
 " =============================================================================================
-
-
 
 " Easily GREP current word in current file.
 " command GREP :execute 'vimgrep '.expand('<cword>').' '.expand('%') | :copen | :cc
