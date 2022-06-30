@@ -38,7 +38,7 @@ source $HOME/.rc/.config/setDefaultOptions.vim
 source $HOME/.rc/.config/startup.vim
 source $HOME/.rc/.config/plugins.vim
 source $HOME/.rc/.config/globalSettings.vim
-source $HOME/.rc/.themerc.vim
+source $HOME/.rc/OneDark.vim
 source $HOME/.rc/.config/keymappings.vim
 " source $HOME/.rc/.config/deoplete.vim
 source $HOME/.rc/.config/airlinePluginConfig.vim

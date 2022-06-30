@@ -56,10 +56,10 @@ then
     ln -s $PWD/.vimrc ~/.config/nvim/init.vim
   fi
 
-  if [ ! -f ~/.config/nvim/colors/EskTheme.vim ]
+  if [ ! -f ~/.config/nvim/colors/OneDark.vim ]
   then
     mkdir -p ~/.config/nvim/colors
-    ln -s $PWD/.themerc.vim ~/.config/nvim/colors/EskTheme.vim
+    ln -s $PWD/OneDark.vim ~/.config/nvim/colors/OneDark.vim
   fi
 else
   echo "Neovim directory ~/.config/nvim does not exist"
@@ -67,10 +67,10 @@ fi
 
 if [ -d ~/.vim ]                      # Check if vim is installed
 then
-  if [ ! -f ~/.vim/colors/EskTheme.vim ]
+  if [ ! -f ~/.vim/colors/OneDark.vim ]
   then
     mkdir -p ~/.vim/colors
-    ln -s $PWD/.themerc.vim ~/.vim/colors/EskTheme.vim
+    ln -s $PWD/OneDark.vim ~/.vim/colors/OneDark.vim
   fi
 else
   echo "~/.vim directory does not exist"

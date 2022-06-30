@@ -1,4 +1,4 @@
-" Name:         EskTheme colorscheme for Vim & NVIM
+" Name:         OneDarkTheme colorscheme for Vim & NVIM
 " Maintainer:   Eskinder <eskinderget@gmail.com>
 
 set background=dark
@@ -8,7 +8,7 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let colors_name = "EskTheme"
+let colors_name = "OneDark"
 
 " if !has('gui_running') && get(g:, 'solarized_termtrans', 0)
 hi! Normal cterm=NONE gui=NONE ctermfg=14 guifg=#c5c7c4 ctermbg=8 guibg=#282c34
@@ -54,7 +54,6 @@ highlight GitGutterAdd guifg=#007c00
 highlight GitGutterChange guifg=#b58900
 highlight GitGutterDelete guifg=#dc322f
 highlight GitGutterChangeDelete guifg=#268bd2
-
 
 " for Plug 'machakann/vim-highlightedyank' setting
 highlight HighlightedyankRegion guibg=#3e4451
@@ -436,7 +435,6 @@ hi! pandocMetadata ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE gu
 hi! pandocMetadataKey ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
 hi! pandocMetadata ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
 hi! link pandocMetadataTitle pandocMetadata
-
 
 hi! vimHighlight cterm=NONE gui=NONE,bold ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
 
