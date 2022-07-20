@@ -143,3 +143,24 @@ require'lspconfig'.omnisharp.setup {
   end,
   cmd = { "/home/esk/.cache/omnisharp-vim/omnisharp-roslyn/OmniSharp", "--languageserver" , "--hostPID", tostring(pid) },
 }
+
+require'lspconfig'.jsonls.setup{
+  on_attach = on_attach,
+  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+
+  settings = {
+    json = {
+      schemas = {
+        {
+          fileMatch = { 'package.json' },
+          url = 'https://json.schemastore.org/package.json',
+        },
+        {
+          fileMatch = { 'tsconfig.json', 'tsconfig.*.json' },
+          url = 'http://json.schemastore.org/tsconfig',
+        },
+      },
+    },
+  }
+
+}
