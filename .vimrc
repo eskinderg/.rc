@@ -60,7 +60,10 @@ source $HOME/.rc/.config/vim-note.vim
 source $HOME/.rc/.config/vim-javacomplete2.vim
 
 if (has("nvim"))
-  luafile $HOME/.rc/.config/lsp-config.lua
+  luafile $HOME/.rc/.config/nvim-cmp.lua
   luafile $HOME/.rc/.config/lsp-config-icons.lua
+  luafile $HOME/.rc/.config/lsp/tsserver-angularls-cssls-eslint.lua
+  luafile $HOME/.rc/.config/lsp/omnisharp.lua
+  luafile $HOME/.rc/.config/lsp/jsonls.lua
   " luafile $HOME/.rc/.config/telescope.lua
 endif
