@@ -1,6 +1,8 @@
 nvim_lsp = require('lspconfig')
-local servers = { 'tsserver', 'angularls', 'cssls', 'eslint' }
+
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+local servers = { 'tsserver', 'angularls', 'cssls', 'eslint', 'html', 'vimls' }
 
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
