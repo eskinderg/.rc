@@ -65,5 +65,7 @@ if (has("nvim"))
   luafile $HOME/.rc/.config/lsp/tsserver-angularls-cssls-eslint.lua
   luafile $HOME/.rc/.config/lsp/omnisharp.lua
   luafile $HOME/.rc/.config/lsp/jsonls.lua
+  luafile $HOME/.rc/.config/lsp/vimls.lua
+  luafile $HOME/.rc/.config/lsp/html.lua
   " luafile $HOME/.rc/.config/telescope.lua
 endif
