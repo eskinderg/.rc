@@ -50,14 +50,12 @@ source $HOME/.rc/.config/language-client.vim
 source $HOME/.rc/.config/languageserver.vim
 source $HOME/.rc/.config/Nerdtree.vim
 source $HOME/.rc/.config/gitgutter.vim
-" source $HOME/.rc/.config/coc.vim
 source $HOME/.rc/.config/omnisharpConfig.vim
 source $HOME/.rc/.config/saveSession.vim
 source $HOME/.rc/.config/searchPlugin.vim
 source $HOME/.rc/.config/syntasticPluginConfig.vim
 source $HOME/.rc/.config/vim-fold.vim
 source $HOME/.rc/.config/vim-note.vim
-source $HOME/.rc/.config/vim-javacomplete2.vim
 
 if (has("nvim"))
   luafile $HOME/.rc/.config/nvim-cmp.lua
@@ -65,5 +63,8 @@ if (has("nvim"))
   luafile $HOME/.rc/.config/lsp/tsserver-angularls-cssls-eslint.lua
   luafile $HOME/.rc/.config/lsp/omnisharp.lua
   luafile $HOME/.rc/.config/lsp/jsonls.lua
+  luafile $HOME/.rc/.config/treesitter.lua
+  luafile $HOME/.rc/.config/nvim-colorizer.lua
+  luafile $HOME/.rc/.config/indent-line.lua
   " luafile $HOME/.rc/.config/telescope.lua
 endif

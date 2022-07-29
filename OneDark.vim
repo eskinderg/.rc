@@ -23,7 +23,7 @@ hi! Function ctermbg=0 guibg=#282c34 guifg=#767676
 hi! Conditional ctermbg=0 guibg=#282c34 guifg=#767676
 hi! String ctermbg=0 guibg=#282c34 cterm=italic guifg=#4a8e5e
 " hi! Repeat ctermbg=0 guibg=#282c34  guifg=black
-hi! Operator ctermbg=0 guibg=#282c34 guifg=#268bd2
+" hi! Operator ctermbg=0 guibg=#282c34 guifg=#268bd2
 hi! Debug ctermbg=0 guibg=#282c34 guifg=blue
 
 hi! LineNr ctermbg=0 guibg=#282c34
@@ -90,7 +90,7 @@ hi! Comment cterm=NONE gui=NONE, gui=italic cterm=italic ctermfg=11 guifg=#4b536
 hi! Constant cterm=NONE gui=NONE ctermfg=6 guifg=#2aa198 ctermbg=NONE guibg=NONE
 
 "this keyword
-hi! Identifier cterm=NONE gui=NONE ctermfg=4 guifg=#61afef ctermbg=NONE guibg=NONE
+hi! Identifier cterm=NONE gui=NONE ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
 hi! Statement cterm=NONE gui=NONE ctermfg=2 guifg=#c678dd ctermbg=NONE guibg=NONE
 hi! PreProc cterm=NONE gui=NONE ctermfg=9 guifg=#61afef ctermbg=NONE guibg=NONE
 hi! Type cterm=NONE gui=NONE ctermfg=3 guifg=#b58900 ctermbg=NONE guibg=NONE
@@ -461,3 +461,12 @@ hi DiagnosticError guifg=Red
 hi DiagnosticWarn guifg=DarkOrange
 hi DiagnosticInfo guifg=Blue
 hi DiagnosticHint guifg=Yellow
+
+highlight IndentBlanklineChar guifg=#46525a gui=nocombine
+highlight IndentBlanklineContextChar guifg=#6c7982 gui=nocombine
+
+hi! TSInclude cterm=NONE gui=NONE ctermfg=2 guifg=#c678dd ctermbg=NONE guibg=NONE
+hi! TSVariableBuiltin cterm=NONE gui=NONE guifg=#4a76ce ctermbg=NONE guibg=NONE
+hi! TSPunctBracket cterm=NONE gui=NONE guifg=#4a76ce ctermbg=NONE guibg=NONE
+hi! TSConstructor cterm=NONE gui=NONE guifg=#b58900 ctermbg=NONE guibg=NONE
+hi! TSVariable cterm=NONE gui=NONE guifg=#b58900 ctermbg=NONE guibg=NONE

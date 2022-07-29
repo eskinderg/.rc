@@ -137,7 +137,8 @@ autocmd BufNewFile,BufReadPost *.ts nmap <silent><Leader>c :call OpenFile(expand
 autocmd BufNewFile,BufReadPost *.ts nmap <silent><Leader>d :call OpenFile(expand('%:p:h').'/'.GetFileName().'.module.ts') <cr>
 
 " Show highlishting groups for the current word
-nmap <leader>u :call<SID>SynStack()<CR>
+nmap <leader>uu :call<SID>SynStack()<CR>
+nmap <leader>u :TSCaptureUnderCursor<CR>
 
 function! <SID>SynStack()
   if !exists("*synstack")

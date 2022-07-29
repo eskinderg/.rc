@@ -68,7 +68,7 @@ if has('nvim')
   set inccommand=split         " Show live preview of substitute command. Works only on neovim compiled with python
 endif
 
-set conceallevel=1
+" set conceallevel=1           " Hides qoutes inside json file
 set laststatus=2               " Always show the statusline
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules,.vscode,docs,.angular,bower_components,dist,build,release,documentation,coverage,node,package-lock.json  "For Windows systems

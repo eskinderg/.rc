@@ -1,30 +1,23 @@
 call plug#begin('~/.config/nvim/plugged')
 
-  Plug 'jiangmiao/auto-pairs' " Autoclose {} [] ()
-  Plug 'ctrlpvim/ctrlp.vim' " Vim-devicons compatible ctrlp
+  Plug 'jiangmiao/auto-pairs'          " Autoclose {} [] ()
+  Plug 'tpope/vim-commentary'
+  Plug 'easymotion/vim-easymotion'
+  Plug 'ctrlpvim/ctrlp.vim'            " Vim-devicons compatible ctrlp
   Plug 'fisadev/vim-ctrlp-cmdpalette'
-  Plug 'Yggdroot/indentLine'
+  " Plug 'Yggdroot/indentLine'
+  Plug 'lukas-reineke/indent-blankline.nvim' " Indent Lines
   Plug 'itchyny/lightline.vim'
-  Plug 'scrooloose/nerdtree'
-  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'preservim/nerdtree'
   Plug 'AndrewRadev/splitjoin.vim'
   Plug 'tpope/vim-repeat'
-  Plug 'drewtempelmeyer/palenight.vim' "Theme Plugin
-  Plug 'flazz/vim-colorschemes'
-  Plug 'ap/vim-css-color'
+  Plug 'drewtempelmeyer/palenight.vim' " Theme Plugin
+
+  Plug 'norcalli/nvim-colorizer.lua' " CSS color highlighter
+
   Plug 'tpope/vim-endwise'
   Plug 'Valloric/MatchTagAlways'
   " Plug 'yuttie/comfortable-motion.vim' " physics-based smooth scrolling
-  Plug 'Rigellute/shades-of-purple.vim'
-  " React Plugins
-  " Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
-  " Plug 'mxw/vim-jsx'
-  " Plug 'wesQ3/vim-windowswap'
-  " Plug 'tiagofumo/vim-nerdtree-syntax-highlight' "Very high performance plugin
-  " Plug 'ianks/vim-tsx'
-  " Plug 'svermeulen/vim-easyclip'
-  " Plug 'w0rp/ale'
-  " Plug 'altercation/vim-colors-solarized'
   " Plug 'godlygeek/tabular'
   Plug 'plasticboy/vim-markdown'
   Plug 'editorconfig/editorconfig-vim'
@@ -37,9 +30,12 @@ call plug#begin('~/.config/nvim/plugged')
   " Plug 'Shougo/vimproc.vim' " Required for Defenition navigation for typescript
   "Deoplete Required Plugins
   " Plug 'KeitaNakamura/highlighter.nvim', { 'do': ':UpdateRemotePlugins' } " For C#
-  Plug 'HerringtonDarkholme/yats.vim' "Typescript syntax highlight
+  " Plug 'HerringtonDarkholme/yats.vim' "Typescript syntax highlight
   " Plug 'leafgarland/typescript-vim', { 'for': 'typescript' } "Typescript syntax highlight
   " Plug 'mhartington/nvim-typescript', {'do': './install.sh'} " Autocompletion of Typescript
+
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " For Syntax Highlighting
+  Plug 'nvim-treesitter/playground' " Syntax debugging
 
   if (has("nvim"))
     Plug 'neovim/nvim-lspconfig'
@@ -50,8 +46,9 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'hrsh7th/nvim-cmp'
     Plug 'onsails/lspkind-nvim' " For Icons
   endif
+
   " For C# Autocompletion
-  Plug 'OrangeT/vim-csharp'
+  " Plug 'OrangeT/vim-csharp'
   Plug 'OmniSharp/omnisharp-vim'
   " CSV Plugin
   " Plug 'chrisbra/csv.vim'
@@ -62,7 +59,7 @@ call plug#begin('~/.config/nvim/plugged')
   " Plug 'Quramy/vim-dtsm'
   " Plug 'Quramy/vim-js-pretty-template'
   " Plug 'vim-syntastic/syntastic' " Syntax error checking
-  Plug 'majutsushi/tagbar'
+  Plug 'preservim/tagbar'
   " Plug 'ternjs/tern_for_vim', { 'do': 'npm install' } " do npm install -g tern
   " Plug 'othree/jspc.vim'
   " Plug 'edkolev/tmuxline.vim'
@@ -70,36 +67,23 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'ton/vim-bufsurf'
-  Plug 'tpope/vim-commentary'
-  Plug 'easymotion/vim-easymotion'
-  Plug 'tpope/vim-eunuch'
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
-  " Plug 'fatih/vim-go'
-  Plug 'nathanaelkane/vim-indent-guides'
-  " Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
-  " Plug 'jason0x43/vim-js-indent'
-  " Plug 'jelera/vim-javascript-syntax'
   Plug 'junegunn/vim-easy-align'
-  Plug 'sheerun/vim-polyglot'
+  " Plug 'sheerun/vim-polyglot' "Syntax highlighting for a collection of languages
   Plug 'tpope/vim-surround'
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'tpope/vim-unimpaired'
-  " Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
-  " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-  " Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
-  " Plug 'OmniSharp/omnisharp-vim'
-  " Plug 'vim-bookmarks'
   Plug 'kshenoy/vim-signature' " Displays Marker symbol on the side
   " Plug 'gregsexton/matchtag'
-  Plug 'sjl/gundo.vim' " Un do History log plugin
+  Plug 'sjl/gundo.vim' " Undo History log plugin
   Plug 'ryanoasis/vim-devicons'
   " Plug 'maxbrunsfeld/vim-yankstack'
   Plug 'machakann/vim-highlightedyank'
 
   " For vim Note taking
   " Plug 'xolox/vim-notes'
-  Plug 'xolox/vim-misc'
+  " Plug 'xolox/vim-misc'
 
   " Plug 'VundleVim/Vundle.vim'
   " Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': ':UpdateRemotePlugins' }
@@ -110,11 +94,10 @@ call plug#begin('~/.config/nvim/plugged')
   " For Denite features
   " Plug 'Shougo/denite.nvim' , { 'do': ':UpdateRemotePlugins' }
   Plug 'vifm/vifm'
-  Plug 'junegunn/goyo.vim'
+  " Plug 'junegunn/goyo.vim'
   Plug 'pseewald/vim-anyfold'
   " Plug 'mhinz/vim-signify' " Helps toggle gitdiff and highlights the changes
-  Plug 'lambdalisue/suda.vim'
-  Plug 'artur-shaik/vim-javacomplete2'
+  Plug 'lambdalisue/suda.vim' " Suda write
 
   if (has("nvim"))
     Plug 'folke/trouble.nvim'
