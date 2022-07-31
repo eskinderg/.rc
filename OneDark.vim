@@ -224,11 +224,11 @@ hi! SpellLocal cterm=NONE,undercurl gui=NONE,undercurl ctermfg=NONE guifg=NONE c
 " Autocomplete menu "selection----------------------------------------------------------------------------
 
 " Autocomplete menu background
-hi! Pmenu ctermfg=0 guifg=#abacac ctermbg=14 guibg=#383c4a cterm=NONE gui=NONE
+hi! Pmenu ctermfg=0 guifg=#abacac ctermbg=14 guibg=#21252b cterm=NONE gui=NONE
 
 " Autocomplete menu selected text
 " hi! PmenuSel ctermfg=15 guifg=white ctermbg=11 guibg=#3c85e4 cterm=NONE gui=NONE
-hi! PmenuSel ctermfg=15 guifg=black ctermbg=11 guibg=#61afef cterm=NONE,bold gui=NONE
+hi! PmenuSel guifg=white ctermbg=11 guibg=#2c313a cterm=NONE,bold gui=NONE
 
 " End autocomplete menu "selection------------------------------------------------------------------------
 
@@ -470,3 +470,19 @@ hi! TSVariableBuiltin cterm=NONE gui=NONE guifg=#4a76ce ctermbg=NONE guibg=NONE
 hi! TSPunctBracket cterm=NONE gui=NONE guifg=#4a76ce ctermbg=NONE guibg=NONE
 hi! TSConstructor cterm=NONE gui=NONE guifg=#b58900 ctermbg=NONE guibg=NONE
 hi! TSVariable cterm=NONE gui=NONE guifg=#b58900 ctermbg=NONE guibg=NONE
+
+" Auto Completion colors ================================================================================================
+hi! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
+hi! CmpItemAbbrMatch guibg=NONE guifg=#569CD6
+hi! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6
+hi! CmpItemKindVariable guibg=NONE guifg=#9CDCFE
+hi! CmpItemKindInterface guibg=NONE guifg=#9CDCFE
+hi! CmpItemKindText guibg=NONE guifg=#9CDCFE
+hi! CmpItemKindField guibg=NONE guifg=#569CD6
+hi! CmpItemKindConstant guibg=NONE guifg=#569CD6
+hi! CmpItemKindFunction guibg=NONE guifg=#C586C0
+hi! CmpItemKindMethod guibg=NONE guifg=#C586C0
+hi! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
+hi! CmpItemKindProperty guibg=NONE guifg=#D4D4D4
+hi! CmpItemKindUnit guibg=NONE guifg=#D4D4D4
+" END Auto Completion colors ================================================================================================
