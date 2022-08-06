@@ -189,6 +189,7 @@ hi def link NERDTreeDirSlash Identifier
 hi! NERDTreeGitStatusStaged cterm=NONE gui=NONE ctermfg=2 guifg=#2aa198 ctermbg=0 guisp=#2aa198
 " hi! NERDTreeFlags cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
 hi! NERDTreeGitStatusDirDirty cterm=NONE gui=NONE,bold ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
+hi! NERDTreeGitStatusDirty cterm=NONE gui=NONE,bold guifg=red ctermbg=NONE guibg=NONE
 hi! NERDTreeFile cterm=NONE gui=NONE ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
 hi! def link NERDTreeExecFile NERDTreeFile
 hi! NERDTreeGitStatusModified cterm=NONE gui=NONE,bold ctermfg=4 guifg=#b58900 ctermbg=NONE guibg=NONE
@@ -466,10 +467,10 @@ highlight IndentBlanklineChar guifg=#46525a gui=nocombine
 highlight IndentBlanklineContextChar guifg=#6c7982 gui=nocombine
 
 hi! TSInclude cterm=NONE gui=NONE ctermfg=2 guifg=#c678dd ctermbg=NONE guibg=NONE
-hi! TSVariableBuiltin cterm=NONE gui=NONE guifg=#4a76ce ctermbg=NONE guibg=NONE
+hi! TSVariableBuiltin cterm=NONE gui=NONE guifg=#b58900 ctermbg=NONE guibg=NONE
 hi! TSPunctBracket cterm=NONE gui=NONE guifg=#4a76ce ctermbg=NONE guibg=NONE
-hi! TSConstructor cterm=NONE gui=NONE guifg=#b58900 ctermbg=NONE guibg=NONE
-hi! TSVariable cterm=NONE gui=NONE guifg=#b58900 ctermbg=NONE guibg=NONE
+hi! TSConstructor cterm=NONE gui=NONE,bold guifg=#4a76ce ctermbg=NONE guibg=NONE
+hi! TSVariable cterm=NONE gui=NONE,bold guifg=#4a76ce ctermbg=NONE guibg=NONE
 
 " Auto Completion colors ================================================================================================
 hi! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
@@ -486,3 +487,6 @@ hi! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
 hi! CmpItemKindProperty guibg=NONE guifg=#D4D4D4
 hi! CmpItemKindUnit guibg=NONE guifg=#D4D4D4
 " END Auto Completion colors ================================================================================================
+
+" Floating window highlight
+" hi! NormalFloat guibg=NONE guifg=red

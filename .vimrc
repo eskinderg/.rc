@@ -40,8 +40,6 @@ source $HOME/.rc/.config/plugins.vim
 source $HOME/.rc/.config/globalSettings.vim
 source $HOME/.rc/OneDark.vim
 source $HOME/.rc/.config/keymappings.vim
-" source $HOME/.rc/.config/deoplete.vim
-source $HOME/.rc/.config/airlinePluginConfig.vim
 source $HOME/.rc/.config/ale.vim
 source $HOME/.rc/.config/AngularFilesPlugin.vim
 source $HOME/.rc/.config/gvim.vim
@@ -66,5 +64,6 @@ if (has("nvim"))
   luafile $HOME/.rc/.config/treesitter.lua
   luafile $HOME/.rc/.config/nvim-colorizer.lua
   luafile $HOME/.rc/.config/indent-line.lua
+  luafile $HOME/.rc/.config/lualine.lua
   " luafile $HOME/.rc/.config/telescope.lua
 endif

@@ -7,7 +7,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'fisadev/vim-ctrlp-cmdpalette'
   " Plug 'Yggdroot/indentLine'
   Plug 'lukas-reineke/indent-blankline.nvim' " Indent Lines
-  Plug 'itchyny/lightline.vim'
   Plug 'preservim/nerdtree'
   Plug 'AndrewRadev/splitjoin.vim'
   Plug 'tpope/vim-repeat'
@@ -64,8 +63,11 @@ call plug#begin('~/.config/nvim/plugged')
   " Plug 'othree/jspc.vim'
   " Plug 'edkolev/tmuxline.vim'
   Plug 'hail2u/vim-css3-syntax'
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
+  " Plug 'vim-airline/vim-airline'
+  " Plug 'vim-airline/vim-airline-themes'
+  Plug 'nvim-lualine/lualine.nvim'
+  " If you want to have icons in your statusline choose one of these
+  Plug 'kyazdani42/nvim-web-devicons'
   Plug 'ton/vim-bufsurf'
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'

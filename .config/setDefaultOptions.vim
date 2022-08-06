@@ -75,7 +75,7 @@ set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules,.vscode,docs,.angular,b
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,node_modules/**,.vscode/**,docs/**,.angular/**,bower_components/**,dist/**,build/**,release/**,documentation/**,coverage/**,node/**,package-lock.json  "For Linux systems
 set statusline+=%F
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 " set diffopt=filler,iwhite        " Vim Diff settings ignore whitespace
 
