@@ -1,7 +1,7 @@
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'auto',
+    theme = 'iceberg_dark',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {
@@ -20,7 +20,15 @@ require('lualine').setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = { 'filename' },
+    lualine_c = {
+      {
+        'filename',
+        color = {
+          fg = '#c5c7c4',
+          -- gui = 'bold',
+        },
+      },
+    },
     lualine_x = {
       {
         function()
@@ -39,9 +47,9 @@ require('lualine').setup {
           end
           return msg
         end,
-        icon = ' LSP:',
+        icon = ' ',
         color = {
-          fg = '#4a76ce',
+          fg = '#c5c7c4',
           -- gui = 'bold',
         },
       },
