@@ -486,6 +486,20 @@ hi! CmpItemKindMethod guibg=NONE guifg=#C586C0
 hi! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
 hi! CmpItemKindProperty guibg=NONE guifg=#D4D4D4
 hi! CmpItemKindUnit guibg=NONE guifg=#D4D4D4
+hi! CmpItemMenu guibg=NONE,italic guifg=#C792EA
+hi! CmpItemKindEvent guibg=#B5585F guifg=#EED8DA
+hi! CmpItemKindEnum guibg=#9FBD73 guifg=#C3E88D
+hi! CmpItemKindConstructor guibg=#D4BB6C guifg=#FFE082
+hi! CmpItemKindReference guibg=#D4BB6C guifg=#FFE082
+" hi! CmpItemKindStruct guibg=#A377BF guifg=#EADFF0
+" hi! CmpItemKindClass guibg=#A377BF guifg=#EADFF0
+" hi! CmpItemKindModule guibg=#A377BF guifg=#EADFF0
+" hi! CmpItemKindOperator guibg=#A377BF guifg=#EADFF0
+hi! CmpItemKindFolder guibg=#D4A959 guifg=#F5EBD9
+hi! CmpItemKindValue guibg=#6C8ED4 guifg=#DDE5F5
+hi! CmpItemKindEnumMember guibg=#6C8ED4 guifg=#DDE5F5
+hi! CmpItemKindColor guibg=#58B5A8 guifg=#D8EEEB
+hi! CmpItemKindTypeParameter guibg=#58B5A8 guifg=#D8EEEB
 " END Auto Completion colors ================================================================================================
 
 " Floating window highlight

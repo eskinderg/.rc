@@ -78,7 +78,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-unimpaired'
   Plug 'kshenoy/vim-signature' " Displays Marker symbol on the side
   " Plug 'gregsexton/matchtag'
-  Plug 'sjl/gundo.vim' " Undo History log plugin
+  " Plug 'sjl/gundo.vim' " Undo History log plugin
   Plug 'ryanoasis/vim-devicons'
   " Plug 'maxbrunsfeld/vim-yankstack'
   Plug 'machakann/vim-highlightedyank'

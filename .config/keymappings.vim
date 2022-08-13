@@ -17,13 +17,6 @@ let mapleader = "\<Space>"
 " Fast saves
 " nmap <leader>w :w!<cr>
 
-" Gundo map =========================================
-nnoremap<F5> :GundoToggle<CR>
-if has('python3')
-    let g:gundo_prefer_python3 = 1
-endif
-" End Gundo map =========================================
-
 "Better Indentation
 vnoremap < <gv
 vnoremap > >gv
