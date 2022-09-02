@@ -182,7 +182,7 @@ source ~/.rc/powerlevelprompt.sh
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source /home/esk/.gulp.plugin.zsh/gulp.plugin.zsh
+source /home/esk/.zsh/gulp.plugin.zsh/gulp.plugin.zsh
 export PATH=$HOME/.config/nvcode/utils/bin:$PATH
 
 # For Android Studio android development
