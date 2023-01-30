@@ -486,7 +486,7 @@ hi! CmpItemKindMethod guibg=NONE guifg=#C586C0
 hi! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
 hi! CmpItemKindProperty guibg=NONE guifg=#D4D4D4
 hi! CmpItemKindUnit guibg=NONE guifg=#D4D4D4
-hi! CmpItemMenu guibg=NONE,italic guifg=#C792EA
+hi! CmpItemMenu cterm=NONE guibg=NONE gui=NONE,italic guifg=#C792EA
 hi! CmpItemKindEvent guibg=#B5585F guifg=#EED8DA
 hi! CmpItemKindEnum guibg=#9FBD73 guifg=#C3E88D
 hi! CmpItemKindConstructor guibg=#D4BB6C guifg=#FFE082

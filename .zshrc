@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # export TERM=screen-256color-bce
-export TERM=xterm-256color
+# export TERM=xterm-256color
 
 DEFAULT_USER=$USER
 
@@ -161,6 +161,8 @@ alias googler='googler --noprompt  -n 8 -c us -l us'
 # unalias ls
 alias la='colorls -lA --sd --gs --group-directories-first'
 alias ls='colorls --group-directories-first'
+
+alias shopt='/usr/bin/shopt'
 
 # if [[ -z "$TMUX" ]]
 # then

@@ -117,7 +117,7 @@ if ! shopt -oq posix; then
 fi
 #TERM=screen-256color
 #export TERM=xterm-256color
-export TERM=xterm-256color-italic
+# export TERM=xterm-256color-italic
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export PATH=$HOME/.config/nvcode/utils/bin:$PATH
