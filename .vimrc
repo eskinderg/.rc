@@ -46,7 +46,6 @@ source $HOME/.rc/.config/gvim.vim
 source $HOME/.rc/.config/highlightsGroupShow.vim
 source $HOME/.rc/.config/language-client.vim
 source $HOME/.rc/.config/languageserver.vim
-source $HOME/.rc/.config/Nerdtree.vim
 source $HOME/.rc/.config/gitgutter.vim
 source $HOME/.rc/.config/omnisharpConfig.vim
 source $HOME/.rc/.config/saveSession.vim
@@ -56,6 +55,7 @@ source $HOME/.rc/.config/vim-fold.vim
 source $HOME/.rc/.config/vim-note.vim
 
 if (has("nvim"))
+  luafile $HOME/.rc/.config/nvim-tree.lua
   luafile $HOME/.rc/.config/nvim-cmp.lua
   luafile $HOME/.rc/.config/lsp-config-icons.lua
   luafile $HOME/.rc/.config/lsp/tsserver-angularls-cssls-eslint.lua

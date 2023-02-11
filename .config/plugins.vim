@@ -7,7 +7,10 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'fisadev/vim-ctrlp-cmdpalette'
   " Plug 'Yggdroot/indentLine'
   Plug 'lukas-reineke/indent-blankline.nvim' " Indent Lines
-  Plug 'preservim/nerdtree'
+
+  Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+  Plug 'nvim-tree/nvim-tree.lua'
+
   Plug 'AndrewRadev/splitjoin.vim'
   Plug 'tpope/vim-repeat'
   Plug 'drewtempelmeyer/palenight.vim' " Theme Plugin
@@ -22,7 +25,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'editorconfig/editorconfig-vim'
   " Plug 'tpope/vim-dispatch'
   Plug 'lifepillar/vim-solarized8'
-  Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'rstacruz/sparkup' " Makes HTML writing easy div > <div></div>
   " Plug 'mhartington/vim-typings'
   " Plug 'Quramy/tsuquyomi'

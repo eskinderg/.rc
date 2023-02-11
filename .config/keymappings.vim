@@ -145,3 +145,7 @@ nmap <silent>gl :0Glog<CR>
 " nmap <cr> gx
 
 " nmap <silent> <space>e :CocCommand explorer<CR>
+
+nmap <silent> <C-b> :NvimTreeToggle<cr>
+nmap <silent> <leader>e :NvimTreeToggle<cr>
+nmap <silent> <C-f> :NvimTreeFindFile<cr>
