@@ -10,6 +10,8 @@ call plug#begin('~/.config/nvim/plugged')
   " Plug 'Yggdroot/indentLine'
   Plug 'lukas-reineke/indent-blankline.nvim' " Indent Lines
 
+  Plug 'ray-x/lsp_signature.nvim'
+
   Plug 'yaocccc/nvim-hlchunk'
 
   Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
