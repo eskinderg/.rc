@@ -1,12 +1,16 @@
 call plug#begin('~/.config/nvim/plugged')
 
-  Plug 'jiangmiao/auto-pairs'          " Autoclose {} [] ()
+  Plug 'windwp/nvim-autopairs' " Auto close {} [] ()
+  Plug 'windwp/nvim-ts-autotag' " Auto close html tags
+
   Plug 'tpope/vim-commentary'
   Plug 'easymotion/vim-easymotion'
   Plug 'ctrlpvim/ctrlp.vim'            " Vim-devicons compatible ctrlp
   Plug 'fisadev/vim-ctrlp-cmdpalette'
   " Plug 'Yggdroot/indentLine'
   Plug 'lukas-reineke/indent-blankline.nvim' " Indent Lines
+
+  Plug 'yaocccc/nvim-hlchunk'
 
   Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
   Plug 'nvim-tree/nvim-tree.lua'
