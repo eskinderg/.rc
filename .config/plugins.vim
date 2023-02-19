@@ -45,6 +45,10 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'nvim-treesitter/playground' " Syntax debugging
 
   if (has("nvim"))
+
+    Plug 'hrsh7th/cmp-vsnip' " makes autocompletion not remove
+    Plug 'hrsh7th/vim-vsnip' " makes autocompletion not remove
+
     Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/cmp-nvim-lsp'
     " Plug 'hrsh7th/cmp-buffer'
