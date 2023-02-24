@@ -72,12 +72,12 @@ setopt HIST_SAVE_NO_DUPS
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker npm node tmux zsh-completions vi-mode zsh-syntax-highlighting autoupdate)
-autoload -U compinit && compinit
+plugins=(git docker npm node tmux zsh-completions zsh-autosuggestions vi-mode zsh-syntax-highlighting autoupdate)
+# autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
-
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 bindkey '^ ' autosuggest-accept
 
@@ -184,7 +184,7 @@ source ~/.rc/powerlevelprompt.sh
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source /home/esk/.zsh/gulp.plugin.zsh/gulp.plugin.zsh
+source /home/esk/.oh-my-zsh/plugins/gulp/gulp.plugin.zsh
 export PATH=$HOME/.config/nvcode/utils/bin:$PATH
 
 # For Android Studio android development
