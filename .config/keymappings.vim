@@ -34,7 +34,7 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
-nmap <silent><C-p> :Telescope find_files<cr>
+" nmap <silent><C-p> :Telescope find_files<cr>
 
 " map <C-h> :call WinMove('h')<cr>
 " map <C-j> :call WinMove('j')<cr>

@@ -229,12 +229,16 @@ hi! Pmenu ctermfg=0 guifg=#abacac ctermbg=14 guibg=#21252b cterm=NONE gui=NONE
 
 " Autocomplete menu selected text
 " hi! PmenuSel ctermfg=15 guifg=white ctermbg=11 guibg=#3c85e4 cterm=NONE gui=NONE
-hi! PmenuSel guifg=white ctermbg=11 guibg=#2c313a cterm=NONE,bold gui=NONE
+hi! PmenuSel guifg=#6893ca ctermbg=11 guibg=#2c313a cterm=NONE,bold gui=NONE
 
 " End autocomplete menu "selection------------------------------------------------------------------------
 
 hi! PmenuSbar ctermfg=15 guifg=black ctermbg=14 guibg=darkgrey cterm=NONE gui=NONE,
-hi! PmenuThumb ctermfg=14 guifg=#3c85e4 ctermbg=8 guibg=#282c34 cterm=NONE,reverse gui=NONE,reverse
+hi! PmenuThumb ctermfg=14 guifg=grey ctermbg=8 guibg=#282c34 cterm=NONE,reverse gui=NONE,reverse
+
+" Menu and menu item preview border color
+highlight! BorderBG guibg=NONE guifg=#4b5364
+
 hi! CursorColumn cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#282c34
 
 "Visual cursor transparent selection
@@ -500,6 +504,8 @@ hi! CmpItemKindValue guibg=#6C8ED4 guifg=#DDE5F5
 hi! CmpItemKindEnumMember guibg=#6C8ED4 guifg=#DDE5F5
 hi! CmpItemKindColor guibg=#58B5A8 guifg=#D8EEEB
 hi! CmpItemKindTypeParameter guibg=#58B5A8 guifg=#D8EEEB
+
+hi! ModalNormal guifg=grey " this is set in nvim-cmp plug
 " END Auto Completion colors ================================================================================================
 
 " Floating window highlight

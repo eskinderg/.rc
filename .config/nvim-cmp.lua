@@ -49,8 +49,12 @@ cmp.setup({
       { name = 'buffer' },
     }),
   window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered()
+    completion = cmp.config.window.bordered({
+      winhighlight = "Normal:ModalNormal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+    }),
+    documentation = cmp.config.window.bordered({
+      winhighlight = "Normal:ModalNormal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+    })
   },
   formatting = {
     fields = { "kind", "abbr", "menu" },
