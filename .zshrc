@@ -72,14 +72,18 @@ setopt HIST_SAVE_NO_DUPS
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker npm node tmux zsh-completions zsh-autosuggestions vi-mode zsh-syntax-highlighting autoupdate)
+plugins=(git docker npm node tmux zsh-completions zsh-autosuggestions zsh-syntax-highlighting zsh-vi-mode autoupdate)
 # autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 # source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-bindkey '^ ' autosuggest-accept
+ZVM_CURSOR_STYLE_ENABLED=false
+ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
+function zvm_after_init() {
+  zvm_bindkey viins '^ ' autosuggest-accept
+}
 
 # export KEYTIMEOUT=1
 
