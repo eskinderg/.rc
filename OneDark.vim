@@ -519,6 +519,6 @@ hi! NvimTreeFolderName gui=bold guifg=#4789eb
 hi! NvimTreeOpendFolderName gui=bold guifg=#4789eb
 hi! NvimTreeOpenedFolderName gui=bold guifg=#4789eb
 hi! NvimTreeFolderIcon gui=bold guifg=#4789eb
-hi!  NvimTreeFileDirty guifg=#b58900
-hi!  NvimTreeGitDirty gui=bold guifg=#b58900
+hi! NvimTreeFileDirty guifg=#b58900
+hi! NvimTreeGitDirty gui=bold guifg=#b58900
 " End Nvim-tree Highlights=========================================================================================================================

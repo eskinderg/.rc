@@ -55,9 +55,25 @@ require("nvim-tree").setup({
         git = true,
         modified = true,
       },
-    },   
-  },
-  filters = {
-    dotfiles = true,
-  },
-})
+      glyphs = {
+        default = "",
+        symlink = "",
+        bookmark = "",
+        modified = "●",
+        folder = {
+          arrow_closed = "▶",
+          arrow_open = "▼",
+          default = "",
+          open = "",
+          empty = "",
+          empty_open = "",
+          symlink = "",
+          symlink_open = "",
+        }
+      }
+      },   
+    },
+    filters = {
+      dotfiles = true,
+    },
+  })
