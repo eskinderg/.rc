@@ -512,11 +512,13 @@ hi! ModalNormal guifg=grey " this is set in nvim-cmp plug
 " hi! NormalFloat guibg=NONE guifg=red
 "
 " Nvim-tree Highlights=============================================================================================================================
-hi! NvimTreeExecFile guifg=#84a2cd
-hi! NvimTreeSpecialFile guifg=#84a2cd
+hi! NvimTreeNormal guifg=#687a94
+hi! NvimTreeExecFile guifg=#687a94
+hi! NvimTreeSpecialFile guifg=#687a94
 hi! NvimTreeFolderName gui=bold guifg=#4789eb
 hi! NvimTreeOpendFolderName gui=bold guifg=#4789eb
 hi! NvimTreeOpenedFolderName gui=bold guifg=#4789eb
 hi! NvimTreeFolderIcon gui=bold guifg=#4789eb
-hi! NvimTreeNormal guifg=#84a2cd
+hi!  NvimTreeFileDirty guifg=#b58900
+hi!  NvimTreeGitDirty gui=bold guifg=#b58900
 " End Nvim-tree Highlights=========================================================================================================================
