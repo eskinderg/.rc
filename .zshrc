@@ -150,6 +150,7 @@ alias o="sudo openfortivpn"
 alias p="~/.xprofile"
 # alias python='python3.6' 
 alias python='python2' 
+# alias ping='sudo /usr/sbin/hping3 -S -p 80'
 
 # Define words using googler. googler must be installed for this to work
 alias define='googler --noprompt -n 3 define'
