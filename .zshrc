@@ -148,8 +148,8 @@ alias f="vifm"
 alias r="remmina-file-wrapper -c ~/.local/share/remmina/group_rdp_10-80-5-87_10-80-5-87.remmina"
 alias o="sudo openfortivpn"
 alias p="~/.xprofile"
-# alias python='python3.6' 
-alias python='python2' 
+alias python='python3.8' 
+# alias python='python2' 
 # alias ping='sudo /usr/sbin/hping3 -S -p 80'
 
 # Define words using googler. googler must be installed for this to work
