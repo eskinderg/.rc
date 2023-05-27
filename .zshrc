@@ -136,6 +136,8 @@ alias pbcopy="xclip -sel clip"
 
 alias suroot="sudo -E -s" # remain loggedin as root user
 alias c="clear"
+alias s="sudo shutdown -P"
+alias sc="sudo shutdown -c"
 alias t="tmux"
 alias vi="nvim"
 alias v="nvim"
