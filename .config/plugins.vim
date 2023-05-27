@@ -1,7 +1,10 @@
 call plug#begin('~/.config/nvim/plugged')
 
   Plug 'windwp/nvim-autopairs' " Auto close {} [] ()
-  Plug 'windwp/nvim-ts-autotag' " Auto close html tags
+
+  if (has("nvim"))
+    Plug 'windwp/nvim-ts-autotag' " Auto close html tags
+  endif
 
   Plug 'tpope/vim-commentary'
   Plug 'easymotion/vim-easymotion'
@@ -12,7 +15,9 @@ call plug#begin('~/.config/nvim/plugged')
 
   Plug 'ray-x/lsp_signature.nvim'
 
-  Plug 'yaocccc/nvim-hlchunk'
+  if (has("nvim"))
+    Plug 'yaocccc/nvim-hlchunk'
+  endif
 
   Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
   Plug 'nvim-tree/nvim-tree.lua'
