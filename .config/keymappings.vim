@@ -112,6 +112,14 @@ nmap sp :split<cr>
 " Create/edit file in the current directory
 nmap :ed :edit %:p:h/
 
+" Make search results appear in the middle of the screen
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
+
 nmap ,1  :call Class()<cr>
 " nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>ev :e ~/.rc/.vimrc<CR>
