@@ -93,7 +93,8 @@ let g:EasyMotion_leader_key = '<Leader>'
 map<leader>l "zdiwaconsole.log(<c-r>z);<esc>
 map<leader><leader>l "zdiwaconsole.log('<c-r>z');<esc>
 
-map <silent><leader>gdiff :Gdiffsplit<cr>
+nmap<leader>l 0v$hdiconsole.log("jj
+
 vmap<leader>l "zdaconsole.log(<c-r>z);<esc>
 vmap<leader><leader>l "zdaconsole.log('<c-r>z');<esc>
 

@@ -85,6 +85,11 @@ function zvm_after_init() {
   zvm_bindkey viins '^ ' autosuggest-accept
 }
 
+function zvm_config() {
+  ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+  # ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+}
+
 # export KEYTIMEOUT=1
 
 # User configuration
@@ -119,13 +124,13 @@ if [ -n "$nvmrc_path" ]; then
     if [ "$nvmrc_node_version" = "N/A" ]; then
         nvm install
     elif [ "$nvmrc_node_version" != "$node_version" ]; then
-        # nvm use --silent
-        nvm use
+        nvm use --silent
+        # nvm use
     fi
 elif [ "$node_version" != "$(nvm version default)" ]; then
     # echo "Reverting to nvm default version"
-    # nvm use default --silent
-    nvm use default
+    nvm use default --silent
+    # nvm use default
 fi
 }
 add-zsh-hook chpwd load-nvmrc
@@ -136,7 +141,17 @@ alias pbcopy="xclip -sel clip"
 
 alias suroot="sudo -E -s" # remain loggedin as root user
 alias c="clear"
-alias s="sudo shutdown -P"
+# alias sl="net rpc -S 192.168.100.7 -U user%123001 shutdown -f -t 1"
+# alias s="sudo shutdown -P +$1"
+
+function s() {
+  sudo shutdown -P $1;
+}
+
+function sp() {
+  sudo shutdown -P $1;
+}
+
 alias sc="sudo shutdown -c"
 alias t="tmux"
 alias vi="nvim"
@@ -173,6 +188,10 @@ alias ls='colorls --group-directories-first'
 
 alias shopt='/usr/bin/shopt'
 
+alias m="mpv http://212.102.58.251:8080/Nroa0AohHn/z3d8ZHNBWt/1286"
+alias mm="mpv http://212.102.58.251:8080/Nroa0AohHn/z3d8ZHNBWt/1296"
+alias mmm="mpv http://212.102.58.251:8080/Nroa0AohHn/z3d8ZHNBWt/191"
+alias mx="mpv http://212.102.58.251:8080/Nroa0AohHn/z3d8ZHNBWt/201"
 # if [[ -z "$TMUX" ]]
 # then
 #     ID="`tmux ls | grep -vm1 attached | cut -d: -f1`"
