@@ -8,8 +8,8 @@ call plug#begin('~/.config/nvim/plugged')
 
   Plug 'tpope/vim-commentary'
   Plug 'easymotion/vim-easymotion'
-  Plug 'ctrlpvim/ctrlp.vim'            " Vim-devicons compatible ctrlp
-  Plug 'fisadev/vim-ctrlp-cmdpalette'
+  " Plug 'ctrlpvim/ctrlp.vim'            " Vim-devicons compatible ctrlp
+  " Plug 'fisadev/vim-ctrlp-cmdpalette'
   " Plug 'Yggdroot/indentLine'
   Plug 'lukas-reineke/indent-blankline.nvim' " Indent Lines
 
@@ -123,8 +123,8 @@ call plug#begin('~/.config/nvim/plugged')
   endif
 
   if (has("nvim")) " For Telescope
-    " Plug 'nvim-lua/plenary.nvim'
-    " Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
   endif
 
   "===================================================Neovim 6.0 Plugins=============================

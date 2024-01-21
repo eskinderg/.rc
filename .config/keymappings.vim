@@ -34,7 +34,7 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
-" nmap <silent><C-p> :Telescope find_files<cr>
+nmap <silent><C-p> :Telescope find_files<cr>
 
 " map <C-h> :call WinMove('h')<cr>
 " map <C-j> :call WinMove('j')<cr>
@@ -57,8 +57,8 @@ nmap <C-l> <C-w>l
 " endfunction
 
 " Mapping for switching buffers
-nmap <C-o> :bp<cr>
-nmap <C-i> :bn<cr>
+nmap <C-i> :bp<cr>
+nmap <C-o> :bn<cr>
 
 " noremap <C-k> <C-e> " Turns out tmux-vim-navigator already have those mappings
 " noremap <C-j> <C-y> " Turns out tmux-vim-navigator already have those mappings
