@@ -192,16 +192,17 @@ alias m="mpv http://212.102.58.251:8080/Nroa0AohHn/z3d8ZHNBWt/1286"
 alias mm="mpv http://212.102.58.251:8080/Nroa0AohHn/z3d8ZHNBWt/1296"
 alias mmm="mpv http://212.102.58.251:8080/Nroa0AohHn/z3d8ZHNBWt/191"
 alias mx="mpv http://212.102.58.251:8080/Nroa0AohHn/z3d8ZHNBWt/201"
-# if [[ -z "$TMUX" ]]
-# then
-#     ID="`tmux ls | grep -vm1 attached | cut -d: -f1`"
-#     if [[ -z "$ID" ]]
-#     then
-#         tmux new-session
-#     else
-#         tmux attach-session -t "$ID"
-#     fi
-# fi
+
+if [[ -z "$TMUX" ]]
+then
+    ID="`tmux ls | grep -vm1 attached | cut -d: -f1`"
+    if [[ -z "$ID" ]]
+    then
+        tmux new-session
+    else
+        tmux attach-session -t "$ID"
+    fi
+fi
 
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
