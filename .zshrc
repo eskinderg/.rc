@@ -152,6 +152,8 @@ function sp() {
   sudo shutdown -P $1;
 }
 
+source ~/.venv/bin/activate # For python
+
 alias sc="sudo shutdown -c"
 alias t="tmux"
 alias vi="nvim"
