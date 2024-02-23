@@ -34,7 +34,7 @@ set previewheight=5
 " Fetch semantic type/interface/identifier names on BufEnter and highlight them
 let g:OmniSharp_highlight_types = 2
 
-let g:OmniSharp_selector_ui = 'ctrlp'  " Use ctrlp.vim
+" let g:OmniSharp_selector_ui = 'ctrlp'  " Use ctrlp.vim
 
 let g:syntastic_cs_checkers = ['code_checker']
 
@@ -62,7 +62,7 @@ augroup omnisharp_commands
   " autocmd FileType cs nnoremap <buffer> gd :OmniSharpGotoDefinition<CR>
   autocmd FileType cs nnoremap <buffer> <C-]> :OmniSharpGotoDefinition<CR>
   autocmd FileType cs nnoremap <buffer> <C-[> :OmniSharpFindImplementations<CR>
-  autocmd FileType cs nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
+  autocmd FileType cs nnoremap <buffer> <Leader>i :OmniSharpFindImplementations<CR>
   autocmd FileType cs nnoremap <buffer> <Leader>fs :OmniSharpFindSymbol<CR>
   autocmd FileType cs nnoremap <buffer> <Leader>r :OmniSharpFindUsages<CR>
 
@@ -74,11 +74,14 @@ augroup omnisharp_commands
   autocmd FileType cs nnoremap <buffer> <Leader>dc :OmniSharpDocumentation<CR>
   autocmd FileType cs nnoremap <buffer> <C-\> :OmniSharpSignatureHelp<CR>
   autocmd FileType cs inoremap <buffer> <C-\> <C-o>:OmniSharpSignatureHelp<CR>
-  autocmd FileType cs nnoremap <buffer> <Leader>= :OmniSharpCodeFormat<CR>
-
+  " autocmd FileType cs nnoremap <buffer> <Leader>= :OmniSharpCodeFormat<CR>
+  autocmd FileType cs nnoremap <buffer> <Leader>== :lua vim.lsp.buf.format { async = true }<CR>
+  autocmd FileType cs nnoremap <buffer> <Leader>= :lua vim.lsp.buf.range_formatting()<CR>
   " Rename with dialog
   autocmd FileType cs nnoremap <Leader>rn :OmniSharpRename<CR>
   autocmd FileType cs nnoremap <F2> :OmniSharpRename<CR> " Rename without dialog - with cursor on the symbol to rename: `:Rename newname`
+  autocmd FileType cs nnoremap <Leader><cr> :lua vim.lsp.buf.code_action()<CR>
+
   command! -nargs=1 Rename :call OmniSharp#RenameTo("<args>")
   " Navigate up and down by method/property/field
   " autocmd FileType cs nnoremap <buffer> <C-k> :OmniSharpNavigateUp<CR>
