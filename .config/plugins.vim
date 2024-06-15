@@ -49,6 +49,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " For Syntax Highlighting
   Plug 'nvim-treesitter/playground' " Syntax debugging
 
+  Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
   if (has("nvim"))
 
     Plug 'hrsh7th/cmp-vsnip' " makes autocompletion not remove

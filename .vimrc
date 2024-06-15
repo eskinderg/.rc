@@ -53,6 +53,7 @@ source $HOME/.rc/.config/searchPlugin.vim
 source $HOME/.rc/.config/syntasticPluginConfig.vim
 source $HOME/.rc/.config/vim-fold.vim
 source $HOME/.rc/.config/vim-note.vim
+source $HOME/.rc/.config/prettier.vim
 
 if (has("nvim"))
   luafile $HOME/.rc/.config/nvim-tree.lua
@@ -61,6 +62,7 @@ if (has("nvim"))
   luafile $HOME/.rc/.config/lsp/tsserver-angularls-cssls-eslint.lua
   luafile $HOME/.rc/.config/lsp/omnisharp.lua
   luafile $HOME/.rc/.config/lsp/jsonls.lua
+  luafile $HOME/.rc/.config/lsp/yamlls.lua
   luafile $HOME/.rc/.config/lsp/lsp_signature.lua
   luafile $HOME/.rc/.config/treesitter.lua
   luafile $HOME/.rc/.config/nvim-colorizer.lua
