@@ -7,3 +7,4 @@ let g:prettier#quickfix_auto_focus = 0 "By default we auto focus on the quickfix
 let g:prettier#quickfix_enabled = 0
 
 " autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.html PrettierAsync
+" au FileType css,scss let b:prettier_exec_cmd = "prettier-stylelint"
