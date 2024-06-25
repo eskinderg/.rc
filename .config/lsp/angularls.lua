@@ -1,8 +1,5 @@
-nvim_lsp = require('lspconfig')
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-local servers = { 'tsserver', 'cssls', 'eslint', 'html', 'vimls', 'tailwindcss' }
 
 local on_attach = function(client, bufnr)
   local opts = { noremap=true, silent=true }
@@ -20,12 +17,10 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>==', '<cmd>lua vim.lsp.buf.format { async = true }<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>=', '<cmd>lua vim.lsp.buf.range_formatting()<CR>', opts)
 
-  client.server_capabilities.renameProvider = false
+  client.server_capabilities.renameProvider = true
 end
 
-for _,lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup{
-    on_attach = on_attach,
-    capabilities = capabilities
-  }
-end
+require'lspconfig'.angularls.setup{
+  on_attach = on_attach,
+  capabilities = capabilities
+}

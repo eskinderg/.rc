@@ -64,6 +64,7 @@ if (has("nvim"))
   luafile $HOME/.rc/.config/lsp/jsonls.lua
   luafile $HOME/.rc/.config/lsp/yamlls.lua
   luafile $HOME/.rc/.config/lsp/lsp_signature.lua
+  luafile /home/esk/.rc/.config/lsp/angularls.lua
   luafile $HOME/.rc/.config/treesitter.lua
   luafile $HOME/.rc/.config/nvim-colorizer.lua
   luafile $HOME/.rc/.config/indent-line.lua
