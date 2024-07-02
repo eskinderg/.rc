@@ -522,3 +522,5 @@ hi! NvimTreeFolderIcon gui=bold guifg=#4789eb
 hi! NvimTreeFileDirty guifg=#b58900
 hi! NvimTreeGitDirty gui=bold guifg=#b58900
 " End Nvim-tree Highlights=========================================================================================================================
+
+hi! WinSeparator guifg=#4789eb

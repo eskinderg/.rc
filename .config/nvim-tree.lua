@@ -40,6 +40,7 @@ require("nvim-tree").setup{
   git ={
     enable = true
   },
+  view = { adaptive_size = true },
   sort_by = "case_sensitive",
   renderer = {
     group_empty = true,
