@@ -136,7 +136,7 @@ nnoremap <silent><C-n> :noh<cr>
 autocmd BufNewFile,BufReadPost *.ts nmap <silent><Leader>t :call OpenFile(expand('%:p:h').'/'.GetFileName().'.component.html') <cr>
 autocmd BufNewFile,BufReadPost *.ts nmap <silent><Leader>s :call OpenFile(expand('%:p:h').'/'.GetFileName().'.component.scss') <cr>
 autocmd BufNewFile,BufReadPost *.ts nmap <silent><Leader>c :call OpenFile(expand('%:p:h').'/'.GetFileName().'.component.ts') <cr>
-autocmd BufNewFile,BufReadPost *.ts nmap <silent><Leader>d :call OpenFile(expand('%:p:h').'/'.GetFileName().'.module.ts') <cr>
+" autocmd BufNewFile,BufReadPost *.ts nmap <silent><Leader>d :call OpenFile(expand('%:p:h').'/'.GetFileName().'.module.ts') <cr>
 
 " Show highlishting groups for the current word
 nmap <leader>uu :call<SID>SynStack()<CR>
