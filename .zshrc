@@ -166,6 +166,8 @@ alias vif="vifm"
 alias f="vifm"
 alias r="remmina-file-wrapper -c ~/.local/share/remmina/group_rdp_10-80-5-87_10-80-5-87.remmina"
 alias o="sudo openfortivpn"
+alias re="git add . ; git reset --hard"
+alias reset="git add . ; git reset --hard"
 alias p="~/.xprofile"
 alias python='python3.8' 
 # alias python='python2' 
@@ -217,6 +219,8 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /home/esk/.oh-my-zsh/plugins/gulp/gulp.plugin.zsh
 export PATH=$HOME/.config/nvcode/utils/bin:$PATH
+
+# pkill -HUP mutter-x11-fram
 
 # For Android Studio android development
 # export ANDROID_HOME=$HOME/Android/Sdk

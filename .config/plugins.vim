@@ -7,7 +7,7 @@ call plug#begin('~/.config/nvim/plugged')
   endif
 
   Plug 'tpope/vim-commentary'
-  Plug 'easymotion/vim-easymotion'
+  " Plug 'easymotion/vim-easymotion'
   " Plug 'ctrlpvim/ctrlp.vim'            " Vim-devicons compatible ctrlp
   " Plug 'fisadev/vim-ctrlp-cmdpalette'
   " Plug 'Yggdroot/indentLine'

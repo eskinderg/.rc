@@ -71,7 +71,8 @@ augroup omnisharp_commands
 
   autocmd FileType cs nnoremap <buffer> <Leader>fx :OmniSharpFixUsings<CR>
   autocmd FileType cs nnoremap <buffer> <Leader>tt :OmniSharpTypeLookup<CR>
-  autocmd FileType cs nnoremap <buffer> <Leader>dc :OmniSharpDocumentation<CR>
+  " autocmd FileType cs nnoremap <buffer> <Leader>dc :OmniSharpDocumentation<CR>
+  autocmd FileType cs nnoremap <silent> <buffer> <Leader>d :lua vim.diagnostic.open_float()<CR>
   autocmd FileType cs nnoremap <buffer> <C-\> :OmniSharpSignatureHelp<CR>
   autocmd FileType cs inoremap <buffer> <C-\> <C-o>:OmniSharpSignatureHelp<CR>
   " autocmd FileType cs nnoremap <buffer> <Leader>= :OmniSharpCodeFormat<CR>
