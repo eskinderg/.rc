@@ -2,7 +2,7 @@ nvim_lsp = require('lspconfig')
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-local servers = { 'tsserver', 'cssls', 'eslint', 'html', 'vimls', 'tailwindcss' }
+local servers = { 'ts_ls', 'cssls', 'eslint', 'html', 'vimls', 'tailwindcss' }
 
 local on_attach = function(client, bufnr)
   local opts = { noremap=true, silent=true }

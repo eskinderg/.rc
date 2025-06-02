@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+apt-get update;
+apt-get install build-essential gnome-shell-extension-manager gnome-tweaks git curl tmux zsh neovim mpv vifm;
 
 if [ ! -f ~/.vimrc ]
 then
