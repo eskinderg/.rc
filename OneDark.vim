@@ -524,3 +524,15 @@ hi! NvimTreeGitDirty gui=bold guifg=#b58900
 " End Nvim-tree Highlights=========================================================================================================================
 
 hi! WinSeparator guifg=#4789eb
+
+" Tree-sitter highlight group mappings
+hi! link @function Function
+hi! link @variable Identifier
+hi! link @type Type
+hi! link @constant Constant
+hi! link @keyword Keyword
+hi! link @string String
+hi! link @number Number
+hi! link @comment Comment
+hi! link @boolean Boolean
+hi! link @operator Operator
