@@ -67,9 +67,9 @@ if (has("nvim"))
   luafile /home/esk/.rc/.config/lsp/angularls.lua
   luafile $HOME/.rc/.config/treesitter.lua
   " luafile $HOME/.rc/.config/nvim-colorizer.lua
+  luafile $HOME/.rc/.config/nvim-ts-autotag.lua
   luafile $HOME/.rc/.config/indent-line.lua
   luafile $HOME/.rc/.config/lualine.lua
   luafile $HOME/.rc/.config/lua configs/nvim-autopairs.lua
-  luafile $HOME/.rc/.config/lua configs/nvim-ts-autotag.lua
   luafile $HOME/.rc/.config/telescope.lua
 endif

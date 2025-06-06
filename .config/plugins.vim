@@ -3,7 +3,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'windwp/nvim-autopairs' " Auto close {} [] ()
 
   if (has("nvim"))
-    Plug 'windwp/nvim-ts-autotag' " Auto close html tags
+    " Plug 'windwp/nvim-ts-autotag' " Auto close html tags
   endif
 
   Plug 'tpope/vim-commentary'
@@ -29,7 +29,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'norcalli/nvim-colorizer.lua' " CSS color highlighter
 
   Plug 'tpope/vim-endwise'
-  Plug 'Valloric/MatchTagAlways'
+  " Plug 'Valloric/MatchTagAlways'
   " Plug 'yuttie/comfortable-motion.vim' " physics-based smooth scrolling
   " Plug 'godlygeek/tabular'
   Plug 'plasticboy/vim-markdown'
@@ -101,6 +101,9 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'ryanoasis/vim-devicons'
   " Plug 'maxbrunsfeld/vim-yankstack'
   Plug 'machakann/vim-highlightedyank'
+
+  Plug 'windwp/nvim-ts-autotag' "Rename tags
+  Plug 'andymass/vim-matchup'  " Match HTML Tags
 
   " For vim Note taking
   " Plug 'xolox/vim-notes'

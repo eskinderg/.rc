@@ -19,7 +19,7 @@ autocmd BufRead,BufNewFile *.txt setlocal spell
 autocmd BufRead,BufNewFile *.txt hi! Normal cterm=NONE gui=NONE ctermfg=14 guifg=#989a97 ctermbg=8 guibg=#282c34
 
 "Function frech brackets
-hi! Function ctermbg=0 guibg=#282c34 guifg=#767676
+hi! Function ctermbg=0 guibg=#282c34 guifg=#61afef
 hi! Conditional ctermbg=0 guibg=#282c34 guifg=#767676
 hi! String ctermbg=0 guibg=#282c34 cterm=italic guifg=#4a8e5e
 " hi! Repeat ctermbg=0 guibg=#282c34  guifg=black
@@ -116,7 +116,7 @@ hi! typescriptBlock cterm=NONE gui=NONE ctermfg=4 guifg=#4a76ce ctermbg=NONE gui
 hi! typescriptIdentifierName cterm=NONE gui=NONE,bold ctermfg=4 guifg=#b58900 ctermbg=NONE guibg=NONE
 " hi! typescriptIdentifier cterm=NONE gui=NONE ctermfg=4 guifg=blue ctermbg=NONE guibg=NONE
 hi! typescriptArray cterm=NONE gui=NONE ctermfg=4 guifg=#61afef ctermbg=NONE guibg=NONE
-hi! typescriptMember cterm=NONE gui=NONE,bold ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
+hi! typescriptMember cterm=NONE gui=NONE ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
 hi! typescriptCall cterm=NONE gui=NONE,italic ctermfg=4 guifg=#4a76ce ctermbg=NONE guibg=NONE
 " hi! typescriptArrowFuncArg cterm=NONE gui=NONE ctermfg=4 guifg=red ctermbg=NONE guibg=NONE
 hi typescriptArrowFunc cterm=NONE gui=NONE,bold cterm=italic ctermfg=11 guifg=#c678dd ctermbg=NONE guibg=NONE
@@ -473,7 +473,8 @@ highlight IndentBlanklineContextChar guifg=#6c7982 gui=nocombine
 hi! TSInclude cterm=NONE gui=NONE ctermfg=2 guifg=#c678dd ctermbg=NONE guibg=NONE
 hi! TSVariableBuiltin cterm=NONE gui=NONE guifg=#b58900 ctermbg=NONE guibg=NONE
 hi! TSPunctBracket cterm=NONE gui=NONE guifg=#4a76ce ctermbg=NONE guibg=NONE
-hi! TSConstructor cterm=NONE gui=NONE,bold guifg=#4a76ce ctermbg=NONE guibg=NONE
+hi! TSConstructor cterm=NONE gui=NONE guifg=#c678dd ctermbg=NONE guibg=NONE
+" hi! TSConstructor cterm=NONE gui=NONE guifg=#c678dd ctermbg=NONE guibg=NONE
 hi! TSVariable cterm=NONE gui=NONE,bold guifg=#4a76ce ctermbg=NONE guibg=NONE
 
 " Auto Completion colors ================================================================================================
@@ -536,3 +537,10 @@ hi! link @number Number
 hi! link @comment Comment
 hi! link @boolean Boolean
 hi! link @operator Operator
+hi! link @constructor TSConstructor
+hi! link @attribute TSConstructor
+hi! link @type.builtin TSVariableBuiltin
+hi! link @variable.builtin Keyword
+" hi! link @function.angular Keyword
+" lua vim.api.nvim_set_hl(0, "@variable.member", { link = "Comment", priority = 200 })
+" hi! link @variable.member Comment
