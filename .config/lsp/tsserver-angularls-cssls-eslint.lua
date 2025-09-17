@@ -21,6 +21,18 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>=', '<cmd>lua vim.lsp.buf.range_formatting()<CR>', opts)
 
   client.server_capabilities.renameProvider = false
+
+  vim.api.nvim_create_autocmd("DiagnosticChanged", {
+    buffer = bufnr,
+    callback = function()
+      vim.api.nvim_create_autocmd("DiagnosticChanged", {
+        buffer = bufnr,
+        callback = function()
+          require("error-lens").setup({})
+        end,
+      })
+    end,
+  })
 end
 
 for _,lsp in ipairs(servers) do

@@ -77,7 +77,7 @@ call plug#begin('~/.config/nvim/plugged')
   " Plug 'Quramy/vim-dtsm'
   " Plug 'Quramy/vim-js-pretty-template'
   " Plug 'vim-syntastic/syntastic' " Syntax error checking
-  Plug 'preservim/tagbar'
+  " Plug 'preservim/tagbar'
   " Plug 'ternjs/tern_for_vim', { 'do': 'npm install' } " do npm install -g tern
   " Plug 'othree/jspc.vim'
   " Plug 'edkolev/tmuxline.vim'
@@ -123,15 +123,18 @@ call plug#begin('~/.config/nvim/plugged')
   " Plug 'mhinz/vim-signify' " Helps toggle gitdiff and highlights the changes
   Plug 'lambdalisue/suda.vim' " Suda write
 
-  if (has("nvim"))
-    Plug 'folke/trouble.nvim'
-  endif
+  " if (has("nvim"))
+  "   Plug 'folke/trouble.nvim'
+  " endif
 
   if (has("nvim")) " For Telescope
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
   endif
 
+  if (has("nvim"))
+    Plug 'chikko80/error-lens.nvim'
+  endif
   "===================================================Neovim 6.0 Plugins=============================
   "Telescope Plugins
   " if has('nvim')

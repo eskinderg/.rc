@@ -96,10 +96,10 @@ cmp.setup.cmdline(':', {
     })
 })
 
-require("trouble").setup {
-  icons=false,
-  use_diagnostic_signs=true
-}
+-- require("trouble").setup {
+--   icons=false,
+--   use_diagnostic_signs=true
+-- }
 
 -- require('lspconfig')['tsserver'].setup {
 --   capabilities = capabilities

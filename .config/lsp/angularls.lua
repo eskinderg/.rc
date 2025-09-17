@@ -20,7 +20,19 @@ local on_attach = function(client, bufnr)
   client.server_capabilities.renameProvider = true
 end
 
+local util = require('lspconfig.util')
+
 require'lspconfig'.angularls.setup{
   on_attach = on_attach,
-  capabilities = capabilities
+  capabilities = capabilities,
+  on_new_config = function(new_config, new_root_dir)
+    new_config.cmd = {
+      "node",
+      new_root_dir .. "/node_modules/@angular/language-server/bin/ngserver",
+      "--stdio",
+      "--tsProbeLocations", new_root_dir .. "/node_modules",
+      "--ngProbeLocations", new_root_dir .. "/node_modules",
+      "--angularCoreVersion", "20.1.4",
+    }
+  end,
 }
