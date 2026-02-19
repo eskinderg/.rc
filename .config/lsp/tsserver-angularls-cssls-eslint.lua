@@ -22,17 +22,17 @@ local on_attach = function(client, bufnr)
 
   client.server_capabilities.renameProvider = false
 
-  vim.api.nvim_create_autocmd("DiagnosticChanged", {
-    buffer = bufnr,
-    callback = function()
-      vim.api.nvim_create_autocmd("DiagnosticChanged", {
-        buffer = bufnr,
-        callback = function()
-          require("error-lens").setup({})
-        end,
-      })
-    end,
-  })
+  -- vim.api.nvim_create_autocmd("DiagnosticChanged", {
+  --   buffer = bufnr,
+  --   callback = function()
+  --     vim.api.nvim_create_autocmd("DiagnosticChanged", {
+  --       buffer = bufnr,
+  --       callback = function()
+  --         require("error-lens").setup({})
+  --       end,
+  --     })
+  --   end,
+  -- })
 end
 
 for _,lsp in ipairs(servers) do

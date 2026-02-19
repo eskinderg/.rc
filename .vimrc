@@ -59,12 +59,14 @@ if (has("nvim"))
   luafile $HOME/.rc/.config/nvim-tree.lua
   luafile $HOME/.rc/.config/nvim-cmp.lua
   luafile $HOME/.rc/.config/lsp-config-icons.lua
+  luafile $HOME/.rc/.config/error-lens.lua
   luafile $HOME/.rc/.config/lsp/tsserver-angularls-cssls-eslint.lua
   luafile $HOME/.rc/.config/lsp/omnisharp.lua
   luafile $HOME/.rc/.config/lsp/jsonls.lua
   luafile $HOME/.rc/.config/lsp/yamlls.lua
   luafile $HOME/.rc/.config/lsp/lsp_signature.lua
   luafile /home/esk/.rc/.config/lsp/angularls.lua
+  " luafile /home/esk/.rc/.config/lsp/java.lua
   luafile $HOME/.rc/.config/treesitter.lua
   " luafile $HOME/.rc/.config/nvim-colorizer.lua
   luafile $HOME/.rc/.config/nvim-ts-autotag.lua
@@ -72,5 +74,5 @@ if (has("nvim"))
   luafile $HOME/.rc/.config/lualine.lua
   luafile $HOME/.rc/.config/lua configs/nvim-autopairs.lua
   luafile $HOME/.rc/.config/telescope.lua
-  luafile $HOME/.rc/.config/error-lens.lua
+  luafile $HOME/.rc/.config/lsp/cpp.lua
 endif

@@ -62,6 +62,7 @@ set backup
 set wildignore+=*/vendor/**
 set wildignore+=*/public/forum/**
 set showcmd                    " Show (partial) command in the status line
+set noendofline
 
 if has('nvim')
   " set inccommand=nosplit     " Show live preview of substitute command. Works only on neovim compiled with python

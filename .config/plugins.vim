@@ -49,6 +49,17 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " For Syntax Highlighting
   Plug 'nvim-treesitter/playground' " Syntax debugging
 
+  "For Java development
+  " Plug 'MunifTanjim/nui.nvim'
+  " Plug 'JavaHello/spring-boot.nvim'
+  " Plug 'mfussenegger/nvim-dap'
+  " Plug 'nvim-java/nvim-java' "For java development
+
+  " Plug 'navarasu/onedark.nvim'
+
+  "Mysql plugin
+  Plug 'jobo3208/nvim-mysql'
+
   Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
   if (has("nvim"))
@@ -135,6 +146,10 @@ call plug#begin('~/.config/nvim/plugged')
   if (has("nvim"))
     Plug 'chikko80/error-lens.nvim'
   endif
+
+  Plug 'williamboman/mason.nvim'
+  Plug 'williamboman/mason-lspconfig.nvim'
+
   "===================================================Neovim 6.0 Plugins=============================
   "Telescope Plugins
   " if has('nvim')

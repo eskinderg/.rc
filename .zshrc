@@ -154,6 +154,8 @@ function sp() {
 
 source ~/.venv/bin/activate # For python
 
+alias w11="/home/esk/VM/Windows_11.sh"
+alias w10="/home/esk/VM/Windows_10.sh"
 alias sc="sudo shutdown -c"
 alias t="tmux"
 alias vi="nvim"
