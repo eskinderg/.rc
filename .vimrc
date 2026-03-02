@@ -75,4 +75,5 @@ if (has("nvim"))
   luafile $HOME/.rc/.config/lua configs/nvim-autopairs.lua
   luafile $HOME/.rc/.config/telescope.lua
   luafile $HOME/.rc/.config/lsp/cpp.lua
+  luafile $HOME/.rc/.config/lsp/bashls.lua
 endif
