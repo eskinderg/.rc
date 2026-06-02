@@ -4,7 +4,7 @@ sudo apt-get update;
 sudo apt-get install build-essential gnome-shell-extension-manager gnome-tweaks git curl tmux zsh neovim mpv vifm rubygems ruby-dev python-is-python3 python3.14-venv -y;
 
 #python setup
-python3 -m venv .venv
+python3 -m venv ~/.venv
 gem install --user-install colorls
 
 mkdir -p ~/.vimrc
