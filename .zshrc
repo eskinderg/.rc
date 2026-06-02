@@ -152,6 +152,13 @@ function sp() {
   sudo shutdown -P $1;
 }
 
+function m() {
+if [ -n "$1" ]; then
+  sudo shutdown -P $1;
+fi
+/home/esk/Desktop/Best\ Musics/music.sh
+}
+
 source ~/.venv/bin/activate # For python
 
 alias w11="/home/esk/VM/Windows_11.sh"
@@ -194,7 +201,8 @@ alias ls='colorls --group-directories-first'
 
 alias shopt='/usr/bin/shopt'
 
-alias m="mpv http://212.102.58.251:8080/Nroa0AohHn/z3d8ZHNBWt/1286"
+# alias m="mpv http://212.102.58.251:8080/Nroa0AohHn/z3d8ZHNBWt/1286"
+# alias m="/home/esk/Desktop/Best\ Musics/music.sh"
 alias mm="mpv http://212.102.58.251:8080/Nroa0AohHn/z3d8ZHNBWt/1296"
 alias mmm="mpv http://212.102.58.251:8080/Nroa0AohHn/z3d8ZHNBWt/191"
 alias mx="mpv http://212.102.58.251:8080/Nroa0AohHn/z3d8ZHNBWt/201"
