@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-apt-get update;
-apt-get install build-essential gnome-shell-extension-manager gnome-tweaks git curl tmux zsh neovim mpv vifm rubygems ruby-dev python -y;
+sudo apt-get update;
+sudo apt-get install build-essential gnome-shell-extension-manager gnome-tweaks git curl tmux zsh neovim mpv vifm rubygems ruby-dev python -y;
 mkdir -p ~/.vimrc
 if [ ! -f ~/.vimrc ]
 then
