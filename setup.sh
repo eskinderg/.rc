@@ -113,6 +113,8 @@ then
   fi
 fi
 
+cp ~/.rc/fonts/* ~/.local/share/fonts
+
 # Restore Gnome-Terminal Config
 dconf load /org/gnome/terminal/ < gnome_terminal_settings_backup.txt
 
