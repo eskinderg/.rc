@@ -1,8 +1,8 @@
 #!/bin/bash
 #
 apt-get update;
-apt-get install build-essential gnome-shell-extension-manager gnome-tweaks git curl tmux zsh neovim mpv vifm;
-
+apt-get install build-essential gnome-shell-extension-manager gnome-tweaks git curl tmux zsh neovim mpv vifm rubygems python;
+mkdir -p ~/.vimrc
 if [ ! -f ~/.vimrc ]
 then
   ln -s $PWD/.vimrc ~/.vimrc
@@ -52,6 +52,7 @@ then
   xrdb -merge ~/.Xresources             # theme for xterm
 fi
 
+mkdir -p ~/.config/nvim
 if [ -d ~/.config/nvim ]                # Check if neovim is installed
 then
   if [ ! -f ~/.config/nvim/init.vim ]
@@ -80,24 +81,24 @@ else
 fi
 
 #i3status and i3status-rust config
-if [ -d ~/.config/i3 ]
-then
-  if [ ! -f ~/.config/i3/config ]
-  then
-    ln -s $PWD/i3/config ~/.config/i3/config
-  fi
-  if [ ! -f ~/.config/i3/i3status-rust/config.toml ]
-  then
-    ln -s $PWD/i3/i3status-rust/config.toml ~/.config/i3/i3status-rust/config.toml
-  fi
-else
-  YELLOW="$(tput setaf 3)"
-  printf '%s' "$YELLOW"
-  printf '%s\n'
-  printf '===============================%s\n'
-  printf '%s\n' 'Warning: I3 is not installed'
-  printf '===============================%s\n'
-fi
+# if [ -d ~/.config/i3 ]
+# then
+#   if [ ! -f ~/.config/i3/config ]
+#   then
+#     ln -s $PWD/i3/config ~/.config/i3/config
+#   fi
+#   if [ ! -f ~/.config/i3/i3status-rust/config.toml ]
+#   then
+#     ln -s $PWD/i3/i3status-rust/config.toml ~/.config/i3/i3status-rust/config.toml
+#   fi
+# else
+#   YELLOW="$(tput setaf 3)"
+#   printf '%s' "$YELLOW"
+#   printf '%s\n'
+#   printf '===============================%s\n'
+#   printf '%s\n' 'Warning: I3 is not installed'
+#   printf '===============================%s\n'
+# fi
 
 if [ -d ~/.config/vifm ]
 then
@@ -113,10 +114,33 @@ then
   fi
 fi
 
+mkdir -p ~/.local/share/fonts
 cp ~/.rc/fonts/* ~/.local/share/fonts
+
+gsettings set org.gnome.desktop.interface font-name 'Inter Regular 10'
+gsettings set org.gnome.desktop.interface document-font-name 'Inter Regular 11'
 
 # Restore Gnome-Terminal Config
 dconf load /org/gnome/terminal/ < gnome_terminal_settings_backup.txt
+
+#For tmux plugins
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+
+#ZSH Plugins
+git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_CUSTOM/plugins/zsh-vi-mode
+git clone https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
+git clone https://github.com/TamCore/autoupdate-oh-my-zsh-plugins ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/autoupdate
+
+#python setup
+sudo apt install python-is-python3 -y
+python3 -m venv .venv
+
+#SETUP node version manager (nvm)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
 
 GREEN="$(tput setaf 2)"
 printf '%s' "$GREEN"
