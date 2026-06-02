@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 apt-get update;
-apt-get install build-essential gnome-shell-extension-manager gnome-tweaks git curl tmux zsh neovim mpv vifm rubygems python;
+apt-get install build-essential gnome-shell-extension-manager gnome-tweaks git curl tmux zsh neovim mpv vifm rubygems ruby-dev python -y;
 mkdir -p ~/.vimrc
 if [ ! -f ~/.vimrc ]
 then
@@ -139,8 +139,10 @@ git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM
 git clone https://github.com/TamCore/autoupdate-oh-my-zsh-plugins ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/autoupdate
 
 #python setup
-sudo apt install python-is-python3 -y
+sudo apt install python-is-python3 python3.14-venv -y
 python3 -m venv .venv
+
+gem install --user-install colorls
 
 #SETUP node version manager (nvm)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
