@@ -1,7 +1,12 @@
 #!/bin/bash
 #
 sudo apt-get update;
-sudo apt-get install build-essential gnome-shell-extension-manager gnome-tweaks git curl tmux zsh neovim mpv vifm rubygems ruby-dev python -y;
+sudo apt-get install build-essential gnome-shell-extension-manager gnome-tweaks git curl tmux zsh neovim mpv vifm rubygems ruby-dev python-is-python3 python3.14-venv -y;
+
+#python setup
+python3 -m venv .venv
+gem install --user-install colorls
+
 mkdir -p ~/.vimrc
 if [ ! -f ~/.vimrc ]
 then
@@ -137,12 +142,6 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 git clone https://github.com/TamCore/autoupdate-oh-my-zsh-plugins ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/autoupdate
-
-#python setup
-sudo apt install python-is-python3 python3.14-venv -y
-python3 -m venv .venv
-
-gem install --user-install colorls
 
 #SETUP node version manager (nvm)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
