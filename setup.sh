@@ -133,7 +133,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 
 ./scripts/apps.sh
-./gnome-settings.sh
+./scripts/gnome-settings.sh
 ./scripts/zsh.sh
 
 #SETUP node version manager (nvm)
