@@ -130,9 +130,7 @@ dconf load /org/gnome/terminal/ < gnome_terminal_settings_backup.txt
 
 #For tmux plugins
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-tmux source-file ~/.tmux.conf
 ~/.tmux/plugins/tpm/bin/install_plugins
-tmux source-file ~/.tmux.conf
 
 #Powerlevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
