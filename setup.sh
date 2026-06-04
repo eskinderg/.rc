@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt-get update;
-sudo apt-get install build-essential gnome-shell-extension-manager gnome-tweaks git curl tmux zsh neovim mpv vifm rubygems ruby-dev python-is-python3 python3.14-venv -y;
+sudo apt-get install build-essential gnome-terminal gnome-shell-extension-manager gnome-tweaks git curl tmux zsh neovim mpv vifm rubygems ruby-dev python-is-python3 python3.14-venv -y;
 
 #python setup
 python3 -m venv ~/.venv
@@ -130,6 +130,10 @@ dconf load /org/gnome/terminal/ < gnome_terminal_settings_backup.txt
 
 #For tmux plugins
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+tmux source-file ~/.tmux.conf
+~/.tmux/plugins/tpm/bin/install_plugins
+
+#Powerlevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 
 ./scripts/apps.sh

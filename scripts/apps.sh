@@ -8,5 +8,5 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] http
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 sudo apt update 
-sudo apt install brave-browser -y
+sudo apt install brave-browser nemo -y
 sudo apt install ./google-chrome-stable_current_amd64.deb -y
