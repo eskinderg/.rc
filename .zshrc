@@ -227,7 +227,7 @@ source ~/.rc/powerlevelprompt.sh
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source /home/esk/.oh-my-zsh/plugins/gulp/gulp.plugin.zsh
+# source /home/esk/.oh-my-zsh/plugins/gulp/gulp.plugin.zsh
 export PATH=$HOME/.config/nvcode/utils/bin:$PATH
 
 # pkill -HUP mutter-x11-fram
