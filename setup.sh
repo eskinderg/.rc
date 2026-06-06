@@ -141,6 +141,9 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 ./scripts/zsh.sh
 ./scripts/nvm.sh
 
+#Unite gnome-extension
+wget https://github.com/hardpixel/unite-shell/releases/download/v85/unite-v85.zip
+gnome-extensions install --force unite-v85.zip
 
 #=========================================================================
 GREEN="$(tput setaf 2)"
