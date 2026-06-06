@@ -1,43 +1,60 @@
-nvim_lsp = require('lspconfig')
+-- 1. Setup global keymaps and on-attach buffer local logic using LspAttach
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(args)
+    local bufnr = args.buf
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    local opts = { noremap = true, silent = true, buffer = bufnr }
 
+    -- Global diagnostics (Do not strictly need a buffer, but safe to set per-buffer)
+    vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, opts)
+    vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+    vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+    vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
+
+    -- Buffer-specific LSP standard mappings (Using modern vim.keymap.set)
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+    vim.keymap.set('n', '<c-]>', vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+    vim.keymap.set('n', '<leader><CR>', vim.lsp.buf.code_action, opts)
+    vim.keymap.set('n', '<leader>r', vim.lsp.buf.references, opts)
+    vim.keymap.set('n', '<leader>==', function() vim.lsp.buf.format({ async = true }) end, opts)
+    -- Note: range_formatting is deprecated in modern Neovim; vim.lsp.buf.format handles ranges visually.
+    vim.keymap.set('v', '<leader>=', vim.lsp.buf.format, opts)
+
+    -- Override individual server capabilities if needed
+    if client then
+      client.server_capabilities.renameProvider = false
+    end
+  end,
+})
+
+-- 2. Define external plugin integration (e.g., cmp-nvim-lsp auto-completion capabilities)
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-local servers = { 'ts_ls', 'cssls', 'eslint', 'html', 'vimls', 'tailwindcss' }
+-- 3. Configuration Map for Servers
+-- Native LSP needs explicit initialization commands ('cmd') if not using default files.
+local server_configs = {
+  ts_ls = { cmd = { 'typescript-language-server', '--stdio' } },
+  cssls = { cmd = { 'vscode-css-language-server', '--stdio' } },
+  eslint = { cmd = { 'vscode-eslint-language-server', '--stdio' } },
+  html = { cmd = { 'vscode-html-language-server', '--stdio' } },
+  vimls = { cmd = { 'vim-language-server', '--stdio' } },
+  tailwindcss = { cmd = { 'tailwindcss-language-server', '--stdio' } }
+}
 
-local on_attach = function(client, bufnr)
-  local opts = { noremap=true, silent=true }
-  vim.api.nvim_set_keymap('n', '<leader>d', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-  vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-  vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-  vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<c-]>', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader><CR>', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>r', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>==', '<cmd>lua vim.lsp.buf.format { async = true }<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>=', '<cmd>lua vim.lsp.buf.range_formatting()<CR>', opts)
-
-  client.server_capabilities.renameProvider = false
-
-  -- vim.api.nvim_create_autocmd("DiagnosticChanged", {
-  --   buffer = bufnr,
-  --   callback = function()
-  --     vim.api.nvim_create_autocmd("DiagnosticChanged", {
-  --       buffer = bufnr,
-  --       callback = function()
-  --         require("error-lens").setup({})
-  --       end,
-  --     })
-  --   end,
-  -- })
+-- 4. Register and Enable the configurations natively
+local servers = {}
+for name, config in pairs(server_configs) do
+  table.insert(servers, name)
+  vim.lsp.config(name, {
+    cmd = config.cmd,
+    capabilities = capabilities,
+    -- Default fallback files to detect project roots if not specified per server
+    root_markers = { '.git', 'package.json' }, 
+  })
 end
 
-for _,lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup{
-    on_attach = on_attach,
-    capabilities = capabilities
-  }
-end
+-- 5. Track files and auto-start servers
+vim.lsp.enable(servers)

@@ -47,7 +47,7 @@ call plug#begin('~/.config/nvim/plugged')
   " Plug 'mhartington/nvim-typescript', {'do': './install.sh'} " Autocompletion of Typescript
 
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " For Syntax Highlighting
-  Plug 'nvim-treesitter/playground' " Syntax debugging
+  " Plug 'nvim-treesitter/playground' " Syntax debugging
 
   "For Java development
   " Plug 'MunifTanjim/nui.nvim'

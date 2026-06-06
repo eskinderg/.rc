@@ -1,19 +1,22 @@
+-- 1. Explicitly merge snippet capabilities into standard capabilities
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-require'lspconfig'.jsonls.setup{
-  on_attach = on_attach,
-  capabilities = capabilities,
+-- If you use nvim-cmp, you can layer its default capabilities on top like this:
+-- local capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+-- 2. Define and register the jsonls configuration natively
+vim.lsp.config('jsonls', {
+  cmd = { 'vscode-json-language-server', '--stdio' },
+  capabilities = capabilities,
+  root_markers = { '.git', 'package.json' },
   settings = {
     json = {
       schemas = {
         {
           description = "TypeScript compiler configuration file",
-          fileMatch = {
-            "tsconfig.json",
-            "tsconfig.*.json",
-          },
+          fileMatch = { "tsconfig.json", "tsconfig.*.json" },
           url = "https://json.schemastore.org/tsconfig.json",
         },
         {
@@ -23,19 +26,12 @@ require'lspconfig'.jsonls.setup{
         },
         {
           description = "Babel configuration",
-          fileMatch = {
-            ".babelrc.json",
-            ".babelrc",
-            "babel.config.json",
-          },
+          fileMatch = { ".babelrc.json", ".babelrc", "babel.config.json" },
           url = "https://json.schemastore.org/babelrc.json",
         },
         {
           description = "ESLint config",
-          fileMatch = {
-            ".eslintrc.json",
-            ".eslintrc",
-          },
+          fileMatch = { ".eslintrc.json", ".eslintrc" },
           url = "https://json.schemastore.org/eslintrc.json",
         },
         {
@@ -45,11 +41,7 @@ require'lspconfig'.jsonls.setup{
         },
         {
           description = "Prettier config",
-          fileMatch = {
-            ".prettierrc",
-            ".prettierrc.json",
-            "prettier.config.json",
-          },
+          fileMatch = { ".prettierrc", ".prettierrc.json", "prettier.config.json" },
           url = "https://json.schemastore.org/prettierrc",
         },
         {
@@ -59,11 +51,7 @@ require'lspconfig'.jsonls.setup{
         },
         {
           description = "Stylelint config",
-          fileMatch = {
-            ".stylelintrc",
-            ".stylelintrc.json",
-            "stylelint.config.json",
-          },
+          fileMatch = { ".stylelintrc", ".stylelintrc.json", "stylelint.config.json" },
           url = "https://json.schemastore.org/stylelintrc",
         },
         {
@@ -73,70 +61,47 @@ require'lspconfig'.jsonls.setup{
         },
         {
           description = "Schema for CMake Presets",
-          fileMatch = {
-            "CMakePresets.json",
-            "CMakeUserPresets.json",
-          },
+          fileMatch = { "CMakePresets.json", "CMakeUserPresets.json" },
           url = "https://raw.githubusercontent.com/Kitware/CMake/master/Help/manual/presets/schema.json",
         },
         {
           description = "Configuration file as an alternative for configuring your repository in the settings page.",
-          fileMatch = {
-            ".codeclimate.json",
-          },
+          fileMatch = { ".codeclimate.json" },
           url = "https://json.schemastore.org/codeclimate.json",
         },
         {
           description = "LLVM compilation database",
-          fileMatch = {
-            "compile_commands.json",
-          },
+          fileMatch = { "compile_commands.json" },
           url = "https://json.schemastore.org/compile-commands.json",
         },
         {
           description = "Config file for Command Task Runner",
-          fileMatch = {
-            "commands.json",
-          },
+          fileMatch = { "commands.json" },
           url = "https://json.schemastore.org/commands.json",
         },
         {
-          description = "AWS CloudFormation provides a common language for you to describe and provision all the infrastructure resources in your cloud environment.",
-          fileMatch = {
-            "*.cf.json",
-            "cloudformation.json",
-          },
+          description = "AWS CloudFormation provides a common language...",
+          fileMatch = { "*.cf.json", "cloudformation.json" },
           url = "https://raw.githubusercontent.com/awslabs/goformation/v5.2.9/schema/cloudformation.schema.json",
         },
         {
-          description = "The AWS Serverless Application Model (AWS SAM, previously known as Project Flourish) extends AWS CloudFormation to provide a simplified way of defining the Amazon API Gateway APIs, AWS Lambda functions, and Amazon DynamoDB tables needed by your serverless application.",
-          fileMatch = {
-            "serverless.template",
-            "*.sam.json",
-            "sam.json",
-          },
+          description = "The AWS Serverless Application Model (AWS SAM)...",
+          fileMatch = { "serverless.template", "*.sam.json", "sam.json" },
           url = "https://raw.githubusercontent.com/awslabs/goformation/v5.2.9/schema/sam.schema.json",
         },
         {
           description = "Json schema for properties json file for a GitHub Workflow template",
-          fileMatch = {
-            ".github/workflow-templates/**.properties.json",
-          },
+          fileMatch = { ".github/workflow-templates/**.properties.json" },
           url = "https://json.schemastore.org/github-workflow-template-properties.json",
         },
         {
           description = "golangci-lint configuration file",
-          fileMatch = {
-            ".golangci.toml",
-            ".golangci.json",
-          },
+          fileMatch = { ".golangci.toml", ".golangci.json" },
           url = "https://json.schemastore.org/golangci-lint.json",
         },
         {
           description = "JSON schema for the JSON Feed format",
-          fileMatch = {
-            "feed.json",
-          },
+          fileMatch = { "feed.json" },
           url = "https://json.schemastore.org/feed.json",
           versions = {
             ["1"] = "https://json.schemastore.org/feed-1.json",
@@ -145,23 +110,17 @@ require'lspconfig'.jsonls.setup{
         },
         {
           description = "Packer template JSON configuration",
-          fileMatch = {
-            "packer.json",
-          },
+          fileMatch = { "packer.json" },
           url = "https://json.schemastore.org/packer.json",
         },
         {
           description = "NPM configuration file",
-          fileMatch = {
-            "package.json",
-          },
+          fileMatch = { "package.json" },
           url = "https://json.schemastore.org/package.json",
         },
         {
           description = "JSON schema for Visual Studio component configuration files",
-          fileMatch = {
-            "*.vsconfig",
-          },
+          fileMatch = { "*.vsconfig" },
           url = "https://json.schemastore.org/vsconfig.json",
         },
         {
@@ -172,4 +131,7 @@ require'lspconfig'.jsonls.setup{
       }
     },
   },
-}
+})
+
+-- 3. Enable the jsonls setup to monitor JSON file buffers
+vim.lsp.enable('jsonls')

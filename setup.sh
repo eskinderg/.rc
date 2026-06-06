@@ -138,10 +138,10 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 ./scripts/apps.sh
 ./scripts/gnome-settings.sh
 ./scripts/zsh.sh
+./scripts/nvm.sh
 
-#SETUP node version manager (nvm)
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
 
+#=========================================================================
 GREEN="$(tput setaf 2)"
 printf '%s' "$GREEN"
 printf '%s\n'
