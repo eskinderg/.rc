@@ -5,7 +5,8 @@ sudo apt-get install build-essential gnome-terminal gnome-shell-extension-manage
 
 #python setup
 python3 -m venv ~/.venv
-gem install --user-install colorls
+#sudo gem install --user-install colorls
+sudo gem install colorls
 
 mkdir -p ~/.vimrc
 if [ ! -f ~/.vimrc ]
