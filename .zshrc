@@ -7,7 +7,7 @@
 DEFAULT_USER=$USER
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/esk/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="duellj"
@@ -109,7 +109,7 @@ function zvm_config() {
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-export NVM_DIR="/home/esk/.nvm" #Nodejs version manager
+export NVM_DIR="$HOME/.nvm" #Nodejs version manager
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Auto switch node version from .nvmrc ===============================================================
@@ -156,13 +156,13 @@ function m() {
 if [ -n "$1" ]; then
   sudo shutdown -P $1;
 fi
-/home/esk/Desktop/Best\ Musics/music.sh
+$HOME/Desktop/Best\ Musics/music.sh
 }
 
 source ~/.venv/bin/activate # For python
 
-alias w11="/home/esk/VM/Windows_11.sh"
-alias w10="/home/esk/VM/Windows_10.sh"
+alias w11="$HOME/VM/Windows_11.sh"
+alias w10="$HOME/VM/Windows_10.sh"
 alias sc="sudo shutdown -c"
 alias t="tmux"
 alias vi="nvim"
@@ -202,7 +202,7 @@ alias ls='colorls --group-directories-first'
 alias shopt='/usr/bin/shopt'
 
 # alias m="mpv http://212.102.58.251:8080/Nroa0AohHn/z3d8ZHNBWt/1286"
-# alias m="/home/esk/Desktop/Best\ Musics/music.sh"
+# alias m="$HOME/Desktop/Best\ Musics/music.sh"
 alias mm="mpv http://212.102.58.251:8080/Nroa0AohHn/z3d8ZHNBWt/1296"
 alias mmm="mpv http://212.102.58.251:8080/Nroa0AohHn/z3d8ZHNBWt/191"
 alias mx="mpv http://212.102.58.251:8080/Nroa0AohHn/z3d8ZHNBWt/201"
@@ -227,7 +227,7 @@ source ~/.rc/powerlevelprompt.sh
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# source /home/esk/.oh-my-zsh/plugins/gulp/gulp.plugin.zsh
+# source $HOME/.oh-my-zsh/plugins/gulp/gulp.plugin.zsh
 export PATH=$HOME/.config/nvcode/utils/bin:$PATH
 
 # pkill -HUP mutter-x11-fram
