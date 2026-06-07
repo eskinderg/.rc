@@ -1,7 +1,21 @@
+#!/bin/bash
+
 #NVM SETUP node version manager (nvm)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
-sudo chown -R $(whoami) ~/.npm
-sudo chown -R $(whoami) /usr/local/lib/node_modules
+
+export NVM_DIR="$HOME/.nvm"
+
+if [ -s "$NVM_DIR/nvm.sh" ]; then
+    source "$NVM_DIR/nvm.sh"
+else
+    echo "Error: NVM not found at $NVM_DIR"
+    exit 1
+fi
+
+nvm install --lts
+
+# sudo chown -R $(whoami) ~/.npm
+# sudo chown -R $(whoami) /usr/local/lib/node_modules
 npm config set prefix ~/.npm
 
 #npm install -g vimls 
