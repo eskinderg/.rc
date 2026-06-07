@@ -16,7 +16,7 @@ nvm install --lts
 
 # sudo chown -R $(whoami) ~/.npm
 # sudo chown -R $(whoami) /usr/local/lib/node_modules
-npm config set prefix ~/.npm
+# npm config set prefix ~/.npm
 
 #npm install -g vimls 
 npm install -g vim-language-server
